@@ -11,7 +11,7 @@ Spring Boot
 
 * Spring Boot Actuator
 * Spring Web
-* Spring Data JPA
+* Spring Data JPA -> MyBatis로 변경해야함
 * Rest Repositories
 * Rest Repositories HAL Explorer
 * Thymeleaf
@@ -24,7 +24,7 @@ Spring Boot
 
 그 외
 
-* QueryDSL 5.0.0
+* QueryDSL 5.0.0 
 * Bootstrap 5.2.0-Beta1
 * Heroku
 
