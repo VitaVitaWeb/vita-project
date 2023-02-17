@@ -21,11 +21,11 @@
 
     <!-- CORS setting -->
     <filter>
-        <filter-name>CorsFilter</filter-name>
-        <filter-class>com.sejong.vitaweb.web.filter.CorsFilter</filter-class>
+        <filter-name>CORSFilter</filter-name>
+        <filter-class>com.sejong.vitaweb.web.filter.CORSFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>CorsFilter</filter-name>
+        <filter-name>CORSFilter</filter-name>
         <url-pattern>http://localhost:8080/</url-pattern>
     </filter-mapping>
     
