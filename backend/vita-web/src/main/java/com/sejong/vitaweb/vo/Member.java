@@ -14,13 +14,12 @@ public class Member implements Serializable {
 
   private String id;
   private String password;
-  private String nickName;
   private Date createdDate;
   private String name;
-  private String email;
   private String phoneNo;
   private Date birthDay;
-  private String gender;
+  private int gender;
+  private int rcnt;
 
 
 }

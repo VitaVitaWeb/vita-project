@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sejong.vitaweb.dao.ModifyMyPageDao">
+
+    <resultMap type="member" id="memberMap">
+        <id column="ID" property="id"/>
+        <result column="PWD" property="password"/>
+        <result column="NAME" property="name"/>
+        <result column="jdate" property="createdDate"/>
+        <result column="phn" property="phoneNo"/>
+        <result column="bth" property="birthDay"/>
+        <result column="gen" property="gender"/>
+        <result column="rcnt" property="rcnt"/>
+    </resultMap>
+
+<!--    <update id="profileUpdate" parameterType="member">-->
+<!--        update viat_member set-->
+<!--        PROFILE=#{profileFig},-->
+<!--        NNAME=#{nickName},-->
+<!--        MBTI=#{mbti},-->
+<!--        SNS=#{snsAddress}-->
+<!--        where ID=#{id}-->
+<!--    </update>-->
+
+
+    <update id="myAccountUpdate" parameterType="member">
+        update vita_member set
+        PWD=sha2(#{password},256),
+        PNUM=#{phoneNo},
+        GENDER=#{gender},
+        bth=#{birthDay}
+        where
+        ID=#{id}
+    </update>
+
+    <select id="findById" resultMap="memberMap">
+        select
+        ID,
+        NAME,
+        PNUM,
+        bth,
+        GEN,
+        from vita_member
+        where
+        ID=#{id}
+    </select>
+
+<!--닉네임 중복확인-->
+<!--    <select id="findByNickName" resultType="int">-->
+<!--        select count(*)-->
+<!--        from vita_member-->
+<!--        where-->
+<!--        NNAME=#{nickName}-->
+<!--    </select>-->
+
+
+    <select id="checkPassword" resultType="int" parameterType="String">
+        select
+            count(*)
+        from vita_member
+        where ID=#{id} and PWD=sha2(#{password},256)
+    </select>
+
+    <update id="resignMemberStatus" parameterType="String">
+        update vita_member set
+        STATUS='탈퇴',
+        OUTDATE=now()
+        where ID=#{id} and PWD=sha2(#{password},256)
+    </update>
+
+</mapper>

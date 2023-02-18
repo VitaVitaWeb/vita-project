@@ -8,29 +8,26 @@
     <resultMap type="member" id="memberMap">
         <id column="ID" property="id"/>
         <result column="PWD" property="password"/>
-        <result column="NNAME" property="nickName"/>
-        <result column="SIDATE" property="createdDate"/>
+        <result column="jdate" property="createdDate"/>
         <result column="NAME" property="name"/>
-        <result column="EMAIL" property="email"/>
-        <result column="PNUM" property="phoneNo"/>
+        <result column="phn" property="phoneNo"/>
         <result column="BIRTH" property="birthDay"/>
-        <result column="GENDER" property="gender"/>
+        <result column="gen" property="gender"/>
+        <result column="rcnt" property="rcnt"/>
     </resultMap>
 
     <!--회원 추가-->
     <insert id="join" parameterType="Member">
-        insert into vita_member(ID,PWD,NAME,EMAIL,NNAME,PNUM)
-        values(#{id},sha2(#{password},256),#{name},#{email},#{nickName},#{phoneNo})
+        insert into vita_member(ID,PWD,NAME,PNUM)
+        values(#{id},sha2(#{password},256),#{name},#{phoneNo})
     </insert>
 
     <!--로그인 조회-->
     <select id="findByIdPassword" resultMap="memberMap">
         select
             ID,
-            NNAME,
-            SIDATE,
+            JDATE,
             NAME,
-            EMAIL
         from
             vita_member
         where
@@ -46,31 +43,23 @@
             ID=#{id}
     </select>
 
-    <select id="findByNickName" resultMap="memberMap">
-        select
-            NNAME
-        from
-            vita_member
-        where
-            NNAME=#{nickName}
-    </select>
 
-    <select id="findByEmail" resultMap="memberMap">
-        select
-            EMAIL, PNUM
-        from
-            vita_member
-        where
-            EMAIL=#{email}
-    </select>
+<!--    <select id="findByID" resultMap="memberMap">-->
+<!--        select-->
+<!--            ID-->
+<!--        from-->
+<!--            vita_member-->
+<!--        where-->
+<!--            ID=#{id}-->
+<!--    </select>-->
 
     <select id="findByPhoneNo" resultMap="memberMap">
         select
-            EMAIL, PNUM
+            EMAIL, phn
         from
             vita_member
         where
-            PNUM=#{phoneNo}
+            phn=#{phoneNo}
     </select>
 
 
@@ -83,7 +72,7 @@
         ID = #{id}
     </select>
 
-    <select id="findByIdAll" resultMap="memberMap">
+    <select id="findById" resultMap="memberMap">
         select
         *
         from
@@ -101,9 +90,8 @@
     <update id="update" parameterType="member">
         update vita_member set
         <!--   pwd=sha2(#{password},256)-->
-        nname=#{nickName},
         name=#{name},
-        pnum=#{phoneNo},
+        phn=#{phoneNo},
         birth=#{birthDay},
         gender=#{gender}
         where
@@ -117,7 +105,7 @@
             vita_member
         where
             name = #{name} and
-            email= #{email}
+            phn= #{phoneNum}
     </select>
 
     <select id="findpwd" parameterType="map" resultMap="memberMap">
@@ -128,7 +116,7 @@
         where
         id=#{id} and
         name = #{name} and
-        email= #{email}
+        phn= #{phoneNum}
     </select>
 
     <update id="findpwdupdate" parameterType="map">
@@ -137,7 +125,7 @@
         where
         id=#{id} and
         name = #{name} and
-        email= #{email}
+        phn= #{phoneNum}
     </update>
 
 
