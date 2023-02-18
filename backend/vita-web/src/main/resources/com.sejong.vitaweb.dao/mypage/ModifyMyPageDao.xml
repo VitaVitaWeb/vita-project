@@ -37,11 +37,7 @@
 
     <select id="findById" resultMap="memberMap">
         select
-        ID,
-        NAME,
-        PNUM,
-        bth,
-        GEN,
+        *
         from vita_member
         where
         ID=#{id}

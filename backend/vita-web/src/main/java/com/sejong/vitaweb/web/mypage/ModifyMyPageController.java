@@ -36,17 +36,7 @@ public class ModifyMyPageController {
         this.memberService = memberService;
     }
 
-//    @GetMapping("profileDetail")
-//    public Map profileDetail(HttpSession session) throws Exception {
-//        Member loginMember = (Member) session.getAttribute("loginMember");
-//        Member member = modifyMyPageService.get(loginMember.getId());
-//
-//        Map map = new HashMap();
-//        map.put("member", member);
-//        return map;
-//    }
-
-    @GetMapping("myAccountDetail")
+    @GetMapping("detail")
     public Map myAccountDetail(HttpSession session) throws Exception {
         Member loginMember = (Member) session.getAttribute("loginMember");
         Member member = modifyMyPageService.get(loginMember.getId());
@@ -57,8 +47,7 @@ public class ModifyMyPageController {
     }
 
 
-
-    @PostMapping("myAccountUpdate")
+    @PostMapping("update")
     public String myAccountUpdate(Member member, HttpSession session) throws Exception {
 
         Member loginMember = (Member) session.getAttribute("loginMember");
@@ -74,15 +63,7 @@ public class ModifyMyPageController {
         return "redirect:/myPage/";
     }
 
-    // 닉네임 중복 확인
-//    @ResponseBody
-//    @PostMapping("nickCheck")
-//    public int nickCheck(String nickName) throws Exception {
-//        int result = modifyMyPageService.nickCheck(nickName);
-//        return result;
-//    }
-
-    @GetMapping("resignmemberform")
+    @GetMapping("resignform")
     public ModelAndView resignMemberForm(HttpSession session) throws Exception {
         Member member = (Member)session.getAttribute("loginMember");
         ModelAndView mv = new ModelAndView();
@@ -110,7 +91,7 @@ public class ModifyMyPageController {
     }
 
     @ResponseBody
-    @PostMapping("resignmember")
+    @PostMapping("resign")
     public int resignMember(String memberId, String memberPw, HttpSession session) throws Exception {
         int result = modifyMyPageService.resignMember(memberId, memberPw);
         if(result == 1) {

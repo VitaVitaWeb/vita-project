@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ModifyMyPageServiceImpl implements ModifyMyPageService {
+public class DefaultMyPageServiceImpl implements ModifyMyPageService {
     @Autowired
     ModifyMyPageDao modifyMyPageDao;
 
