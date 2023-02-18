@@ -13,9 +13,9 @@ import java.sql.Date;
 public class Member implements Serializable {
 
   private String id;
+  private String name;
   private String password;
   private Date createdDate;
-  private String name;
   private String phoneNo;
   private Date birthDay;
   private int gender;

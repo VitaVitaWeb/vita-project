@@ -6,12 +6,12 @@
 
     <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
     <resultMap type="member" id="memberMap">
-        <id column="ID" property="id"/>
-        <result column="PWD" property="password"/>
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="pwd" property="password"/>
         <result column="jdate" property="createdDate"/>
-        <result column="NAME" property="name"/>
         <result column="phn" property="phoneNo"/>
-        <result column="BIRTH" property="birthDay"/>
+        <result column="bth" property="birthDay"/>
         <result column="gen" property="gender"/>
         <result column="rcnt" property="rcnt"/>
     </resultMap>
@@ -34,28 +34,10 @@
             ID=#{id} and PWD=sha2(#{password},256)
     </select>
 
-    <select id="findById" resultMap="memberMap">
-        select
-            *
-        from
-            vita_member
-        where
-            ID=#{id}
-    </select>
-
-
-<!--    <select id="findByID" resultMap="memberMap">-->
-<!--        select-->
-<!--            ID-->
-<!--        from-->
-<!--            vita_member-->
-<!--        where-->
-<!--            ID=#{id}-->
-<!--    </select>-->
 
     <select id="findByPhoneNo" resultMap="memberMap">
         select
-            EMAIL, phn
+            *
         from
             vita_member
         where

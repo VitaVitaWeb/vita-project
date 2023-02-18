@@ -39,14 +39,7 @@ public class AuthController {
     return inputCheck(id, result, filter);
   }
 
-  @ResponseBody
-  @GetMapping("nickNameCheck")
-  public String nickNameCheck(String nickName) throws Exception {
-    String filter = "^[A-Za-z0-9가-힣]*$";
-    Member result = memberService.nickNameCheck(nickName);
 
-    return inputCheck(nickName, result, filter);
-  }
 
   private String inputCheck(String inputString, Member result, String filter) throws Exception {
     if (

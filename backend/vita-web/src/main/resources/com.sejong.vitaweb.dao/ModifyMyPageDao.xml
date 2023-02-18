@@ -5,8 +5,8 @@
 <mapper namespace="com.sejong.vitaweb.dao.ModifyMyPageDao">
 
     <resultMap type="member" id="memberMap">
-        <id column="ID" property="id"/>
-        <result column="PWD" property="password"/>
+        <id column="id" property="id"/>
+        <result column="pwd" property="password"/>
         <result column="NAME" property="name"/>
         <result column="jdate" property="createdDate"/>
         <result column="phn" property="phoneNo"/>
