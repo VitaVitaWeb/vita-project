@@ -1,23 +1,32 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import VitaInfoPage from './Pages/InfoPage/VitaInfoPage';
-import VitaComparePage from './Pages/ComparePage/VitaComparePage';
-import HomePage from "./Pages/HomePage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainPage from "./Pages/MainPage/mainPage";
+import SurveyFormation from "./Pages/Survey/surveyFormation";
+import SurveyPrefer from "./Pages/Survey/surveyPrefer";
+import SurveyPurpose from "./Pages/Survey/surveyPurpose";
+import VitaInfoPage from "./Pages/InfoPage/VitaInfoPage";
+import VitaComparePage from "./Pages/ComparePage/VitaComparePage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
+    <div>
+      <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<HomePage />}>
-          </Route>
-          <Route path="/ComparePage" element={<VitaComparePage />}>
-          </Route>
-          <Route path="/InfoPage" element={<VitaInfoPage />}>
-          </Route>
+          <Route path="/" element={<MainPage />}></Route>
+          <Route
+            path={"/Pages/MainPage/mainPage"}
+            element={<MainPage />}
+          ></Route>
+          <Route
+            path={"/surveyFormation"}
+            element={<SurveyFormation />}
+          ></Route>
+          <Route path={"/surveyPrefer"} element={<SurveyPrefer />}></Route>
+          <Route path={"/surveyPurpose"} element={<SurveyPurpose />}></Route>
+          <Route path="/ComparePage" element={<VitaComparePage />}></Route>
+          <Route path="/InfoPage" element={<VitaInfoPage />}></Route>
         </Routes>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
-
 export default App;

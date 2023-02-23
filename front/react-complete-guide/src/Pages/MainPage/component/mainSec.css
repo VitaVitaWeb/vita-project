@@ -1,0 +1,52 @@
+.mainSec {
+  width: 100%;
+  height: 600px;
+  background-color: white;
+  display: flex;
+}
+.mainSecBorder {
+  width: 75%;
+  height: 90%;
+  background-color: white;
+  margin: auto;
+  display: flex;
+}
+.mainSecWindow {
+  width: 575px;
+  height: 342px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgb(255, 226, 219);
+  margin-left: auto;
+  align-self: center;
+  position: relative;
+  bottom: 110px;
+}
+.statusImgSec {
+  width: 350px;
+  height: 140px;
+  margin: 30px;
+}
+.textBoxSec {
+  width: 300px;
+  height: 45px;
+  background-color: orange;
+  border-radius: 15px;
+  border: none;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  position: relative;
+  left: 250px;
+  top: 70px;
+}
+.textBoxMainWindow {
+  width: 575px;
+  height: 342px;
+}
+.textBoxMainOne {
+  font-size: 30px;
+}
+.textBoxMainTwo {
+  font-size: 23px;
+}

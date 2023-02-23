@@ -1,0 +1,19 @@
+.surveyMainBorder {
+  width: 100%;
+  margin-top: 40px;
+  height: 665px;
+  display: flex;
+}
+.surveyMainTextTitle {
+  margin-top: 0px;
+  font-size: 30px;
+  white-space: pre-wrap;
+}
+.surveyMainText {
+  text-size-adjust: 30;
+  font-size: 20px;
+  white-space: pre-wrap;
+}
+.rightAlign {
+  margin-left: auto;
+}

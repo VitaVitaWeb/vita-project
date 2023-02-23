@@ -1,0 +1,55 @@
+.bestItemText {
+  font-size: 25;
+}
+.bestItemTextBox {
+  margin-left: 40px;
+  width: 200px;
+  height: 60px;
+}
+.bestItemButton {
+  width: 120px;
+  height: 50px;
+  font-size: 20px;
+  background-color: white;
+  border: none;
+}
+.bestItemButtomWindow {
+  position: relative;
+  width: 800px;
+  height: 30px;
+  top: 70px;
+  right: 200px;
+  align-self: left;
+}
+.bestItemImgWindow {
+  width: 1100px;
+  height: 200px;
+  position: absolute;
+  margin-left: 43px;
+  margin-top: 120px;
+}
+.bestItemImgBorder {
+  width: 250px;
+  height: 250px;
+  margin: 12px;
+  background-color: white;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 0px 20px rgb(105, 105, 105);
+}
+.bestItemInfo {
+  width: 250px;
+  height: 50px;
+  margin: 12px;
+  margin-top: 0px;
+  font-size: 25px;
+  background-color: white;
+  border: none;
+}
+.bestItemInfoWindow {
+  width: 1100px;
+  height: 50px;
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 43px;
+}

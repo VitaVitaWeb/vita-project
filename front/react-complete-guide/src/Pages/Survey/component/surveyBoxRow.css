@@ -1,0 +1,12 @@
+.surveyBoxRowBorder {
+  width: 500px;
+  height: 150px;
+  display: flex;
+  margin-left: auto;
+}
+.surveyBoxRowWindow {
+  width: 100px;
+  height: 140px;
+  margin: 12px;
+  display: flex;
+}
