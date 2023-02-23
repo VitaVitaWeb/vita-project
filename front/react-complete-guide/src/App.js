@@ -22,8 +22,8 @@ function App() {
           ></Route>
           <Route path={"/surveyPrefer"} element={<SurveyPrefer />}></Route>
           <Route path={"/surveyPurpose"} element={<SurveyPurpose />}></Route>
-          <Route path="/ComparePage" element={<VitaComparePage />}></Route>
-          <Route path="/InfoPage" element={<VitaInfoPage />}></Route>
+          <Route path={"/ComparePage"} element={<VitaComparePage />}></Route>
+          <Route path={"/InfoPage"} element={<VitaInfoPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

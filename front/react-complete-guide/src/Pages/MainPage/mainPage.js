@@ -1,4 +1,4 @@
-import TopBar from "../../CommonComponents/TopBar/topBar";
+import TopBar from "../../CommonComponent/TopBar/topBar";
 import Main from "./component/main";
 import MainSec from "./component/mainSec";
 import MainBestItem from "./component/mainBestItem";

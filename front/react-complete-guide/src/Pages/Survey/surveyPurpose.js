@@ -1,4 +1,4 @@
-import TopBar from "../../CommonComponents/TopBar/topBar";
+import TopBar from "../../CommonComponent/TopBar/topBar";
 import SurveyMain from "./component/surveyMain";
 import SurveyBottom from "./component/surveyBottomBar";
 import "./component/surveyBackground.css";

@@ -8,6 +8,9 @@ function TopBar() {
   function goSurvey() {
     movePage("/surveyFormation");
   }
+  function goCompare() {
+    movePage("/ComparePage");
+  }
   return (
     <div className="topBar">
       <div className="topMain">
@@ -20,7 +23,9 @@ function TopBar() {
         <button onClick={goSurvey} className="mainCompareButton">
           분석하기
         </button>
-        <button className="mainCompareButton">비교하기</button>
+        <button onClick={goCompare} className="mainCompareButton">
+          비교하기
+        </button>
         <button className="mainCompareButton">계산하기</button>
         <button className="mainLoginButton">로그인</button>
       </div>
