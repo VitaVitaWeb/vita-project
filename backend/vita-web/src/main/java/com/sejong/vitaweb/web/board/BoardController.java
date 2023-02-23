@@ -1,9 +1,5 @@
-package com.sejong.vitaweb.web.board.controller;
+package com.sejong.vitaweb.web.board;
 
-
-import com.sejong.vitaweb.web.board.mapper.BoardMapper;
-import com.sejong.vitaweb.web.board.model.Board;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

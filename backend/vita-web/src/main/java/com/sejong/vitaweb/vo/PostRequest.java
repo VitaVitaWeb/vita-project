@@ -1,4 +1,4 @@
-package com.study.domain.post;
+package com.sejong.vitaweb.vo;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,12 +1,13 @@
-package com.study.domain.post;
+package com.sejong.vitaweb.dao;
 
+import com.sejong.vitaweb.vo.PostRequest;
+import com.sejong.vitaweb.vo.PostResponse;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
-public interface PostMapper {
-
+public interface PostDao {
     /**
      * 게시글 저장
      * @param params - 게시글 정보
@@ -43,5 +44,4 @@ public interface PostMapper {
      * @return 게시글 수
      */
     int count();
-
 }

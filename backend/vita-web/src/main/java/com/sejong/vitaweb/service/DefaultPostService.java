@@ -1,16 +1,22 @@
-package com.study.domain.post;
+package com.sejong.vitaweb.service;
 
+import com.sejong.vitaweb.dao.PostDao;
+import com.sejong.vitaweb.vo.PostRequest;
+import com.sejong.vitaweb.vo.PostResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
+
+//import javax.transaction.Transactional;
+//import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PostService {
+public class DefaultPostService {
 
-    private final PostMapper postMapper;
+    private final PostDao postDao;
 
     /**
      * 게시글 저장
@@ -19,7 +25,7 @@ public class PostService {
      */
     @Transactional
     public Long savePost(final PostRequest params) {
-        postMapper.save(params);
+        postDao.save(params);
         return params.getId();
     }
 
@@ -29,7 +35,7 @@ public class PostService {
      * @return 게시글 상세정보
      */
     public PostResponse findPostById(final Long id) {
-        return postMapper.findById(id);
+        return postDao.findById(id);
     }
 
     /**
@@ -39,7 +45,7 @@ public class PostService {
      */
     @Transactional
     public Long updatePost(final PostRequest params) {
-        postMapper.update(params);
+        postDao.update(params);
         return params.getId();
     }
 
@@ -49,7 +55,7 @@ public class PostService {
      * @return PK
      */
     public Long deletePost(final Long id) {
-        postMapper.deleteById(id);
+        postDao.deleteById(id);
         return id;
     }
 
@@ -58,7 +64,7 @@ public class PostService {
      * @return 게시글 리스트
      */
     public List<PostResponse> findAllPost() {
-        return postMapper.findAll();
+        return postDao.findAll();
     }
 
 }

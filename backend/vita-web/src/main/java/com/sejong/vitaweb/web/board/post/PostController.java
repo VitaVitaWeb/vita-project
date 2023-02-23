@@ -1,5 +1,8 @@
-package com.study.domain.post;
+package com.sejong.vitaweb.web.board.post;
 
+import com.sejong.vitaweb.service.DefaultPostService;
+import com.sejong.vitaweb.vo.PostRequest;
+import com.sejong.vitaweb.vo.PostResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class PostController {
 
-    private final PostService postService;
+    private final DefaultPostService postService;
 
     // 게시글 작성 페이지
     @GetMapping("/post/write.do")
