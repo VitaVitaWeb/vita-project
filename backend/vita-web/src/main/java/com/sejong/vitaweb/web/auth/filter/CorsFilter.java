@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class CorsFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
-            throws IOException, ServletException
+            throws IOException , ServletException
     {
         HttpServletResponse response = (HttpServletResponse) res;
         response.setHeader("Access-Control-Allow-Origin", "*"); //허용대상 도메인
