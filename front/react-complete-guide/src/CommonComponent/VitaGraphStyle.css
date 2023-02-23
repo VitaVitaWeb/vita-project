@@ -1,0 +1,123 @@
+.compare-nutrient-range {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 350px;
+    height: 20px;
+
+    border: 1px solid #000000;
+    border-radius: 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.compare-today-range1 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 200px;
+    height: 20px;
+
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 50px 0px 0px 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.compare-today-range2 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 300px;
+    height: 20px;
+
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 50px 0px 0px 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.compare-nutrient-content {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 264.63px;
+    height: 20px;
+
+    background-color: #FF5C35;
+    border: 1px solid #000000;
+    border-radius: 50px 0px 0px 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.info-nutrient-range {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 700px;
+    height: 20px;
+
+    border: 1px solid #000000;
+    border-radius: 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.info-today-range1 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 400px;
+    height: 20px;
+
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 50px 0px 0px 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.info-today-range2 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 500px;
+    height: 20px;
+
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 50px 0px 0px 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.info-nutrient-content {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 264.63px;
+    height: 20px;
+
+    background-color: #FF5C35;
+    border: 1px solid #000000;
+    border-radius: 50px 0px 0px 50px;
+
+    left: 38px;
+    top: 0px;
+}
+
+.nutrient-content-text {
+    position: absolute;
+    left: 100%;
+    top: 30px;
+}

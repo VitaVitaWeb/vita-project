@@ -1,0 +1,21 @@
+.wish {
+    display: flex;
+    margin-left: auto;
+    height: 21px;
+    align-items: center;
+    gap: 10px;
+}
+
+.wish-button {
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    border: none;
+    background-color:transparent;
+}
+
+.heart-icon {
+    height: 19px;
+    width: 19px;
+    margin: auto;
+}

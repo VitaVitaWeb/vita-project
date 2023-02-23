@@ -1,0 +1,16 @@
+#info-buttons {
+    display: flex;
+    width: 737px;
+    margin-top: 120px;
+    gap: 24px;
+    align-items: center;
+}
+
+.info-button {
+    width: 230px;
+    height: 52px;
+
+    background: #FFFFFF;
+    border: 2px solid #FF5C35;
+    border-radius: 10px;
+}

@@ -1,0 +1,18 @@
+#compare-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin: auto;
+    align-items: center;
+    flex: 1;
+}
+
+.compare-button {
+    width: 250px;
+    height: 52px;
+
+    background: #FFFFFF;
+    border: 2px solid #FF5C35;
+    border-radius: 10px;
+}

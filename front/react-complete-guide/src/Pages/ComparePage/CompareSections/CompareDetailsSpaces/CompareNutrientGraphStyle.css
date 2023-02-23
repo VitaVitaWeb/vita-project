@@ -1,0 +1,13 @@
+.compare-nutrient-graph {
+    display: flex;
+    margin: 10px 5px 20px 5px;
+
+    justify-content: center;
+    flex: 1;
+}
+
+.compare-nutrient-graph-space {
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+}

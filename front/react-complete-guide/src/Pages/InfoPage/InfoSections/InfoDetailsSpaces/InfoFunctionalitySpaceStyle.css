@@ -1,0 +1,28 @@
+#info-functionality-space {
+    display: flex;
+    padding: 10px 0;
+}
+
+#info-functionality-text {
+    width: 200px;
+    margin: 10px 0 auto 0;
+}
+
+#info-functionality-ul {
+    display: flex;
+    gap: 20px;
+    padding-inline-start: 0px;
+    margin: auto 0 auto 0;
+}
+
+.info-functionality-li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-text {
+    text-align: center;
+    font-size: 13px;
+    width: 70px;
+}

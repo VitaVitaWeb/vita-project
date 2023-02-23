@@ -1,0 +1,51 @@
+.vita-component-top {
+    position: relative;
+    width: auto;
+    height: 30px;
+}
+
+.x-button-space {
+    position: absolute;
+    left: 182px;
+    top: 0px;
+    height: 30px;
+}
+
+.x-button {
+    height: 30px;
+    width: 30px;
+    padding: 0px;
+
+    margin: auto;
+}
+
+.wish-button-space {
+    position: absolute;
+    left: 155px;
+    top: 15px;
+}
+
+.vita-component-image {
+    margin: auto;
+}
+
+.vita-component-image-space {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    margin: auto;
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+.vita-component-down {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 10px;
+}

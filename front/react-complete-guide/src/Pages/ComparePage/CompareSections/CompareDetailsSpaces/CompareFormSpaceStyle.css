@@ -1,0 +1,12 @@
+#compare-form-space {
+    padding: 10px 0;
+}
+
+#compare-form-text {
+    text-align: center;
+}
+
+#compare-each-form-space {
+    display: flex;
+    padding: 10px 0;
+}

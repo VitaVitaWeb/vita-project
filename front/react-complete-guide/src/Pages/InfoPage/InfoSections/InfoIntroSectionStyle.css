@@ -1,0 +1,43 @@
+#info-intro-section {
+    display: flex;
+    gap: 132px;
+    width: 1280px;
+    height: 411px;
+
+    margin: 30px auto 30px auto;
+}
+
+#info-image-space {
+    border: 1px solid;
+    width: 411px;
+    height: auto;
+    padding: 77px;
+}
+
+#info-image {
+    width: 255px;
+    height: 255px;
+}
+
+#info-intro-space {
+    width: 737px;
+    height: 411px;
+}
+
+#name-explain-space {
+    width: 737px;
+    height: 217px;
+}
+
+#name-wish-space {
+    display: flex;
+    width: 737px;
+    height: 36px;
+    margin-bottom: 10px;
+    gap: 400px;
+}
+
+#vita-explain {
+    width: 737px;
+    height: 100px;
+}

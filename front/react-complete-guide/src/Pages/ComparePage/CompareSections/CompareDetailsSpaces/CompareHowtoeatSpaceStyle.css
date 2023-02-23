@@ -1,0 +1,19 @@
+#compare-howtoeat-space {
+    padding: 10px 0;
+}
+
+#compare-howtoeat-text {
+    text-align: center;
+}
+
+#compare-each-howtoeat-space {
+    display: flex;
+    padding: 10px 0;
+}
+
+.compare-howtoeat-description {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex: 1;
+}

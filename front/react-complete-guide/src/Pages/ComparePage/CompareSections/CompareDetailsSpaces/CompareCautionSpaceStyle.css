@@ -1,0 +1,19 @@
+#compare-caution-space {
+    padding: 10px 0;
+}
+
+#compare-caution-text {
+    text-align: center;
+}
+
+#compare-each-caution-space {
+    display: flex;
+    padding: 10px 0;
+}
+
+.compare-caution-precautions {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex: 1;
+}

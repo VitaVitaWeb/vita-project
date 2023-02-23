@@ -1,0 +1,9 @@
+#info-caution-space {
+    display: flex;
+    padding: 10px 0;
+}
+
+#info-caution-text {
+    width: 200px;
+    margin: 10px 0 auto 0;
+}

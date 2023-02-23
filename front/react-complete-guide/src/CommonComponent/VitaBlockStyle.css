@@ -1,0 +1,18 @@
+.vita-component-space {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    margin: auto;
+    width: 214.8px;
+    height: 360px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+.vita-need-choice-image {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}

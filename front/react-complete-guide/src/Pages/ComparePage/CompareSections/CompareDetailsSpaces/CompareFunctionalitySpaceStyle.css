@@ -1,0 +1,32 @@
+#compare-functionality-space {
+    padding: 10px 0;
+}
+
+#compare-functionality-text {
+    text-align: center;
+}
+
+#compare-each-functionality-space {
+    display: flex;
+    padding: 10px 0;
+}
+
+.compare-functionality-ul {
+    display: flex;
+    gap: 10px;
+    margin: auto;
+    justify-content: center;
+    flex: 1;
+}
+
+.compare-functionality-li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-text {
+    text-align: center;
+    font-size: 13px;
+    width: 70px;
+}

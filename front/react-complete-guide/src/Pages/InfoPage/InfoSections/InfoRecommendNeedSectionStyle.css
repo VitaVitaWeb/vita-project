@@ -1,0 +1,18 @@
+#info-recommend-need-section {
+    border: 1px solid;
+    width: 1280px;
+
+    height: auto;
+
+    background: rgba(255, 239, 235, 0.2);
+    border: 1px solid #000000;
+    border-radius: 10px;
+
+    margin: 30px auto 30px auto;
+
+    padding: 10px 0px 15px 0px;
+}
+
+#info-recommend-need-text {
+    padding: 15px;
+}
