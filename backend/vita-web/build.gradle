@@ -56,6 +56,10 @@ dependencies {
 
 	// 메일 보내는 의존
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	// json
+	implementation 'org.json:json:20190722'
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 }
 
 tasks.named('test') {
