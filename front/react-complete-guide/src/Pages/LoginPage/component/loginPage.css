@@ -1,0 +1,45 @@
+.loginPageMain {
+  width: 600px;
+  height: 200px;
+  margin: auto;
+  margin-top: 250px;
+}
+.loginPageBox {
+  width: 400px;
+  height: 50px;
+  margin: auto;
+  display: flex;
+}
+.loginPageInput {
+  width: 400px;
+  height: 40px;
+  font-size: 30px;
+}
+.loginPageLoginButton {
+  height: 30px;
+  width: 100px;
+  margin-left: 100px;
+}
+
+.loginPageAssignButton {
+  height: 30px;
+  width: 100px;
+  margin-left: 200px;
+}
+.loginPageCheckIdTrue {
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 410px;
+  margin-top: 5px;
+  color: chartreuse;
+}
+
+.loginPageCheckIdFalse {
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 410px;
+  margin-top: 5px;
+  color: red;
+}

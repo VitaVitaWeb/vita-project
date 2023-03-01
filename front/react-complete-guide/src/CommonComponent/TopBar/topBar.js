@@ -11,6 +11,9 @@ function TopBar() {
   function goCompare() {
     movePage("/ComparePage");
   }
+  function goLogin() {
+    movePage("/loginPage");
+  }
   return (
     <div className="topBar">
       <div className="topMain">
@@ -27,7 +30,9 @@ function TopBar() {
           비교하기
         </button>
         <button className="mainCompareButton">계산하기</button>
-        <button className="mainLoginButton">로그인</button>
+        <button onClick={goLogin} className="mainLoginButton">
+          로그인
+        </button>
       </div>
     </div>
   );
