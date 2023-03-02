@@ -8,13 +8,13 @@
     <resultMap type="member" id="memberMap">
         <id column="ID" property="id"/>
         <result column="PWD" property="password"/>
-        <result column="NNAME" property="nickName"/>
-        <result column="SIDATE" property="createdDate"/>
+        <result column="JDATE" property="createdDate"/>
         <result column="NAME" property="name"/>
+        <result column="NNAME" property="nickname"/>
         <result column="EMAIL" property="email"/>
-        <result column="PNUM" property="phoneNo"/>
-        <result column="BIRTH" property="birthDay"/>
-        <result column="GENDER" property="gender"/>
+        <result column="PHN" property="phoneNo"/>
+        <result column="BTH" property="birthDay"/>
+        <result column="GEN" property="gender"/>
     </resultMap>
 
     <!--회원 추가-->

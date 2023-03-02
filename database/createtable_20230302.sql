@@ -36,8 +36,6 @@ drop table vita_vitamin;
 
 drop table vita_vita;
 
-
-
 create table vita_comment
 (
     cno   int auto_increment
@@ -55,8 +53,8 @@ create table vita_member
     jdate datetime default current_timestamp() null,
     phn   varchar(30)                          not null,
     bth   date                                 not null,
-    gen   int                                  not null,
-    rcnt  int                                  null
+    gen   int      default 0                   not null,
+    nname varchar(50)                          not null comment '닉네임'
 );
 
 create table vita_QA
