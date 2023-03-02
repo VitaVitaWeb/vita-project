@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api")
 @Controller
 public class ApiController {
     @Autowired
     NaverProductService naverProductService;
 
-    @GetMapping("search")
+    @GetMapping("/search")
     public List<NaverProductDto> search(@RequestParam("q") String q, Model model) {
         NaverRequestVariableDto naverRequestVariableDto = NaverRequestVariableDto.builder()
                 .query(q)
