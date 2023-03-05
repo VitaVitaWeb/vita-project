@@ -19,7 +19,7 @@ public interface MemberDao {
           @Param("id") String id,
           @Param("password") String password);
 
-  Member findByEmail(String email);
+//  Member findByEmail(String email);
 
   Member findByPhoneNo(String phoneNo);
 

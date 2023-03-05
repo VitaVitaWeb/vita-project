@@ -40,8 +40,7 @@ public class DefaultMemberService implements MemberService {
 
   @Override
   public boolean join(String email, String phoneNo, Member member) throws Exception {
-    if (memberDao.findByEmail(email) != null
-        || memberDao.findByPhoneNo(phoneNo) != null) {
+    if (memberDao.findByPhoneNo(phoneNo) != null) {
       return false;
     }
     memberDao.join(member);
@@ -54,8 +53,8 @@ public class DefaultMemberService implements MemberService {
   }
 
   @Override
-  public Member emailCheck(String email) throws Exception {
-    return memberDao.findByEmail(email);
+  public Member emailCheck(String id) throws Exception {
+    return memberDao.findById(id);
   }
 
   @Transactional
