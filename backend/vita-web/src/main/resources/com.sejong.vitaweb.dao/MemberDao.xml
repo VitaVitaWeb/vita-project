@@ -11,7 +11,6 @@
         <result column="JDATE" property="createdDate"/>
         <result column="NAME" property="name"/>
         <result column="NNAME" property="nickname"/>
-        <result column="EMAIL" property="email"/>
         <result column="PHN" property="phoneNo"/>
         <result column="BTH" property="birthDay"/>
         <result column="GEN" property="gender"/>
@@ -19,8 +18,8 @@
 
     <!--회원 추가-->
     <insert id="join" parameterType="Member">
-        insert into vita_member(ID,PWD,NAME,EMAIL,NNAME,PNUM)
-        values(#{id},sha2(#{password},256),#{name},#{email},#{nickName},#{phoneNo})
+        insert into vita_member(ID,PWD,NAME,NNAME,PNUM, BTH, GEN)
+        values(#{id},sha2(#{password},256),#{name},#{nickName},#{phoneNo}, #{birthDay}, #{gender})
     </insert>
 
     <!--로그인 조회-->
@@ -28,9 +27,8 @@
         select
             ID,
             NNAME,
-            SIDATE,
-            NAME,
-            EMAIL
+            JDATE,
+            NAME
         from
             vita_member
         where
@@ -55,18 +53,18 @@
             NNAME=#{nickName}
     </select>
 
-    <select id="findByEmail" resultMap="memberMap">
-        select
-            EMAIL, PNUM
-        from
-            vita_member
-        where
-            EMAIL=#{email}
-    </select>
+<!--    <select id="findByEmail" resultMap="memberMap">-->
+<!--        select-->
+<!--            EMAIL, PNUM-->
+<!--        from-->
+<!--            vita_member-->
+<!--        where-->
+<!--            EMAIL=#{email}-->
+<!--    </select>-->
 
     <select id="findByPhoneNo" resultMap="memberMap">
         select
-            EMAIL, PNUM
+            PNUM
         from
             vita_member
         where
@@ -117,7 +115,7 @@
             vita_member
         where
             name = #{name} and
-            email= #{email}
+            phn= #{phoneNo}
     </select>
 
     <select id="findpwd" parameterType="map" resultMap="memberMap">
@@ -128,7 +126,7 @@
         where
         id=#{id} and
         name = #{name} and
-        email= #{email}
+        phn= #{phoneNo}
     </select>
 
     <update id="findpwdupdate" parameterType="map">
@@ -137,7 +135,7 @@
         where
         id=#{id} and
         name = #{name} and
-        email= #{email}
+        phn= #{phoneNo}
     </update>
 
 

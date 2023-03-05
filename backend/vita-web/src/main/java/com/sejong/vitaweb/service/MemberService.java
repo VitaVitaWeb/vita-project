@@ -21,7 +21,7 @@ public interface MemberService {
 
   Member phoneNoCheck(String phoneNo) throws Exception;
 
-  Member emailCheck(String email) throws Exception;
+  Member emailCheck(String id) throws Exception;
 
   boolean delete(String id) throws Exception;
   List<Member> list() throws Exception;
