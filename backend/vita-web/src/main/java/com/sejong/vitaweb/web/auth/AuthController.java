@@ -2,6 +2,7 @@ package com.sejong.vitaweb.web.auth;
 
 import com.sejong.vitaweb.service.MemberService;
 import com.sejong.vitaweb.vo.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.regex.Pattern;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/auth/")
 public class AuthController {
@@ -27,9 +28,10 @@ public class AuthController {
 
   @ResponseBody
   @GetMapping("idCheck")
-  public Boolean idCheck(@RequestParam String id) throws Exception {
+  public Boolean idCheck(@RequestParam("id") String id) throws Exception {
 //    String filter = "^[a-z0-9]*$";
 
+    log.info("통신 성공! = {}");
     System.out.println("id = " + id);
 
     Member result = memberService.idCheck(id);
@@ -150,6 +152,7 @@ public class AuthController {
 
   @GetMapping("checkLogin")
   public Member checkLogin(HttpSession session) throws Exception {
+    log.info("checkLogin-test");
     Member member = (Member) session.getAttribute("loginMember");
     System.out.println("member = " + member);
     if(member == null) {

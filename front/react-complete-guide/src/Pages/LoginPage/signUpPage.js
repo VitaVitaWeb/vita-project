@@ -1,10 +1,11 @@
 import TopBar from "../../CommonComponent/TopBar/topBar";
 import "./component/loginPage.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CustomerInfo from "../../customerInfo"
 function SignUpPage() {
-  const [userInfo, setUserInfo] = useState();
+  const userInfo = useContext(CustomerInfo);
   const [inputId, setId] = useState();
   const [inputPassword, setPassword] = useState();
   const [idCheck, setIdCheck] = useState(true);
@@ -15,7 +16,8 @@ function SignUpPage() {
   const onChangeId = (val) => {
     //아이디 입력시 중복 체크 및 갱신
     setId(val.target.value);
-    userInfo.Id = inputId;
+    userInfo.Id = "text";
+    onTryCheckId();
   };
 
   const onChangePassword = (val) => {
@@ -26,19 +28,7 @@ function SignUpPage() {
   const onTryCheckId = async () => {
     // 아이디 중복 체크
     try {
-      setLoading(true);
-      const data = await axios.post("주소", userInfo.Id);
-
-      if (data === "성공") {
-        console.log("사용가능한 아이디");
-        setIdCheck(true);
-        setIdCheckText("*사용가능한 아이디");
-      }
-      if (data === "실패") {
-        console.log("사용불가능한 아이디");
-        setIdCheck(false);
-        setIdCheckText("*사용불가능한 아이디");
-      }
+      const data = await axios.get("/auth/checkLogin")
     } catch {
       console.log("error in checkId");
     }
