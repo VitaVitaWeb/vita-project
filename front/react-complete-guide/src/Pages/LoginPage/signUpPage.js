@@ -4,6 +4,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CustomerInfo from "../../customerInfo"
+import { param } from "jquery";
 function SignUpPage() {
   const userInfo = useContext(CustomerInfo);
   const [inputId, setId] = useState();
@@ -16,7 +17,7 @@ function SignUpPage() {
   const onChangeId = (val) => {
     //아이디 입력시 중복 체크 및 갱신
     setId(val.target.value);
-    userInfo.Id = "text";
+    userInfo.Id = inputId;
     onTryCheckId();
   };
 
@@ -28,7 +29,8 @@ function SignUpPage() {
   const onTryCheckId = async () => {
     // 아이디 중복 체크
     try {
-      const data = await axios.get("/auth/checkLogin")
+      console.log(userInfo.Id)
+      const data = await axios.get("/auth/idCheck", {params: {id: "test"}});
     } catch {
       console.log("error in checkId");
     }
