@@ -31,8 +31,8 @@ public class AuthController {
   public Boolean idCheck(@RequestParam("id") String id) throws Exception {
 //    String filter = "^[a-z0-9]*$";
 
-    log.info("통신 성공! = {}");
-    System.out.println("id = " + id);
+    log.info("통신 성공! = {}", id);
+//    System.out.println("id = " + id);
 
     Member result = memberService.idCheck(id);
 
