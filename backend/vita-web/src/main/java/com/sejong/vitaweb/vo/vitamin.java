@@ -26,6 +26,7 @@ public class vitamin implements Serializable {
   private double b7;
   private double b9;
   private double b12;
+  private double c;
   private double
 
 
