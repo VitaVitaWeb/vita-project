@@ -30,7 +30,7 @@ function SignUpPage() {
     // 아이디 중복 체크
     try {
       console.log(userInfo.Id)
-      const data = await axios.get("/auth/idCheck", {params: {id: "test"}});
+      const data = await axios.get("/auth/idCheck", {params: {id: userInfo.Id}});
     } catch {
       console.log("error in checkId");
     }

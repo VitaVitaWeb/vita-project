@@ -18,7 +18,7 @@
 
     <!--회원 추가-->
     <insert id="join" parameterType="Member">
-        insert into vita_member(ID,PWD,NAME,NNAME,PNUM, BTH, GEN)
+        insert into vita_member(ID,PWD,NAME,NNAME,PHN, BTH, GEN)
         values(#{id},sha2(#{password},256),#{name},#{nickName},#{phoneNo}, #{birthDay}, #{gender})
     </insert>
 
@@ -64,11 +64,11 @@
 
     <select id="findByPhoneNo" resultMap="memberMap">
         select
-            PNUM
+            PHN
         from
             vita_member
         where
-            PNUM=#{phoneNo}
+        PHN=#{phoneNo}
     </select>
 
 
@@ -101,7 +101,7 @@
         <!--   pwd=sha2(#{password},256)-->
         nname=#{nickName},
         name=#{name},
-        pnum=#{phoneNo},
+        PHN=#{phoneNo},
         birth=#{birthDay},
         gender=#{gender}
         where
