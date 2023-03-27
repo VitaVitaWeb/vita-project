@@ -1,26 +1,34 @@
 package com.sejong.vitaweb.service;
 
+import com.sejong.vitaweb.dao.NaverDao;
 import com.sejong.vitaweb.dao.VitaDao;
 import com.sejong.vitaweb.vo.NaverProductDto;
 import com.sejong.vitaweb.vo.Vitamin;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sejong.vitaweb.vo.VitaminDetail;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class DefaultVitaService implements VitaService {
-  @Autowired
   private final VitaDao vitaDao;
+  private final NaverDao naverDao;
 
-  @Autowired
-  public DefaultVitaService(VitaDao vitaDao) {
-    this.vitaDao = vitaDao;
+
+  @Override
+  public void insertVitaDetail(VitaminDetail vitaminDetail) {
+    vitaDao.insertVitaDetail(vitaminDetail);
   }
 
   @Override
-  public void insertVitaDB(List<NaverProductDto> prods) throws Exception {
-    vitaDao.insertVitaDB(prods);
+  public void insertVitaDB(List<NaverProductDto> prods){
+    for(NaverProductDto prod : prods) {
+//      naverDao.insertVitaDBToNaver(prod);
+      vitaDao.insertVitaDBToVita(prod);
+    }
+
   }
 
   @Override

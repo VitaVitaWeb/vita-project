@@ -1,12 +1,15 @@
 package com.sejong.vitaweb.vo;
 
 import lombok.Getter;
+import lombok.ToString;
 import org.json.JSONObject;
 
 import javax.swing.*;
+import java.io.Serializable;
 
+@ToString
 @Getter
-public class NaverProductDto {
+public class NaverProductDto implements Serializable {
 
     // 상품 이름
     private String title;

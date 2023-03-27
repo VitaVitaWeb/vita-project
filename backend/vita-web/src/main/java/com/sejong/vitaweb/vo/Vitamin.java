@@ -16,5 +16,6 @@ public class Vitamin implements Serializable {
   private String link; // 구매 링크
   private String img_path; // 이미지 링크
 
+
 }
 

@@ -10,7 +10,10 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class VitaminInfo implements Serializable {
+public class VitaminDetail implements Serializable {
+
+    private int vdno;
+    private int vno; // foreign key
 
     // 비타민 정보들
     private double e;

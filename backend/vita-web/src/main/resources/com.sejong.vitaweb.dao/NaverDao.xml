@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sejong.vitaweb.dao.NaverDao">
+
+    <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
+    <resultMap type="naverProductDto" id="naverProductDto">
+        <id column="nno" property="nno"/>
+        <result column="TITLE" property="title"/>
+        <result column="LINK" property="link"/>
+        <result column="IMG" property="image"/>
+        <result column="LPRICE" property="lprice"/>
+        <result column="MALLNAME" property="mallname"/>
+        <result column="MAKER" property="maker"/>
+        <result column="BRAND" property="brand"/>
+        <result column="CAT1" property="category1"/>
+        <result column="CAT2" property="category2"/>
+        <result column="CAT3" property="category3"/>
+        <result column="CAT4" property="category4"/>
+    </resultMap>
+
+<!--    <resultMap type="vitaminInfo" id="vitaminInfoMap">-->
+<!--        <id column="vno" property="vno"/>-->
+<!--        <result column="e" property="e"/>-->
+<!--        <result column="d" property="d"/>-->
+<!--        <result column="a" property="a"/>-->
+<!--        <result column="b1" property="b1"/>-->
+<!--        <result column="b2" property="b2"/>-->
+<!--        <result column="b3" property="b3"/>-->
+<!--        <result column="b4" property="b4"/>-->
+<!--        <result column="b7" property="b7"/>-->
+<!--        <result column="b9" property="b9"/>-->
+<!--        <result column="b12" property="b12"/>-->
+<!--        <result column="c" property="c"/>-->
+<!--        <result column="cr" property="cr"/>-->
+<!--        <result column="mo" property="mo"/>-->
+<!--        <result column="i" property="i"/>-->
+<!--        <result column="mn" property="mn"/>-->
+<!--        <result column="se" property="se"/>-->
+<!--        <result column="cu" property="cu"/>-->
+<!--        <result column="zn" property="zn"/>-->
+<!--        <result column="fe" property="fe"/>-->
+<!--        <result column="mg" property="mg"/>-->
+<!--        <result column="ca" property="ca"/>-->
+<!--        <result column="lacto" property="lacto"/>-->
+
+<!--    </resultMap>-->
+
+    <!--비타민 DB 추가-->
+    <insert id="insertVitaDBToNaver" parameterType="naverProductDto">
+        insert into vita_naver_result(title, link, img, lprice, mallName, maker, brand, cat1, cat2, cat3, cat4)
+        values(#{title}, #{link}, #{image}, #{lprice}, #{mallName}, #{maker}, #{brand}, #{category1}, #{category2}, #{category3}, #{category4})
+    </insert>
+
+<!--    <insert id="insertVitaDBToVita" parameterType="naverProductDto">-->
+<!--        insert into vita_vita(title, link, img_path)-->
+<!--        values(#{name}, #{link}, #{image})-->
+<!--    </insert>-->
+
+</mapper>
