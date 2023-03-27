@@ -10,7 +10,11 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class VitaminInfo implements Serializable {
+public class VitaminDetail implements Serializable {
+
+    private int vdno;
+
+    private int vno;
 
     // 비타민 정보들
     private double e;
@@ -20,6 +24,7 @@ public class VitaminInfo implements Serializable {
     private double b2;
     private double b3;
     private double b4;
+    private double b5;
     private double b7;
     private double b9;
     private double b12;

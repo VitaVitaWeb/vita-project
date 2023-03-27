@@ -2,17 +2,22 @@ package com.sejong.vitaweb.service;
 
 import com.sejong.vitaweb.vo.NaverProductDto;
 import com.sejong.vitaweb.vo.Vitamin;
+import com.sejong.vitaweb.vo.VitaminDetail;
 
 import java.util.List;
 
 public interface VitaService {
-    public void insertVitaDB(List<NaverProductDto> prods) throws Exception;
+    void insertVitaDB(List<NaverProductDto> prods);
+    void setVitaDetail();
 
-    public void insertVita(Vitamin vitamin) throws Exception;
 
-    public List<Vitamin> findVitalAll() throws Exception;
+    List<Vitamin> findVitalAll() throws Exception;
 
-    public Vitamin findVitaById(String id) throws Exception;
+    Vitamin findVitaById(String id) throws Exception;
 
-    public void updateVita(Vitamin vitamin) throws Exception;
+    void updateVita(VitaminDetail vitaminDetail) throws Exception;
+
+    VitaminDetail findVitalDetail(int vno);
+
+    List<VitaminDetail> findVitalDetailAll();
 }
