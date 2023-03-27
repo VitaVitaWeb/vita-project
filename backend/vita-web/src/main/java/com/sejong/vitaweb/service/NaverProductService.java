@@ -44,7 +44,7 @@ public class NaverProductService {
         ResponseEntity<String> result = restTemplate.exchange(req, String.class);
         List<NaverProductDto> naverProductDtos = fromJSONtoNaverProduct(result.getBody());
 
-        log.info("result ={}", naverProductDtos);
+//        log.info("result ={}", naverProductDtos);
         return naverProductDtos;
 
     }

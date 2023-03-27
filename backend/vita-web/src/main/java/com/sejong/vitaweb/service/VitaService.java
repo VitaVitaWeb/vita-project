@@ -7,15 +7,17 @@ import com.sejong.vitaweb.vo.VitaminDetail;
 import java.util.List;
 
 public interface VitaService {
+    void insertVitaDB(List<NaverProductDto> prods);
+    void setVitaDetail();
 
-    void insertVitaDetail(VitaminDetail vitaminDetail);
-    public void insertVitaDB(List<NaverProductDto> prods);
 
-    public void insertVita(Vitamin vitamin) throws Exception;
+    List<Vitamin> findVitalAll() throws Exception;
 
-    public List<Vitamin> findVitalAll() throws Exception;
+    Vitamin findVitaById(String id) throws Exception;
 
-    public Vitamin findVitaById(String id) throws Exception;
+    void updateVita(VitaminDetail vitaminDetail) throws Exception;
 
-    public void updateVita(Vitamin vitamin) throws Exception;
+    VitaminDetail findVitalDetail(int vno);
+
+    List<VitaminDetail> findVitalDetailAll();
 }

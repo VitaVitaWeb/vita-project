@@ -4,44 +4,45 @@ import com.sejong.vitaweb.service.VitaService;
 import com.sejong.vitaweb.vo.NaverProductDto;
 import com.sejong.vitaweb.vo.Vitamin;
 import com.sejong.vitaweb.vo.VitaminDetail;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/vita/")
 public class VitaController {
     @Autowired
     VitaService vitaService;
 
-//    @PostMapping("insertDB")
-//    public void insertVitaDB(List<NaverProductDto> prods) throws Exception{
-//        vitaService.insertVitaDB(prods);
+//    @PostMapping("insertVita")
+//    public void insertVita(@RequestBody Vitamin vitamin) throws Exception {
+//        vitaService.insertVita(vitamin);
 //    }
-
-    @PostMapping("insertVita")
-    public void insertVita(@RequestBody Vitamin vitamin) throws Exception {
-        vitaService.insertVita(vitamin);
-    }
 
     @GetMapping("list")
     public List<Vitamin> findVitalAll() throws Exception {
         return vitaService.findVitalAll();
     }
 
-//    @GetMapping("{id}")
-//    public Vitamin findVitaById(@PathVariable String id) throws Exception {
-//        return vitaService.findVitaById(id);
-//    }
+    // detail 관련
+    @GetMapping("detailList/{vno}")
+    public VitaminDetail findVitaDetail(@PathVariable int vno) throws Exception {
+        log.info("vno = {}", vno);
+        return vitaService.findVitalDetail(vno);
+    }
+
+    @GetMapping("detailList")
+    public List<VitaminDetail> findVitaDetailAll() throws Exception {
+        return vitaService.findVitalDetailAll();
+    }
 
     @PutMapping("update")
-    public void updateVita(@RequestBody Vitamin vitamin) throws Exception {
-        vitaService.updateVita(vitamin);
+    public void updateVitaDetail(@RequestBody VitaminDetail vitaminDetail) throws Exception {
+        vitaService.updateVita(vitaminDetail);
     }
 
-    @PostMapping("insertVitaDetail")
-    public void insertVitaDetail(@RequestBody VitaminDetail vitaminDetail) throws Exception {
-        vitaService.insertVitaDetail(vitaminDetail);
-    }
+
 }

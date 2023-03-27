@@ -13,16 +13,19 @@ import java.util.Map;
 
 @Mapper
 public interface VitaDao {
+   int insertVitaDetailInit(int vno);
 
-   void insertVitaDetail(VitaminDetail vitaminDetail);
-   void insertVitaDBToVita(NaverProductDto prod);
+   Vitamin getRecentVita();
 
-   void insertVita(Vitamin vitamin);
+   int insertVitaDBToVita(Vitamin vitamin);
 
    List<Vitamin> findVitalAll();
 
    Vitamin findVitaById(String id);
 
-   void updateVita(Vitamin vitamin);
+   void updateVitaDetail(VitaminDetail vitaminDetail);
 
+   VitaminDetail findVitalDetail(int vno);
+
+   List<VitaminDetail> findVitalDetailAll();
 }
