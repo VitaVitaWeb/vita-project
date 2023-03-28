@@ -5,138 +5,121 @@
 <mapper namespace="com.sejong.vitaweb.dao.VitaDao">
 
     <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
-    <resultMap type="member" id="memberMap">
-        <id column="ID" property="id"/>
-        <result column="PWD" property="password"/>
-        <result column="JDATE" property="createdDate"/>
+    <resultMap type="vitamin" id="vitamin">
+        <id column="vno" property="vno"/>
         <result column="NAME" property="name"/>
-        <result column="NNAME" property="nickname"/>
-        <result column="PHN" property="phoneNo"/>
-        <result column="BTH" property="birthDay"/>
-        <result column="GEN" property="gender"/>
+        <result column="LINK" property="link"/>
+        <result column="IMG_PATH" property="img_path"/>
+        <result column="VDNO" property="vdno"/>
+        <result column="CAT1" property="category1"/>
+        <result column="CAT2" property="category2"/>
+        <result column="CAT3" property="category3"/>
+        <result column="CAT4" property="category4"/>
     </resultMap>
 
-    <!--회원 추가-->
-    <insert id="join" parameterType="Member">
-        insert into vita_member(ID,PWD,NAME,NNAME,PHN, BTH, GEN)
-        values(#{id},sha2(#{password},256),#{name},#{nickName},#{phoneNo}, #{birthDay}, #{gender})
+    <resultMap type="vitaminDetail" id="vitaminDetail">
+        <id column="vdno" property="vdno"/>
+        <result column="vno" property="vno"/>
+        <result column="e" property="e"/>
+        <result column="d" property="d"/>
+        <result column="a" property="a"/>
+        <result column="b1" property="b1"/>
+        <result column="b2" property="b2"/>
+        <result column="b3" property="b3"/>
+        <result column="b7" property="b7"/>
+        <result column="b9" property="b9"/>
+        <result column="b12" property="b12"/>
+        <result column="c" property="c"/>
+        <result column="cr" property="cr"/>
+        <result column="mo" property="mo"/>
+        <result column="i" property="i"/>
+        <result column="mn" property="mn"/>
+        <result column="se" property="se"/>
+        <result column="cu" property="cu"/>
+        <result column="zn" property="zn"/>
+        <result column="fe" property="fe"/>
+        <result column="mg" property="mg"/>
+        <result column="ca" property="ca"/>
+        <result column="lacto" property="lacto"/>
+        <result column="lutein" property="lutein"/>
+        <result column="milk_thistle" property="milk_thistle"/>
+        <result column="omega3" property="omega3"/>
+    </resultMap>
+
+
+    <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
+
+    <!--VitaDetail 설정-->
+<!--    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">-->
+<!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b9, b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca, lacto, lutein, milk_thistle, omega3)-->
+<!--        values(#{vno}, #{e}, #{d}, #{a}, #{b1}, #{b2}, #{b3}, #{b5}, #{b9},-->
+<!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca}, #{lacto}, #{lutein}, #{milk_thistle}, #{omega3})-->
+<!--    </insert>-->
+    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">
+        insert ignore into vita_vitamin(vno)
+        values(#{vno})
     </insert>
 
-    <!--로그인 조회-->
-    <select id="findByIdPassword" resultMap="memberMap">
-        select
-            ID,
-            NNAME,
-            JDATE,
-            NAME
-        from
-            vita_member
+    <update id="updateVitaDetail" parameterType="vitaminDetail">
+        update vita_vitamin set
+        e = #{e}, d = #{d}, a = #{a}, b1 = #{b1}, b2 = #{b2}, b3 = #{b3}, b5 = #{b5}, b9 = #{b9},
+        b12 = #{b12}, b7 = #{b7}, c = #{c}, cr = #{cr}, mo = #{mo}, i = #{i},
+        mn = #{mn}, se = #{se}, cu = #{cu}, zn = #{zn}, fe = #{fe}, mg = #{mg}, ca = #{ca}, lacto = #{lacto},
+        lutein = #{lutein}, milk_thistle = #{milk_thistle}, omega3={omega3}
         where
-            ID=#{id} and PWD=sha2(#{password},256)
+        VNO=#{VNO}
+    </update>
+
+    <select id="findVitalDetailAll" resultMap="vitaminDetail">
+        select
+        *
+        from
+        vita_vitamin
     </select>
 
-    <select id="findById" resultMap="memberMap">
+    <select id="findVitalDetail" resultMap="vitaminDetail">
         select
             *
         from
-            vita_member
+            vita_vitamin
         where
-            ID=#{id}
+            VNO=#{VNO}
     </select>
 
-    <select id="findByNickName" resultMap="memberMap">
+    <!--Naver API를 DB에 추가-->
+    <insert id="insertVitaDBToVita" parameterType="vitamin">
+        insert ignore into vita_vita(name, link, img_path, cat1, cat2, cat3, cat4)
+        values(#{name}, #{link}, #{img_path}, #{category1}, #{category2}, #{category3}, #{category4})
+    </insert>
+
+    <select id="getRecentVita" resultType="vitamin">
+        SELECT * FROM vita_vita ORDER BY insert_date DESC LIMIT 1;
+    </select>
+
+    <!--비타민 추가-->
+    <insert id="insertVita" parameterType="vitamin">
+        insert into vita_member(NAME, LINK, IMG_PATH)
+        values(#{NAME}, #{LINK}, #{IMG_PATH})
+    </insert>
+
+    <!--비타민 조회-->
+    <select id="findVitalAll" resultMap="vitamin">
         select
-            NNAME
+            *
         from
-            vita_member
-        where
-            NNAME=#{nickName}
+            vita_vita
     </select>
 
-<!--    <select id="findByEmail" resultMap="memberMap">-->
-<!--        select-->
-<!--            EMAIL, PNUM-->
-<!--        from-->
-<!--            vita_member-->
-<!--        where-->
-<!--            EMAIL=#{email}-->
-<!--    </select>-->
-
-    <select id="findByPhoneNo" resultMap="memberMap">
+    <select id="findVitaById" resultMap="vitamin">
         select
-            PHN
+            *
         from
-            vita_member
+            vita_vita
         where
-        PHN=#{phoneNo}
+            VNO=#{VNO}
     </select>
 
 
-    <select id="findAll" resultMap="memberMap">
-        select
-        *
-        from
-            vita_member
-        order by
-        ID = #{id}
-    </select>
-
-    <select id="findByIdAll" resultMap="memberMap">
-        select
-        *
-        from
-            vita_member
-        where
-        ID = #{id}
-    </select>
-
-    <delete id="delete">
-        delete from vita_member
-        where ID=#{id}
-    </delete>
-
- <!--   pwd=sha2(#{password},256)-->
-    <update id="update" parameterType="member">
-        update vita_member set
-        <!--   pwd=sha2(#{password},256)-->
-        nname=#{nickName},
-        name=#{name},
-        PHN=#{phoneNo},
-        birth=#{birthDay},
-        gender=#{gender}
-        where
-        id=#{id};
-    </update>
-
-    <select id="findId" parameterType="map" resultMap="memberMap">
-        select
-        *
-        from
-            vita_member
-        where
-            name = #{name} and
-            phn= #{phoneNo}
-    </select>
-
-    <select id="findpwd" parameterType="map" resultMap="memberMap">
-        select
-        *
-        from
-            vita_member
-        where
-        id=#{id} and
-        name = #{name} and
-        phn= #{phoneNo}
-    </select>
-
-    <update id="findpwdupdate" parameterType="map">
-        update vita_member set
-        pwd=sha2(#{password},256)
-        where
-        id=#{id} and
-        name = #{name} and
-        phn= #{phoneNo}
-    </update>
 
 
 </mapper>
