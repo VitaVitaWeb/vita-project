@@ -23,7 +23,7 @@ public class VitaminDetail implements Serializable {
     private double b1;
     private double b2;
     private double b3;
-    private double b4;
+//    private double b4;
     private double b5;
     private double b7;
     private double b9;
@@ -40,4 +40,7 @@ public class VitaminDetail implements Serializable {
     private double mg;
     private double ca;
     private double lacto;
+    private double lutein;
+    private double milk_thistle;
+    private double omega3;
 }

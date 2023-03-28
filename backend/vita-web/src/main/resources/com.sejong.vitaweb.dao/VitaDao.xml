@@ -26,7 +26,6 @@
         <result column="b1" property="b1"/>
         <result column="b2" property="b2"/>
         <result column="b3" property="b3"/>
-        <result column="b4" property="b4"/>
         <result column="b7" property="b7"/>
         <result column="b9" property="b9"/>
         <result column="b12" property="b12"/>
@@ -42,6 +41,9 @@
         <result column="mg" property="mg"/>
         <result column="ca" property="ca"/>
         <result column="lacto" property="lacto"/>
+        <result column="lutein" property="lutein"/>
+        <result column="milk_thistle" property="milk_thistle"/>
+        <result column="omega3" property="omega3"/>
     </resultMap>
 
 
@@ -49,9 +51,9 @@
 
     <!--VitaDetail 설정-->
 <!--    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">-->
-<!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b4, b9, b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca, lacto)-->
-<!--        values(#{vno}, #{e}, #{d}, #{a}, #{b1}, #{b2}, #{b3}, #{b5}, #{b4}, #{b9},-->
-<!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca}, #{lacto})-->
+<!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b9, b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca, lacto, lutein, milk_thistle, omega3)-->
+<!--        values(#{vno}, #{e}, #{d}, #{a}, #{b1}, #{b2}, #{b3}, #{b5}, #{b9},-->
+<!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca}, #{lacto}, #{lutein}, #{milk_thistle}, #{omega3})-->
 <!--    </insert>-->
     <insert id="insertVitaDetailInit" parameterType="vitaminDetail">
         insert ignore into vita_vitamin(vno)
@@ -60,9 +62,10 @@
 
     <update id="updateVitaDetail" parameterType="vitaminDetail">
         update vita_vitamin set
-        e = #{e}, d = #{d}, a = #{a}, b1 = #{b1}, b2 = #{b2}, b3 = #{b3}, b5 = #{b5}, b4 = #{b4}, b9 = #{b9},
+        e = #{e}, d = #{d}, a = #{a}, b1 = #{b1}, b2 = #{b2}, b3 = #{b3}, b5 = #{b5}, b9 = #{b9},
         b12 = #{b12}, b7 = #{b7}, c = #{c}, cr = #{cr}, mo = #{mo}, i = #{i},
-        mn = #{mn}, se = #{se}, cu = #{cu}, zn = #{zn}, fe = #{fe}, mg = #{mg}, ca = #{ca}, lacto = #{lacto}
+        mn = #{mn}, se = #{se}, cu = #{cu}, zn = #{zn}, fe = #{fe}, mg = #{mg}, ca = #{ca}, lacto = #{lacto},
+        lutein = #{lutein}, milk_thistle = #{milk_thistle}, omega3={omega3}
         where
         VNO=#{VNO}
     </update>
