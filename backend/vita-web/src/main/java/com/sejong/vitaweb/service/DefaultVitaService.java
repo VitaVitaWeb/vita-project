@@ -24,7 +24,7 @@ public class DefaultVitaService implements VitaService {
       Vitamin vitamin = new Vitamin(prod.getTitle(), prod.getLink(), prod.getImage(), prod.getCategory1(), prod.getCategory2(), prod.getCategory3(), prod.getCategory4());
       vitaDao.insertVitaDBToVita(vitamin);
 
-//      log.info("vitamin = {}", vitamin);
+      log.info("vitamin = {}", vitamin);
 
 //      Vitamin newVitamin = vitaDao.getRecentVita();
 //      log.info("newVitamin = {}", newVitamin);
