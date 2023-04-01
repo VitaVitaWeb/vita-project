@@ -1,7 +1,12 @@
 import { createContext } from "react";
 const CustomerInfo = createContext({
-  Id: "testId",
-  password: "testPassword",
+  id: null,
+  password: null,
+  createdDate: null,
+  name: null,
+  phoneNo: null,
+  birthDay: null,
+  gender: null,
   setContext: () => {},
 });
 export default CustomerInfo;

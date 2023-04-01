@@ -1,8 +1,8 @@
 .loginPageMain {
   width: 600px;
-  height: 200px;
+  height: 600px;
   margin: auto;
-  margin-top: 250px;
+  margin-top: 150px;
 }
 .loginPageBox {
   width: 400px;
@@ -15,18 +15,48 @@
   height: 40px;
   font-size: 30px;
 }
+.loginPageInputShort {
+  width: 150px;
+  height: 40px;
+  font-size: 30px;
+}
+.loginPageInputMonthDay {
+  width: 120px;
+  margin-left: 20px;
+  height: 40px;
+  font-size: 30px;
+}
 .loginPageLoginButton {
   height: 30px;
   width: 100px;
   margin-left: 100px;
 }
-
+.loginPageSignUpButton {
+  height: 30px;
+  width: 100px;
+  margin-left: 100px;
+  background-color: orange;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
 .loginPageAssignButton {
   height: 30px;
   width: 100px;
   margin-left: 200px;
 }
-.loginPageCheckIdTrue {
+.loginPageCheckBox {
+  margin-bottom: 15px;
+  width: 20px;
+}
+.loginPageCheckBoxText {
+  margin-top: auto;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.loginPageCheckTrue {
   position: absolute;
   font-size: 20px;
   text-align: center;
@@ -34,12 +64,28 @@
   margin-top: 5px;
   color: chartreuse;
 }
-
-.loginPageCheckIdFalse {
+.loginPageCheckFalse {
   position: absolute;
   font-size: 20px;
   text-align: center;
   margin-left: 410px;
   margin-top: 5px;
   color: red;
+  margin-right: auto;
+}
+
+.loginPageCheckSignUpFalse {
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 210px;
+  color: red;
+}
+
+.loginPageCheckSignUpTrue {
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 210px;
+  color: chartreuse;
 }

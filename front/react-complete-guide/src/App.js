@@ -14,8 +14,13 @@ function App() {
   return (
     <CustomerInfo.Provider
       value={{
-        Id: "test",
-        password: "testpassword",
+        id: null,
+        password: null,
+        createdDate: null,
+        name: null,
+        phoneNo: null,
+        birthDay: null,
+        gender: null,
         setContext: setContext,
       }}
     >
