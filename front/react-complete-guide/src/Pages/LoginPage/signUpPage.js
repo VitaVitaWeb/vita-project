@@ -232,7 +232,7 @@ function SignUpPage() {
           ></input>
           <div
             className={
-              nicknameCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
+              nicknameCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"
             }
           >
             {idCheckNicknameText}
@@ -245,9 +245,7 @@ function SignUpPage() {
             onChange={onChangeId}
           ></input>
           <div
-            className={
-              idCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
-            }
+            className={idCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"}
           >
             {idCheckText}
           </div>
@@ -309,19 +307,21 @@ function SignUpPage() {
           ></input>
           <div
             className={
-              PhoneCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
+              PhoneCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"
             }
           >
             {idCheckPhoneText}
           </div>
         </div>
         <div className="displayFlex">
-          <button className="loginPageLoginButton" onClick={onTrySignUp}>
+          <button className="loginPageSignUpButton" onClick={onTrySignUp}>
             만들기
           </button>
           <div
             className={
-              signUpCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
+              signUpCheck
+                ? "loginPageCheckSignUpTrue"
+                : "loginPageCheckSignUpFalse"
             }
           >
             {idCheckSignUpText}
