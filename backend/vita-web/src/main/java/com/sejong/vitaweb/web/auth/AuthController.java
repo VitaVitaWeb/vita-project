@@ -42,12 +42,12 @@ public class AuthController {
   }
 
   @ResponseBody
-  @GetMapping("nickNameCheck")
-  public Boolean nickNameCheck(String nickName) throws Exception {
+  @GetMapping("nameCheck")
+  public Boolean nameCheck(@RequestParam String name) throws Exception {
 //    String filter = "^[A-Za-z0-9가-힣]*$";
-    Member result = memberService.nickNameCheck(nickName);
+    Member result = memberService.nameCheck(name);
 
-    return inputCheck(nickName, result);
+    return inputCheck(name, result);
   }
 
   private Boolean inputCheck(String inputString, Member result) throws Exception {

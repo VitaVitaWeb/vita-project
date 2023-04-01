@@ -13,7 +13,7 @@ public interface MemberDao {
 
    Member findById(String id);
 
-   Member findByNickName(String nickName);
+   Member findByName(String name);
 
    Member findByIdPassword(
           @Param("id") String id,
