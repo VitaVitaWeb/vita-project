@@ -205,9 +205,7 @@ function SignUpPage() {
       try {
         inputUserInfo.createdDate = new Date();
         console.log(inputUserInfo);
-        const data = await axios.post("/auth/join", {
-          params: { member: inputUserInfo },
-        });
+        const data = await axios.post("/auth/join", { ...inputUserInfo });
         console.log(data);
         userInfo.birthDay = inputUserInfo.birthDay;
         userInfo.createdDate = inputUserInfo.createdDate;

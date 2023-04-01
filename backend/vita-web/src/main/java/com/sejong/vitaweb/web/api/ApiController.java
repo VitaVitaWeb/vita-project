@@ -38,8 +38,8 @@ public class ApiController {
         List<NaverProductDto> naverProductDtos = naverProductService.naverShopSearchAPI(naverRequestVariableDto);
         model.addAttribute("naverProductList", naverProductDtos);
 
-//        vitaService.insertVitaDB(naverProductDtos); // 지우면 안돼요
-//        vitaService.setVitaDetail(); // 지우면 안돼요
+        vitaService.insertVitaDB(naverProductDtos); // 지우면 안돼요
+        vitaService.setVitaDetail(); // 지우면 안돼요
         return naverProductDtos;
     }
 

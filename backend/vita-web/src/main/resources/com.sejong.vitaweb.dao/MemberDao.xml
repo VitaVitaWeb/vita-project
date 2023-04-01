@@ -10,7 +10,6 @@
         <result column="PWD" property="password"/>
         <result column="JDATE" property="createdDate"/>
         <result column="NAME" property="name"/>
-        <result column="NNAME" property="nickname"/>
         <result column="PHN" property="phoneNo"/>
         <result column="BTH" property="birthDay"/>
         <result column="GEN" property="gender"/>
@@ -18,15 +17,14 @@
 
     <!--회원 추가-->
     <insert id="join" parameterType="Member">
-        insert into vita_member(ID,PWD,NAME,NNAME,PHN, BTH, GEN)
-        values(#{id},sha2(#{password},256),#{name},#{nickName},#{phoneNo}, #{birthDay}, #{gender})
+        insert into vita_member(ID,PWD,NAME, PHN, BTH, GEN)
+        values(#{id},sha2(#{password},256),#{name},#{phoneNo}, #{birthDay}, #{gender})
     </insert>
 
     <!--로그인 조회-->
     <select id="findByIdPassword" resultMap="memberMap">
         select
             ID,
-            NNAME,
             JDATE,
             NAME
         from
@@ -44,14 +42,14 @@
             ID=#{id}
     </select>
 
-    <select id="findByNickName" resultMap="memberMap">
-        select
-            NNAME
-        from
-            vita_member
-        where
-            NNAME=#{nickName}
-    </select>
+<!--    <select id="findByNickName" resultMap="memberMap">-->
+<!--        select-->
+<!--            NNAME-->
+<!--        from-->
+<!--            vita_member-->
+<!--        where-->
+<!--            NNAME=#{nickName}-->
+<!--    </select>-->
 
 <!--    <select id="findByEmail" resultMap="memberMap">-->
 <!--        select-->
@@ -99,7 +97,7 @@
     <update id="update" parameterType="member">
         update vita_member set
         <!--   pwd=sha2(#{password},256)-->
-        nname=#{nickName},
+<!--        nname=#{nickName},-->
         name=#{name},
         PHN=#{phoneNo},
         birth=#{birthDay},

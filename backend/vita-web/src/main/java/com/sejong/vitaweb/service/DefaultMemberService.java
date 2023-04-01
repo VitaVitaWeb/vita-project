@@ -110,7 +110,7 @@ public class DefaultMemberService implements MemberService {
     MimeMessage message = new MimeMessage(session);
     message.setFrom(new InternetAddress(id));
 
-    message.addRecipient(Message.RecipientType.TO, new InternetAddress(member.getEmail()));
+    message.addRecipient(Message.RecipientType.TO, new InternetAddress(member.getId()));
     message.setSubject("HowMuchDoYouNeed 임시 비밀번호를 발급해드립니다.");
     message.setText("안녕하세요 회원님 HowMuchDoYouNeed 의 임시비밀번호 발송해드립니다\n" + " 회원님의 임시비밀번호는" +
                     "임시 비밀번호: " + newPw);
