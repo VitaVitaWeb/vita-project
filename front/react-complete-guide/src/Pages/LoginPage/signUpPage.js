@@ -229,12 +229,12 @@ function SignUpPage() {
         <div className="loginPageBox">
           <input
             className="loginPageInput"
-            placeholder="닉네임:"
-            onChange={onChangeNickname}
+            placeholder="아이디:"
+            onChange={onChangeId}
           ></input>
           <div
             className={
-              nicknameCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
+              nicknameCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"
             }
           >
             {idCheckNicknameText}
@@ -247,9 +247,7 @@ function SignUpPage() {
             onChange={onChangeId}
           ></input>
           <div
-            className={
-              idCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
-            }
+            className={idCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"}
           >
             {idCheckText}
           </div>
@@ -262,72 +260,10 @@ function SignUpPage() {
             onChange={onChangePassword}
           ></input>
         </div>
-        <div className="loginPageBox">
-          <input
-            type="password"
-            className="loginPageInput"
-            placeholder="비밀번호 확인:"
-            onChange={onChangePasswordCheck}
-          ></input>
-        </div>
-        <div className="loginPageBox">
-          <input
-            type="checkbox"
-            checked={isMale ? true : false}
-            className="loginPageCheckBox"
-            onChange={onChangeMale}
-          ></input>
-          <p className="loginPageCheckBoxText">남</p>
-          <input
-            type="checkbox"
-            checked={isFemale ? true : false}
-            className="loginPageCheckBox"
-            onChange={onChangeFemale}
-          ></input>
-          <p className="loginPageCheckBoxText">여</p>
-        </div>
-        <div className="loginPageBox">
-          <input
-            className="loginPageInputShort"
-            placeholder="생일(년):"
-            onChange={onChangeYear}
-          ></input>
-          <select className="loginPageInputMonthDay" onChange={onChangeMonth}>
-            {monthOptions.map((option) => (
-              <option value={option.value}>{option.name}</option>
-            ))}
-          </select>
-          <input
-            className="loginPageInputMonthDay"
-            placeholder="생일(일):"
-            onChange={onChangeDay}
-          ></input>
-        </div>
-        <div className="loginPageBox">
-          <input
-            className="loginPageInput"
-            placeholder="전화번호:"
-            onChange={onChangePhone}
-          ></input>
-          <div
-            className={
-              PhoneCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
-            }
-          >
-            {idCheckPhoneText}
-          </div>
-        </div>
         <div className="displayFlex">
-          <button className="loginPageLoginButton" onClick={onTrySignUp}>
+          <button className="loginPageSignUpButton" onClick={onTrySignUp}>
             만들기
           </button>
-          <div
-            className={
-              signUpCheck ? "loginPageCheckIdTrue" : "loginPageCheckIdFalse"
-            }
-          >
-            {idCheckSignUpText}
-          </div>
         </div>
       </div>
       <TopBar></TopBar>
