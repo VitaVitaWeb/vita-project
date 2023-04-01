@@ -42,8 +42,8 @@ public class AuthController {
   }
 
   @ResponseBody
-  @GetMapping("nickNameCheck")
-  public Boolean nickNameCheck(String name) throws Exception {
+  @GetMapping("NameCheck")
+  public Boolean nameCheck(String name) throws Exception {
 //    String filter = "^[A-Za-z0-9가-힣]*$";
     Member result = memberService.nameCheck(name);
 
