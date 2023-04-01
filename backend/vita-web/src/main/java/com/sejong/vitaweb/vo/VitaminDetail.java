@@ -39,8 +39,16 @@ public class VitaminDetail implements Serializable {
     private double fe;
     private double mg;
     private double ca;
+
+    // add column
     private double lacto;
     private double lutein;
     private double milk_thistle;
     private double omega3;
+
+    // add column
+    private double msm;
+    private double propolis;
+    private double collagen;
+    private double theanine;
 }

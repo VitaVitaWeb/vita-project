@@ -44,6 +44,10 @@
         <result column="lutein" property="lutein"/>
         <result column="milk_thistle" property="milk_thistle"/>
         <result column="omega3" property="omega3"/>
+        <result column="msm" property="msm"/>
+        <result column="propolis" property="propolis"/>
+        <result column="collagen" property="collagen"/>
+        <result column="theanine" property="theanine"/>
     </resultMap>
 
 
@@ -51,10 +55,16 @@
 
     <!--VitaDetail 설정-->
 <!--    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">-->
-<!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b9, b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca, lacto, lutein, milk_thistle, omega3)-->
+<!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b9,-->
+<!--        b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca,-->
+<!--        lacto, lutein, milk_thistle, omega3,-->
+<!--        msm, propolis, collagen, theanine)-->
 <!--        values(#{vno}, #{e}, #{d}, #{a}, #{b1}, #{b2}, #{b3}, #{b5}, #{b9},-->
-<!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca}, #{lacto}, #{lutein}, #{milk_thistle}, #{omega3})-->
+<!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca},-->
+<!--        #{lacto}, #{lutein}, #{milk_thistle}, #{omega3},-->
+<!--        #{msm}, #{propolis}, #{collagen}, #{theanine})-->
 <!--    </insert>-->
+
     <insert id="insertVitaDetailInit" parameterType="vitaminDetail">
         insert ignore into vita_vitamin(vno)
         values(#{vno})
@@ -65,7 +75,8 @@
         e = #{e}, d = #{d}, a = #{a}, b1 = #{b1}, b2 = #{b2}, b3 = #{b3}, b5 = #{b5}, b9 = #{b9},
         b12 = #{b12}, b7 = #{b7}, c = #{c}, cr = #{cr}, mo = #{mo}, i = #{i},
         mn = #{mn}, se = #{se}, cu = #{cu}, zn = #{zn}, fe = #{fe}, mg = #{mg}, ca = #{ca}, lacto = #{lacto},
-        lutein = #{lutein}, milk_thistle = #{milk_thistle}, omega3={omega3}
+        lutein = #{lutein}, milk_thistle = #{milk_thistle}, omega3={omega3},
+        msm = #{msm}, propolis = #{propolis}, collagen = #{collagen}, theanine = #{theanine}
         where
         VNO=#{VNO}
     </update>

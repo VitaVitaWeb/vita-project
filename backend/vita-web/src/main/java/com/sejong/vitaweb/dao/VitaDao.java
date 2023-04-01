@@ -13,7 +13,7 @@ import java.util.Map;
 
 @Mapper
 public interface VitaDao {
-   int insertVitaDetailInit(int vno);
+   void insertVitaDetailInit(int vno);
 
    Vitamin getRecentVita();
 
