@@ -43,7 +43,7 @@ public class AuthController {
 
   @ResponseBody
   @GetMapping("nameCheck")
-  public Boolean nameCheck(String name) throws Exception {
+  public Boolean nameCheck(@RequestParam String name) throws Exception {
 //    String filter = "^[A-Za-z0-9가-힣]*$";
     Member result = memberService.nameCheck(name);
 

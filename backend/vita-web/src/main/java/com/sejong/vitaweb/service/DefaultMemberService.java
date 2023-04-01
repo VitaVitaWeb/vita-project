@@ -30,7 +30,7 @@ public class DefaultMemberService implements MemberService {
 
   @Override
   public Member nameCheck(String name) throws Exception {
-    return memberDao.findByNickName(name);
+    return memberDao.findByName(name);
   }
 
   @Override

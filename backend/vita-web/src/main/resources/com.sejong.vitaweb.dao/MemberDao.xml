@@ -42,14 +42,14 @@
             ID=#{id}
     </select>
 
-<!--    <select id="findByNickName" resultMap="memberMap">-->
-<!--        select-->
-<!--            NNAME-->
-<!--        from-->
-<!--            vita_member-->
-<!--        where-->
-<!--            NNAME=#{nickName}-->
-<!--    </select>-->
+    <select id="findByName" resultMap="memberMap">
+        select
+            NAME
+        from
+            vita_member
+        where
+            NAME=#{name}
+    </select>
 
 <!--    <select id="findByEmail" resultMap="memberMap">-->
 <!--        select-->
