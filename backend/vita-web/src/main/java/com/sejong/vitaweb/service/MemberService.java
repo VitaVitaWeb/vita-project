@@ -11,7 +11,7 @@ public interface MemberService {
 
   Member idCheck(String id) throws Exception;
 
-  Member nickNameCheck(String nickName) throws Exception;
+  Member nameCheck(String name) throws Exception;
 
 
 

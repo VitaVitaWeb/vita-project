@@ -29,8 +29,8 @@ public class DefaultMemberService implements MemberService {
   }
 
   @Override
-  public Member nickNameCheck(String nickName) throws Exception {
-    return memberDao.findByNickName(nickName);
+  public Member nameCheck(String name) throws Exception {
+    return memberDao.findByNickName(name);
   }
 
   @Override
