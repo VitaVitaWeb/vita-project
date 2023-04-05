@@ -8,10 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const userInfo = useContext(CustomerInfo);
-  const [inputId, setId] = useState();
-  const [inputPassword, setPassword] = useState();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [inputInfo, setinputInfo] = useState({ id: null, password: null });
+  const [loginErrorMessage, setLoginErrorMessage] = useState(null);
 
   const movePage = useNavigate();
   function goSignUpPage() {
@@ -20,29 +18,28 @@ function Login() {
 
   const onChangeId = (val) => {
     //아이디 입력시 갱신
-    setId(val.target.value);
-    userInfo.Id = inputId;
+    inputInfo.id = val.target.value;
   };
   const onChangePassword = (val) => {
     //비밀번호 입력시 갱신
-    setPassword(val.target.value);
-    userInfo.password = inputPassword;
+    inputInfo.password = val.target.value;
   };
   const onTryLogin = async () => {
     try {
-      setLoading(true);
-      const data = await axios.post("주소", userInfo);
+      console.log(inputInfo);
+      const data = await axios.post("/auth/login", {
+        id: inputInfo.id,
+        password: inputInfo.password,
+      });
 
-      if (data === "성공") {
-        console.log("로그인");
+      if (data) {
         onLogin();
-      }
-      if (data === "실패") {
+      } else {
+        setLoginErrorMessage("올바르지 않은 정보");
       }
     } catch {
-      console.log("error in post");
+      console.log("error in login");
     }
-    setLoading(false);
   };
 
   const onLogin = () => {
@@ -67,13 +64,14 @@ function Login() {
           ></input>
         </div>
         <div className="displayFlex">
-          <button className="loginPageLoginButton" onClick={onTryLogin}>
+          <button className="loginPageButton" onClick={onTryLogin}>
             로그인
           </button>
-          <button className="loginPageAssignButton" onClick={goSignUpPage}>
+          <button className="loginPageSignUpButton" onClick={goSignUpPage}>
             회원가입
           </button>
         </div>
+        <div className="loginPageLoginFalse">{loginErrorMessage}</div>
       </div>
       <TopBar></TopBar>
     </div>

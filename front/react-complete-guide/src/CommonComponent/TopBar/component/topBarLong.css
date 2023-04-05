@@ -1,4 +1,4 @@
-.topBar {
+.topBarLong {
   background-color: white;
   width: 100%;
   height: 100px;
@@ -6,22 +6,29 @@
   left: 0;
   right: 0;
   position: fixed;
+  box-shadow: 0px 0px 8px rgb(105, 105, 105);
 }
-.topMain {
-  background-color: white;
-  width: 75%;
+.topMainLong {
+  width: 80%;
   height: 100px;
   margin: auto;
+  align-content: center;
+  display: flex;
+}
+.topMainLongFix {
+  width: 1000px;
+  height: 100px;
+  margin: auto;
+  align-content: center;
   display: flex;
 }
 .mainPageButton {
   height: 100%;
-  width: 17%;
+  width: 200px;
   font-size: 50px;
   background-color: white;
   border: none;
   color: orange;
-  text-align: justify;
 }
 .mainPageSearchBorder {
   width: 50%;
@@ -36,16 +43,17 @@
 .mainPageSearch {
   font-size: 25px;
   position: relative;
-  left: 12px;
+  left: 16px;
   width: 93%;
   height: 95%;
   align-self: center;
   border: none;
   outline: none;
+  background-color: transparent;
 }
 .mainCompareButton {
   height: 100px;
-  width: 12%;
+  width: 150px;
   font-size: 24px;
   background-color: white;
   border: none;
@@ -54,10 +62,11 @@
 }
 .mainLoginButton {
   height: 100%;
-  width: 12%;
+  width: 150px;
   font-size: 30px;
   background-color: white;
   border: none;
   color: orange;
   text-align: center;
+  align-content: center;
 }

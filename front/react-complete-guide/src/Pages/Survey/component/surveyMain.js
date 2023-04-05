@@ -20,7 +20,7 @@ function SurveyMain(props) {
         <p className="surveyMainTextTitle">{props.text.title}</p>
         <p className="surveyMainText">{props.text.content}</p>
       </div>
-      <div className="rightAlign">
+      <div className="surveyMainButtonArea">
         {props.lists.map((prob) => (
           <SurveyBoxRow list={prob} />
         ))}

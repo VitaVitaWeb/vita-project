@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from "./Pages/MainPage/mainPage";
 import SurveyFormation from "./Pages/Survey/surveyFormation";
-import SurveyPrefer from "./Pages/Survey/surveyPrefer";
 import SurveyPurpose from "./Pages/Survey/surveyPurpose";
 import VitaInfoPage from "./Pages/InfoPage/VitaInfoPage";
 import VitaComparePage from "./Pages/ComparePage/VitaComparePage";
@@ -32,7 +31,6 @@ function App() {
             path={"/surveyFormation"}
             element={<SurveyFormation />}
           ></Route>
-          <Route path={"/surveyPrefer"} element={<SurveyPrefer />}></Route>
           <Route path={"/surveyPurpose"} element={<SurveyPurpose />}></Route>
           <Route path={"/ComparePage"} element={<VitaComparePage />}></Route>
           <Route path={"/InfoPage"} element={<VitaInfoPage />}></Route>
