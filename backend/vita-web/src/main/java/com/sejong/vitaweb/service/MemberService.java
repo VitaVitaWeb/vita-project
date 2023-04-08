@@ -2,11 +2,12 @@ package com.sejong.vitaweb.service;
 
 
 import com.sejong.vitaweb.vo.Member;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
-
+@Service
 public interface MemberService {
 
   Member idCheck(String id) throws Exception;

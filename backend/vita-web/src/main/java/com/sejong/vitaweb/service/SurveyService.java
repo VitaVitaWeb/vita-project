@@ -1,13 +1,12 @@
-package com.sejong.vitaweb.dao;
+package com.sejong.vitaweb.service;
 
-import com.sejong.vitaweb.vo.VitaFormulation;
-import com.sejong.vitaweb.vo.VitaFunction;
-import com.sejong.vitaweb.vo.VitaSurveyFormulation;
-import com.sejong.vitaweb.vo.VitaSurveyFunction;
-import org.apache.ibatis.annotations.Mapper;
+import com.sejong.vitaweb.vo.*;
+import org.springframework.stereotype.Service;
 
-@Mapper
-public interface SurveyDao {
+import java.util.List;
+
+@Service
+public interface SurveyService {
     void insertFunction(String id, VitaSurveyFunction vitaSurveyFunction);
 
     void insertFormulation(String id, VitaSurveyFormulation vitaSurveyFormulation);
@@ -15,6 +14,7 @@ public interface SurveyDao {
     void insertSurvey(int forno, int funno);
 
     int getForNo(String id);
+
     int getFuncNo(String id);
 
 
