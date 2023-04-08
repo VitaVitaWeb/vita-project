@@ -28,6 +28,7 @@
         <result column="VMID" property="vmid"/>
         <result column="ID" property="id"/>
     </resultMap>
+
     <resultMap type="vitaSurveyFormulation" id="vitaSurveyFormulation">
         <id column="FORNO" property="forno"/>
         <result column="CAP" property="cap"/>
@@ -60,16 +61,20 @@
         values(#{forno}, #{funno})
     </insert>
 
-    <select id="getForNo" resultMap="int">
+    <select id="getForNo" resultType="int">
         select forno from vita_sur_formulation where id = #{id}
     </select>
 
-    <select id="getFuncNo" resultMap="int">
+    <select id="getFuncNo" resultType="int">
         select funno from vita_sur_function where id = #{id}
     </select>
 
     <select id="findFunctionById" resultMap="vitaSurveyFunction">
         select * from vita_sur_function where id = #{id}
+    </select>
+
+    <select id="isFunctionNullById" resultType="int">
+        select count(*) from vita_sur_function where id = #{id}
     </select>
 
     <select id="findFormulationById" resultMap="vitaSurveyFormulation">

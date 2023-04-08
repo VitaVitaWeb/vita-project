@@ -17,13 +17,13 @@ public class DefaultSurveyService implements SurveyService {
 
 
   @Override
-  public void insertFunction(String id, VitaFunction vitaFunction) {
-    surveyDao.insertFunction(id, vitaFunction);
+  public void insertFunction(String id, VitaSurveyFunction vitaSurveyFunction) {
+    surveyDao.insertFunction(id, vitaSurveyFunction);
   }
 
   @Override
-  public void insertFormulation(String id, VitaFormulation vitaFormulation) {
-    surveyDao.insertFormulation(id, vitaFormulation);
+  public void insertFormulation(String id, VitaSurveyFormulation vitaSurveyFormulation) {
+    surveyDao.insertFormulation(id, vitaSurveyFormulation);
   }
 
   @Override
@@ -42,22 +42,27 @@ public class DefaultSurveyService implements SurveyService {
   }
 
   @Override
-  public VitaFunction findFunctionById(String id) {
+  public VitaSurveyFunction findFunctionById(String id) {
     return surveyDao.findFunctionById(id);
   }
 
   @Override
-  public VitaFormulation findFormulationById(String id) {
+  public VitaSurveyFormulation findFormulationById(String id) {
     return surveyDao.findFormulationById(id);
   }
 
   @Override
-  public int updateFunction(String id, VitaFunction vitaFunction) {
-    return surveyDao.updateFunction(id, vitaFunction);
+  public int updateFunction(String id, VitaSurveyFunction vitaSurveyFunction) {
+    return surveyDao.updateFunction(id, vitaSurveyFunction);
   }
 
   @Override
-  public int updateFormulation(String id, VitaFormulation vitaFormulation) {
-    return surveyDao.updateFormulation(id, vitaFormulation);
+  public int updateFormulation(String id, VitaSurveyFormulation vitaSurveyFormulation) {
+    return surveyDao.updateFormulation(id, vitaSurveyFormulation);
+  }
+
+  @Override
+  public int isFunctionNullById(String id) {
+    return surveyDao.isFunctionNullById(id);
   }
 }

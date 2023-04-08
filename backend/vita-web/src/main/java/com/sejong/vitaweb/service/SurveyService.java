@@ -7,9 +7,9 @@ import java.util.List;
 
 @Service
 public interface SurveyService {
-    void insertFunction(String id, VitaFunction vitaFunction);
+    void insertFunction(String id, VitaSurveyFunction vitaSurveyFunction);
 
-    void insertFormulation(String id, VitaFormulation vitaFormulation);
+    void insertFormulation(String id, VitaSurveyFormulation vitaSurveyFormulation);
 
     void insertSurvey(int forno, int funno);
 
@@ -18,11 +18,14 @@ public interface SurveyService {
     int getFuncNo(String id);
 
 
-    VitaFunction findFunctionById(String id);
+    VitaSurveyFunction findFunctionById(String id);
 
-    VitaFormulation findFormulationById(String id);
+    VitaSurveyFormulation findFormulationById(String id);
 
-    int updateFunction(String id, VitaFunction vitaFunction);
+    int updateFunction(String id, VitaSurveyFunction vitaSurveyFunction);
 
-    int updateFormulation(String id, VitaFormulation vitaFormulation);
+    int updateFormulation(String id, VitaSurveyFormulation vitaSurveyFormulation);
+
+
+    int isFunctionNullById(String id);
 }
