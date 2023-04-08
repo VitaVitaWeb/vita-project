@@ -80,12 +80,12 @@
 
     <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
 
-    <insert id="insertVitaFunctionInit" parameterType="vitaminFunction">
+    <insert id="insertVitaFunctionInit" parameterType="vitaFunction">
         insert ignore into vita_function(vno)
         values(#{vno})
     </insert>
 
-    <insert id="insertVitaFormulationInit" parameterType="vitaminFormulation">
+    <insert id="insertVitaFormulationInit" parameterType="vitaFormulation">
         insert ignore into vita_formulation(vno)
         values(#{vno})
     </insert>

@@ -39,5 +39,15 @@ public class VitaController {
         vitaService.updateVita(vitaminDetail);
     }
 
+    @PostMapping("init-vita-function")
+    public void initVitaFunction() throws Exception {
+        vitaService.setVitaFunction();
+    }
+
+    @PostMapping("init-vita-formulation")
+    public void initVitaFormulation() throws Exception {
+        vitaService.setVitaFormulation();
+    }
+
 
 }
