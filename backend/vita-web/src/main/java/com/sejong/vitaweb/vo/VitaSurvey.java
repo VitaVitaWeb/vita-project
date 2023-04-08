@@ -12,6 +12,5 @@ import java.io.Serializable;
 public class VitaSurvey implements Serializable {
     private String id; // member id
     private int forno; // vitamin survey formulation
-    private int funno; // vitamin survey function
-    private int vino; // vitamin survey detail
+    private int funno; // vitamin survey function 먹는 이유
 }

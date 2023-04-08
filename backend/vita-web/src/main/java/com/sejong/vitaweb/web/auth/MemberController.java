@@ -51,47 +51,47 @@ public class MemberController {
     return "redirect:list";
   }
 
-  @GetMapping("findid/{name}/{id}")
-  @ResponseBody
-  public String findId(@PathVariable("name") String name, @PathVariable("id") String id) throws Exception {
-    Map<String, String> map = new HashMap();
-    map.put("name", name);
-    map.put("email", email);
-
-    Member member = memberService.findId(map);
-
-    if(member ==null){
-      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
-    }
-    return member.getId() ;
-  }
-
-  @GetMapping("findid")
-  public void findId()  throws Exception {
-
-  }
-
-
-
-  //  비밀번호 찾기
-  @GetMapping("findpwd/{id}/{name}/{email}")
-  @ResponseBody
-  public String findpwd(@PathVariable("id") String id,@PathVariable("name") String name) throws Exception {
-    Map<String, String> map = new HashMap();
-    map.put("id", id);
-    map.put("name", name);
-    map.put("email", email);
-
-    Member member = memberService.findpwd(map);
-
-    if (member == null) {
-      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
-    }
-    return member.getPassword();
-  }
-
-  @GetMapping("findpwd")
-  public void findpwd()  throws Exception {
-
-  }
+//  @GetMapping("findid/{name}/{id}")
+//  @ResponseBody
+//  public String findId(@PathVariable("name") String name, @PathVariable("id") String id) throws Exception {
+//    Map<String, String> map = new HashMap();
+//    map.put("name", name);
+//    map.put("email", email);
+//
+//    Member member = memberService.findId(map);
+//
+//    if(member ==null){
+//      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
+//    }
+//    return member.getId() ;
+//  }
+//
+//  @GetMapping("findid")
+//  public void findId()  throws Exception {
+//
+//  }
+//
+//
+//
+//  //  비밀번호 찾기
+//  @GetMapping("findpwd/{id}/{name}/{email}")
+//  @ResponseBody
+//  public String findpwd(@PathVariable("id") String id,@PathVariable("name") String name) throws Exception {
+//    Map<String, String> map = new HashMap();
+//    map.put("id", id);
+//    map.put("name", name);
+//    map.put("email", email);
+//
+//    Member member = memberService.findpwd(map);
+//
+//    if (member == null) {
+//      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
+//    }
+//    return member.getPassword();
+//  }
+//
+//  @GetMapping("findpwd")
+//  public void findpwd()  throws Exception {
+//
+//  }
 }
