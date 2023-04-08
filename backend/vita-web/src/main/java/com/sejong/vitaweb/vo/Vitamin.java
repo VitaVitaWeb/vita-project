@@ -31,8 +31,6 @@ public class Vitamin implements Serializable {
     this.category4 = category4;
   }
 
-//  private VitaminDetail vitaminDetail;
-
 
 }
 

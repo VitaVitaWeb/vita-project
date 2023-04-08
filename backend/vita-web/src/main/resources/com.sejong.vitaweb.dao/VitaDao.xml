@@ -50,20 +50,45 @@
         <result column="theanine" property="theanine"/>
     </resultMap>
 
+    <resultMap type="vitaFunction" id="vitaFunction">
+        <id column="vno" property="vno"/>
+        <result column="SC" property="sc"/>
+        <result column="ACT" property="act"/>
+        <result column="EYE" property="eye"/>
+        <result column="JOINT" property="joint"/>
+        <result column="OXY" property="oxy"/>
+        <result column="SIGHT" property="sight"/>
+        <result column="SKIN" property="skin"/>
+        <result column="IMN" property="imn"/>
+        <result column="JANG" property="jang"/>
+        <result column="GAN" property="gan"/>
+        <result column="PRS" property="prs"/>
+        <result column="BONE" property="bone"/>
+        <result column="COL" property="col"/>
+        <result column="VMID" property="vmid"/>
+    </resultMap>
+
+    <resultMap type="vitaFormulation" id="vitaFormulation">
+        <id column="vno" property="vno"/>
+        <result column="CAP" property="cap"/>
+        <result column="PILL" property="pill"/>
+        <result column="POW" property="pow"/>
+        <result column="LIQ" property="liq"/>
+        <result column="CHEW" property="chew"/>
+    </resultMap>
+
 
     <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
 
-    <!--VitaDetail 설정-->
-<!--    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">-->
-<!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b9,-->
-<!--        b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca,-->
-<!--        lacto, lutein, milk_thistle, omega3,-->
-<!--        msm, propolis, collagen, theanine)-->
-<!--        values(#{vno}, #{e}, #{d}, #{a}, #{b1}, #{b2}, #{b3}, #{b5}, #{b9},-->
-<!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca},-->
-<!--        #{lacto}, #{lutein}, #{milk_thistle}, #{omega3},-->
-<!--        #{msm}, #{propolis}, #{collagen}, #{theanine})-->
-<!--    </insert>-->
+    <insert id="insertVitaFunctionInit" parameterType="vitaFunction">
+        insert ignore into vita_function(vno)
+        values(#{vno})
+    </insert>
+
+    <insert id="insertVitaFormulationInit" parameterType="vitaFormulation">
+        insert ignore into vita_formulation(vno)
+        values(#{vno})
+    </insert>
 
     <insert id="insertVitaDetailInit" parameterType="vitaminDetail">
         insert ignore into vita_vitamin(vno)
@@ -132,5 +157,16 @@
 
 
 
+    <!--VitaDetail 설정-->
+    <!--    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">-->
+    <!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b9,-->
+    <!--        b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca,-->
+    <!--        lacto, lutein, milk_thistle, omega3,-->
+    <!--        msm, propolis, collagen, theanine)-->
+    <!--        values(#{vno}, #{e}, #{d}, #{a}, #{b1}, #{b2}, #{b3}, #{b5}, #{b9},-->
+    <!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca},-->
+    <!--        #{lacto}, #{lutein}, #{milk_thistle}, #{omega3},-->
+    <!--        #{msm}, #{propolis}, #{collagen}, #{theanine})-->
+    <!--    </insert>-->
 
 </mapper>
