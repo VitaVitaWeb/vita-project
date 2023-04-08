@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sejong.vitaweb.dao.VitaDao">
+
+    <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
+    <resultMap type="vitamin" id="vitamin">
+        <id column="vno" property="vno"/>
+        <result column="NAME" property="name"/>
+        <result column="LINK" property="link"/>
+        <result column="IMG_PATH" property="img_path"/>
+        <result column="VDNO" property="vdno"/>
+        <result column="CAT1" property="category1"/>
+        <result column="CAT2" property="category2"/>
+        <result column="CAT3" property="category3"/>
+        <result column="CAT4" property="category4"/>
+    </resultMap>
+
+    <resultMap type="vitaminDetail" id="vitaminDetail">
+        <id column="vdno" property="vdno"/>
+        <result column="vno" property="vno"/>
+        <result column="e" property="e"/>
+        <result column="d" property="d"/>
+        <result column="a" property="a"/>
+        <result column="b1" property="b1"/>
+        <result column="b2" property="b2"/>
+        <result column="b3" property="b3"/>
+        <result column="b7" property="b7"/>
+        <result column="b9" property="b9"/>
+        <result column="b12" property="b12"/>
+        <result column="c" property="c"/>
+        <result column="cr" property="cr"/>
+        <result column="mo" property="mo"/>
+        <result column="i" property="i"/>
+        <result column="mn" property="mn"/>
+        <result column="se" property="se"/>
+        <result column="cu" property="cu"/>
+        <result column="zn" property="zn"/>
+        <result column="fe" property="fe"/>
+        <result column="mg" property="mg"/>
+        <result column="ca" property="ca"/>
+        <result column="lacto" property="lacto"/>
+        <result column="lutein" property="lutein"/>
+        <result column="milk_thistle" property="milk_thistle"/>
+        <result column="omega3" property="omega3"/>
+        <result column="msm" property="msm"/>
+        <result column="propolis" property="propolis"/>
+        <result column="collagen" property="collagen"/>
+        <result column="theanine" property="theanine"/>
+    </resultMap>
+
+    <resultMap type="vitaFunction" id="vitaFunction">
+        <id column="vno" property="vno"/>
+        <result column="SC" property="sc"/>
+        <result column="ACT" property="act"/>
+        <result column="EYE" property="eye"/>
+        <result column="JOINT" property="joint"/>
+        <result column="OXY" property="oxy"/>
+        <result column="SIGHT" property="sight"/>
+        <result column="SKIN" property="skin"/>
+        <result column="IMN" property="imn"/>
+        <result column="JANG" property="jang"/>
+        <result column="GAN" property="gan"/>
+        <result column="PRS" property="prs"/>
+        <result column="BONE" property="bone"/>
+        <result column="COL" property="col"/>
+        <result column="VMID" property="vmid"/>
+    </resultMap>
+
+    <resultMap type="vitaFormulation" id="vitaFormulation">
+        <id column="vno" property="vno"/>
+        <result column="CAP" property="cap"/>
+        <result column="PILL" property="pill"/>
+        <result column="POW" property="pow"/>
+        <result column="LIQ" property="liq"/>
+        <result column="CHEW" property="chew"/>
+    </resultMap>
+
+
+    <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
+
+
+    <!--비타민 Logic-->
+    <insert id="insertVita" parameterType="vitamin">
+        insert into vita_member(NAME, LINK, IMG_PATH)
+        values(#{NAME}, #{LINK}, #{IMG_PATH})
+    </insert>
+
+    <select id="findVitalAll" resultMap="vitamin">
+        select
+        *
+        from
+        vita_vita
+    </select>
+
+    <select id="findVitaByKey" resultMap="vitamin">
+        select
+        *
+        from
+        vita_vita
+        where
+        VNO=#{VNO}
+    </select>
+
+
+
+    <!--비타민 Detail Logic-->
+    <update id="updateVitaDetail" parameterType="vitaminDetail">
+        update vita_vitamin set
+        e = #{e}, d = #{d}, a = #{a}, b1 = #{b1}, b2 = #{b2}, b3 = #{b3}, b5 = #{b5}, b9 = #{b9},
+        b12 = #{b12}, b7 = #{b7}, c = #{c}, cr = #{cr}, mo = #{mo}, i = #{i},
+        mn = #{mn}, se = #{se}, cu = #{cu}, zn = #{zn}, fe = #{fe}, mg = #{mg}, ca = #{ca}, lacto = #{lacto},
+        lutein = #{lutein}, milk_thistle = #{milk_thistle}, omega3={omega3},
+        msm = #{msm}, propolis = #{propolis}, collagen = #{collagen}, theanine = #{theanine}
+        where
+        VNO=#{VNO}
+    </update>
+
+    <select id="findVitalDetailAll" resultMap="vitaminDetail">
+        select
+        *
+        from
+        vita_vitamin
+    </select>
+
+    <select id="findVitalDetail" resultMap="vitaminDetail">
+        select
+            *
+        from
+            vita_vitamin
+        where
+            VNO=#{VNO}
+    </select>
+
+    <!--비타민 Formulation Logic-->
+    <select id="findVitaFormulationAll" resultMap="vitaFormulation">
+        select
+        *
+        from
+        vita_formulation
+    </select>
+
+    <select id="findVitaFormulationByKey" resultMap="vitaFormulation">
+        select
+        *
+        from
+        vita_formulation
+        where
+        VNO=#{VNO}
+    </select>
+
+    <!--비타민 Function Logic-->
+    <select id="findVitaFunctionAll" resultMap="vitaFunction">
+        select
+        *
+        from
+        vita_function
+    </select>
+
+    <select id="findVitaFunctionByKey" resultMap="vitaFunction">
+        select
+        *
+        from
+        vita_function
+        where
+        VNO=#{VNO}
+    </select>
+
+
+    <!-- DB Init -->
+    <insert id="insertVitaFunctionInit" parameterType="vitaFunction">
+        insert ignore into vita_function(vno)
+        values(#{vno})
+    </insert>
+
+    <insert id="insertVitaFormulationInit" parameterType="vitaFormulation">
+        insert ignore into vita_formulation(vno)
+        values(#{vno})
+    </insert>
+
+    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">
+        insert ignore into vita_vitamin(vno)
+        values(#{vno})
+    </insert>
+
+    <!--Naver API를 DB에 추가-->
+    <insert id="insertVitaDBToVita" parameterType="vitamin">
+        insert ignore into vita_vita(name, link, img_path, cat1, cat2, cat3, cat4)
+        values(#{name}, #{link}, #{img_path}, #{category1}, #{category2}, #{category3}, #{category4})
+    </insert>
+
+    <select id="getRecentVita" resultType="vitamin">
+        SELECT * FROM vita_vita ORDER BY insert_date DESC LIMIT 1;
+    </select>
+
+
+    <!--VitaDetail 설정-->
+    <!--    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">-->
+    <!--        insert ignore into vita_vitamin(vno, e, d, a, b1, b2, b3, b5, b9,-->
+    <!--        b12, b7, c, cr, mo, i, mn, se, cu, zn, fe, mg, ca,-->
+    <!--        lacto, lutein, milk_thistle, omega3,-->
+    <!--        msm, propolis, collagen, theanine)-->
+    <!--        values(#{vno}, #{e}, #{d}, #{a}, #{b1}, #{b2}, #{b3}, #{b5}, #{b9},-->
+    <!--        #{b12}, #{b7}, #{c}, #{cr}, #{mo}, #{i}, #{mn}, #{se}, #{cu}, #{zn}, #{fe}, #{mg}, #{ca},-->
+    <!--        #{lacto}, #{lutein}, #{milk_thistle}, #{omega3},-->
+    <!--        #{msm}, #{propolis}, #{collagen}, #{theanine})-->
+    <!--    </insert>-->
+
+</mapper>
