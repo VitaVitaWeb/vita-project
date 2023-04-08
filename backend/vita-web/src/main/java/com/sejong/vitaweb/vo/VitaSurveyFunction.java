@@ -25,4 +25,6 @@ public class VitaSurveyFunction implements Serializable {
     boolean bone; // 뼈 건강
     boolean col; // 콜레스트롤
     boolean vmid; // 혈중 중성 지질
+
+    String id;
 }

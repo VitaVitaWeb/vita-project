@@ -1,9 +1,11 @@
 package com.sejong.vitaweb.service;
 
 import com.sejong.vitaweb.vo.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface VitaService {
 
     /**

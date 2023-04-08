@@ -51,15 +51,6 @@
             NAME=#{name}
     </select>
 
-<!--    <select id="findByEmail" resultMap="memberMap">-->
-<!--        select-->
-<!--            EMAIL, PNUM-->
-<!--        from-->
-<!--            vita_member-->
-<!--        where-->
-<!--            EMAIL=#{email}-->
-<!--    </select>-->
-
     <select id="findByPhoneNo" resultMap="memberMap">
         select
             PHN
@@ -93,11 +84,8 @@
         where ID=#{id}
     </delete>
 
- <!--   pwd=sha2(#{password},256)-->
     <update id="update" parameterType="member">
         update vita_member set
-        <!--   pwd=sha2(#{password},256)-->
-<!--        nname=#{nickName},-->
         name=#{name},
         PHN=#{phoneNo},
         birth=#{birthDay},
