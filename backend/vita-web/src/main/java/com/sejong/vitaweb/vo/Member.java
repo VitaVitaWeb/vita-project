@@ -12,7 +12,7 @@ import java.sql.Date;
 @ToString
 public class Member implements Serializable {
 
-  private String id;
+  private String id; // email
   private String password;
   private Date createdDate;
   private String name;
