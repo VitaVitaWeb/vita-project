@@ -17,11 +17,6 @@ public class VitaController {
     @Autowired
     VitaService vitaService;
 
-//    @PostMapping("insertVita")
-//    public void insertVita(@RequestBody Vitamin vitamin) throws Exception {
-//        vitaService.insertVita(vitamin);
-//    }
-
     @GetMapping("list")
     public List<Vitamin> findVitalAll() throws Exception {
         return vitaService.findVitalAll();
