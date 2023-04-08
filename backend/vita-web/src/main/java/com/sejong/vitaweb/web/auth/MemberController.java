@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -20,21 +21,16 @@ public class MemberController {
   private HttpSession session;
 
   @GetMapping("list")
-  public void list(Model model) throws Exception {
-//     프론트 컨트롤러가 건네준 Model 객체에 작업 결과를 담아 두면
-//     핸들러 호출이 끝났을 때 JSP 를 실행하기 전에
-//     먼저 Model 객체에 담아둔 값을 ServletRequest 보관소로 옮긴다.
-    model.addAttribute("members", memberService.list());
+  public List<Member> list() throws Exception {
+    return memberService.list();
   }
   @GetMapping("detail")
-  public void detail(String id, Map map) throws Exception {
+  public void detail(@RequestParam String id) throws Exception {
     Member member = memberService.get(id);
 
     if (member == null) {
       throw new Exception("해당 아이디의 회원이 없습니다.");
     }
-
-    map.put("member", member);
   }
 
 
@@ -55,9 +51,9 @@ public class MemberController {
     return "redirect:list";
   }
 
-  @GetMapping("findid/{name}/{email}")
+  @GetMapping("findid/{name}/{id}")
   @ResponseBody
-  public String findId(@PathVariable("name") String name, @PathVariable("email") String email) throws Exception {
+  public String findId(@PathVariable("name") String name, @PathVariable("id") String id) throws Exception {
     Map<String, String> map = new HashMap();
     map.put("name", name);
     map.put("email", email);
@@ -80,7 +76,7 @@ public class MemberController {
   //  비밀번호 찾기
   @GetMapping("findpwd/{id}/{name}/{email}")
   @ResponseBody
-  public String findpwd(@PathVariable("id") String id,@PathVariable("name") String name,@PathVariable("email") String email) throws Exception {
+  public String findpwd(@PathVariable("id") String id,@PathVariable("name") String name) throws Exception {
     Map<String, String> map = new HashMap();
     map.put("id", id);
     map.put("name", name);
