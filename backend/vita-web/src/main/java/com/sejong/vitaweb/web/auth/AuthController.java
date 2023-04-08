@@ -2,6 +2,7 @@ package com.sejong.vitaweb.web.auth;
 
 import com.sejong.vitaweb.service.MemberService;
 import com.sejong.vitaweb.vo.Member;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -16,35 +17,22 @@ import java.util.regex.Pattern;
 @Slf4j
 @RestController
 @RequestMapping("/auth/")
+@RequiredArgsConstructor
 public class AuthController {
+  private final MemberService memberService;
 
-  @Autowired
-  MemberService memberService;
-
-  @GetMapping("register")
-  public void register(@CookieValue(name = "id", defaultValue="") String id, Model model) throws Exception {
-    model.addAttribute("id", id);
-  }
 
   @ResponseBody
   @GetMapping("idCheck")
   public Boolean idCheck(@RequestParam("id") String id) throws Exception {
-//    String filter = "^[a-z0-9]*$";
-
     log.info("통신 성공! = {}", id);
-//    System.out.println("id = " + id);
-
     Member result = memberService.idCheck(id);
-
-
-
     return inputCheck(id, result);
   }
 
   @ResponseBody
   @GetMapping("nameCheck")
   public Boolean nameCheck(@RequestParam String name) throws Exception {
-//    String filter = "^[A-Za-z0-9가-힣]*$";
     Member result = memberService.nameCheck(name);
 
     return inputCheck(name, result);
@@ -72,38 +60,16 @@ public class AuthController {
     }
   }
 
-  @ResponseBody
-  @PostMapping("lastCheck")
-  public String lastCheck(String finalCheck) throws Exception {
-    if (finalCheck.equals("1")) {
-      return "true";
-    } else {
-      return "false";
-    }
-
-  }
 
   @PostMapping("join")
   public Boolean join(@RequestBody Member member, Model model) throws Exception {
-//    System.out.println(12121212);
-    System.out.println(member);
-    //가입정보가 제대로된 정보인지 확인
-//    if (member.getId().length() < 5 || member.getPhoneNo().length() < 5) {
-//      System.out.println("email = " + member.getId());
-//      System.out.println("phoneNo = " + member.getPhoneNo());
-//      System.out.println(1);
-//      return "/auth/register1";
-//    }
+    log.info("member = {}", member);
 
     // 가입정보가 중복인지 확인하고 문제없다면 가입처리
     if(memberService.join(member.getId(), member.getPhoneNo(), member)) {
-      System.out.println(2);
       return true;
     }
 
-//    System.out.println(3);
-    // 이 외의 모든 올바르지 않은 가입정보에 대해 가입정보 재입력 강제하기
-    model.addAttribute("checkResult", "false");
     return false;
   }
 
@@ -114,11 +80,11 @@ public class AuthController {
           HttpServletResponse response,
           HttpSession session) throws Exception {
 
-    Member member = memberService.get(id, password);
+    Member member = memberService.getMemberByIdAndPwd(id, password);
 
     if (member != null) {
       session.setAttribute("loginMember", member); // 로그인한 멤버 정보를 세션 보관소에 저장
-      System.out.println("member = " + member);
+      log.info("login member = {}", session.getAttribute("loginMember"));
     }
 
     // 클라이언트에게 쿠키 보내기
@@ -137,8 +103,6 @@ public class AuthController {
 //    }
     response.addCookie(cookie);
 
-//    ModelAndView mv = new ModelAndView("/auth/loginResult");
-//    mv.addObject("member", member);
     if(member != null)
       return true;
     else

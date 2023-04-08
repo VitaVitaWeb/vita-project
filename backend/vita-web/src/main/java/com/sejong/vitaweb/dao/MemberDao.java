@@ -4,6 +4,7 @@ import com.sejong.vitaweb.vo.Member;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -15,9 +16,8 @@ public interface MemberDao {
 
    Member findByName(String name);
 
-   Member findByIdPassword(
-          @Param("id") String id,
-          @Param("password") String password);
+
+   Member login(String id, String password);
 
 //  Member findByEmail(String email);
 
@@ -35,7 +35,7 @@ public interface MemberDao {
 
   int update(Member member);
 
-  Member findId(Map<String, String> map);
+  Member findId(String name, Date birthday, int gender);
 
   Member findpwd(Map<String, String> map);
 

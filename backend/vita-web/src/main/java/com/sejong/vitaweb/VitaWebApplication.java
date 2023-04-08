@@ -19,10 +19,9 @@ public class VitaWebApplication {
 		System.out.println("vita-web project start!");
 	}
 
-	@GetMapping("/")
-	public String welcome(@CookieValue(name = "id", defaultValue = "") String id, Model model) {
-		model.addAttribute("id", id);
-		return "main";
-	}
+//	@GetMapping("/")
+//	public String welcome() {
+//		return "main";
+//	}
 
 }
