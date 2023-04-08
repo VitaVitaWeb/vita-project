@@ -2,6 +2,7 @@ package com.sejong.vitaweb.service;
 
 import com.sejong.vitaweb.dao.MemberDao;
 import com.sejong.vitaweb.vo.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +16,7 @@ import java.util.Map;
 import java.util.Properties;
 
 @Service
+@Slf4j
 public class DefaultMemberService implements MemberService {
   @Autowired
   private final MemberDao memberDao;
@@ -35,8 +37,8 @@ public class DefaultMemberService implements MemberService {
   }
 
   @Override
-  public Member get(String id, String password) throws Exception {
-    return memberDao.findByIdPassword(id, password);
+  public Member getMemberByIdAndPwd(String id, String password) throws Exception {
+    return memberDao.login(id, password);
   }
 
   @Override

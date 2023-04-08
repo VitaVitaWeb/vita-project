@@ -2,36 +2,39 @@ package com.sejong.vitaweb.web.auth;
 
 import com.sejong.vitaweb.service.MemberService;
 import com.sejong.vitaweb.vo.Member;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.sql.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/member/")
+@Slf4j
+@RequiredArgsConstructor
 public class MemberController {
-  @Autowired
-  MemberService memberService;
-  // HttpSession 클래스 주입.
-  @Autowired
-  private HttpSession session;
+  private final MemberService memberService;
 
   @GetMapping("list")
   public List<Member> list() throws Exception {
+    log.info("list = {}", memberService.list());
     return memberService.list();
   }
+
+
   @GetMapping("detail")
-  public void detail(@RequestParam String id) throws Exception {
+  public Member detail(@RequestParam String id) throws Exception {
     Member member = memberService.get(id);
+
+    log.info("member = {}", member);
 
     if (member == null) {
       throw new Exception("해당 아이디의 회원이 없습니다.");
     }
+
+    return member;
   }
 
 
@@ -61,7 +64,7 @@ public class MemberController {
     }
     return member.getId() ;
   }
-  
+
 //
 //
 //

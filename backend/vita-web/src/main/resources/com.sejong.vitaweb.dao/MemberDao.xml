@@ -22,16 +22,12 @@
     </insert>
 
     <!--로그인 조회-->
-    <select id="findByIdPassword" resultMap="memberMap">
-        select
-            ID,
-            JDATE,
-            NAME
-        from
-            vita_member
-        where
-            ID=#{id} and PWD=sha2(#{password},256)
+    <select id="login" resultMap="memberMap">
+        select * from vita_member where id=#{id} and pwd=#{password}
     </select>
+
+    <!--            ID=#{id} and PWD=sha2(#{password},256)-->
+
 
     <select id="findById" resultMap="memberMap">
         select
@@ -114,14 +110,14 @@
 <!--        phn= #{phoneNo}-->
 <!--    </select>-->
 
-    <update id="findpwdupdate" parameterType="map">
-        update vita_member set
-        pwd=sha2(#{password},256)
-        where
-        id=#{id} and
-        name = #{name} and
-        phn= #{phoneNo}
-    </update>
+<!--    <update id="findpwdupdate" parameterType="map">-->
+<!--        update vita_member set-->
+<!--        pwd=sha2(#{password},256)-->
+<!--        where-->
+<!--        id=#{id} and-->
+<!--        name = #{name} and-->
+<!--        phn= #{phoneNo}-->
+<!--    </update>-->
 
 
 </mapper>

@@ -17,7 +17,7 @@ public interface MemberService {
 
 
 
-  Member get(String id, String password) throws Exception;
+  Member getMemberByIdAndPwd(String id, String password) throws Exception;
 
   boolean join(String email, String phoneNo, Member member) throws Exception;
 

@@ -16,9 +16,8 @@ public interface MemberDao {
 
    Member findByName(String name);
 
-   Member findByIdPassword(
-          @Param("id") String id,
-          @Param("password") String password);
+
+   Member login(String id, String password);
 
 //  Member findByEmail(String email);
 
