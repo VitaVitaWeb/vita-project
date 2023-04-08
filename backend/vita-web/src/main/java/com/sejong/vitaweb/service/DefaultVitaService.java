@@ -25,15 +25,6 @@ public class DefaultVitaService implements VitaService {
       vitaDao.insertVitaDBToVita(vitamin);
 
       log.info("vitamin = {}", vitamin);
-
-//      Vitamin newVitamin = vitaDao.getRecentVita();
-//      log.info("newVitamin = {}", newVitamin);
-
-
-//      int vno = newVitamin.getVno();
-//      log.info("vno = {}", vno);
-
-//      vitaDao.insertVitaDetailInit(vno);
     }
 
   }
@@ -43,6 +34,22 @@ public class DefaultVitaService implements VitaService {
     List<Vitamin> vitalAll = vitaDao.findVitalAll();
     for(Vitamin vitamin : vitalAll) {
       vitaDao.insertVitaDetailInit(vitamin.getVno());
+      log.info("vno = {}", vitamin.getVno());
+    }
+  }
+
+  public void setVitaFunction() {
+    List<Vitamin> vitalAll = vitaDao.findVitalAll();
+    for(Vitamin vitamin : vitalAll) {
+      vitaDao.insertVitaFunctionInit(vitamin.getVno());
+      log.info("vno = {}", vitamin.getVno());
+    }
+  }
+
+  public void setVitaFormulation() {
+    List<Vitamin> vitalAll = vitaDao.findVitalAll();
+    for(Vitamin vitamin : vitalAll) {
+      vitaDao.insertVitaFormulationInit(vitamin.getVno());
       log.info("vno = {}", vitamin.getVno());
     }
   }

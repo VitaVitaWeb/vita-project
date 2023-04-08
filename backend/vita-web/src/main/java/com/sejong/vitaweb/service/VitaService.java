@@ -10,6 +10,9 @@ public interface VitaService {
     void insertVitaDB(List<NaverProductDto> prods);
     void setVitaDetail();
 
+    void setVitaFormulation();
+
+    void setVitaFunction();
 
     List<Vitamin> findVitalAll() throws Exception;
 

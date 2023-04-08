@@ -14,6 +14,8 @@ import java.util.Map;
 @Mapper
 public interface VitaDao {
    void insertVitaDetailInit(int vno);
+   void insertVitaFunctionInit(int vno);
+   void insertVitaFormulationInit(int vno);
 
    Vitamin getRecentVita();
 

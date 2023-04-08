@@ -17,11 +17,6 @@ public class VitaController {
     @Autowired
     VitaService vitaService;
 
-//    @PostMapping("insertVita")
-//    public void insertVita(@RequestBody Vitamin vitamin) throws Exception {
-//        vitaService.insertVita(vitamin);
-//    }
-
     @GetMapping("list")
     public List<Vitamin> findVitalAll() throws Exception {
         return vitaService.findVitalAll();
@@ -42,6 +37,21 @@ public class VitaController {
     @PutMapping("update")
     public void updateVitaDetail(@RequestBody VitaminDetail vitaminDetail) throws Exception {
         vitaService.updateVita(vitaminDetail);
+    }
+
+    @PostMapping("init-vita-function")
+    public void initVitaFunction() throws Exception {
+        vitaService.setVitaFunction();
+    }
+
+    @PostMapping("init-vita-formulation")
+    public void initVitaFormulation() throws Exception {
+        vitaService.setVitaFormulation();
+    }
+
+    @PostMapping("init-vita-detail")
+    public void initVitaDetail() throws Exception {
+        vitaService.setVitaDetail();
     }
 
 
