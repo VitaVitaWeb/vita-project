@@ -80,21 +80,32 @@
 
     <!-- 자바 객체의 프로퍼티와 컬럼 이름을 연결 -->
 
-    <insert id="insertVitaFunctionInit" parameterType="vitaFunction">
-        insert ignore into vita_function(vno)
-        values(#{vno})
+
+    <!--비타민 Logic-->
+    <insert id="insertVita" parameterType="vitamin">
+        insert into vita_member(NAME, LINK, IMG_PATH)
+        values(#{NAME}, #{LINK}, #{IMG_PATH})
     </insert>
 
-    <insert id="insertVitaFormulationInit" parameterType="vitaFormulation">
-        insert ignore into vita_formulation(vno)
-        values(#{vno})
-    </insert>
+    <select id="findVitalAll" resultMap="vitamin">
+        select
+        *
+        from
+        vita_vita
+    </select>
 
-    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">
-        insert ignore into vita_vitamin(vno)
-        values(#{vno})
-    </insert>
+    <select id="findVitaByKey" resultMap="vitamin">
+        select
+        *
+        from
+        vita_vita
+        where
+        VNO=#{VNO}
+    </select>
 
+
+
+    <!--비타민 Detail Logic-->
     <update id="updateVitaDetail" parameterType="vitaminDetail">
         update vita_vitamin set
         e = #{e}, d = #{d}, a = #{a}, b1 = #{b1}, b2 = #{b2}, b3 = #{b3}, b5 = #{b5}, b9 = #{b9},
@@ -122,6 +133,57 @@
             VNO=#{VNO}
     </select>
 
+    <!--비타민 Formulation Logic-->
+    <select id="findVitaFormulationAll" resultMap="vitaFormulation">
+        select
+        *
+        from
+        vita_formulation
+    </select>
+
+    <select id="findVitaFormulationByKey" resultMap="vitaFormulation">
+        select
+        *
+        from
+        vita_formulation
+        where
+        VNO=#{VNO}
+    </select>
+
+    <!--비타민 Function Logic-->
+    <select id="findVitaFunctionAll" resultMap="vitaFunction">
+        select
+        *
+        from
+        vita_function
+    </select>
+
+    <select id="findVitaFunctionByKey" resultMap="vitaFunction">
+        select
+        *
+        from
+        vita_function
+        where
+        VNO=#{VNO}
+    </select>
+
+
+    <!-- DB Init -->
+    <insert id="insertVitaFunctionInit" parameterType="vitaFunction">
+        insert ignore into vita_function(vno)
+        values(#{vno})
+    </insert>
+
+    <insert id="insertVitaFormulationInit" parameterType="vitaFormulation">
+        insert ignore into vita_formulation(vno)
+        values(#{vno})
+    </insert>
+
+    <insert id="insertVitaDetailInit" parameterType="vitaminDetail">
+        insert ignore into vita_vitamin(vno)
+        values(#{vno})
+    </insert>
+
     <!--Naver API를 DB에 추가-->
     <insert id="insertVitaDBToVita" parameterType="vitamin">
         insert ignore into vita_vita(name, link, img_path, cat1, cat2, cat3, cat4)
@@ -131,30 +193,6 @@
     <select id="getRecentVita" resultType="vitamin">
         SELECT * FROM vita_vita ORDER BY insert_date DESC LIMIT 1;
     </select>
-
-    <!--비타민 추가-->
-    <insert id="insertVita" parameterType="vitamin">
-        insert into vita_member(NAME, LINK, IMG_PATH)
-        values(#{NAME}, #{LINK}, #{IMG_PATH})
-    </insert>
-
-    <!--비타민 조회-->
-    <select id="findVitalAll" resultMap="vitamin">
-        select
-            *
-        from
-            vita_vita
-    </select>
-
-    <select id="findVitaById" resultMap="vitamin">
-        select
-            *
-        from
-            vita_vita
-        where
-            VNO=#{VNO}
-    </select>
-
 
 
     <!--VitaDetail 설정-->
