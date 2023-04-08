@@ -4,6 +4,7 @@ import com.sejong.vitaweb.vo.Member;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -35,7 +36,7 @@ public interface MemberDao {
 
   int update(Member member);
 
-  Member findId(Map<String, String> map);
+  Member findId(String name, Date birthday, int gender);
 
   Member findpwd(Map<String, String> map);
 

@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,41 +36,32 @@ public class MemberController {
 
 
 @PostMapping("update")
-  public String update(Member member) throws Exception {
+  public void update(Member member) throws Exception {
     if (!memberService.update(member)) {
       throw new Exception("회원 변경 오류입니다!");
     }
-    return "redirect:list";
   }
 
   @GetMapping("delete")
-  public String delete(String id) throws Exception {
+  public void delete(String id) throws Exception {
     if (!memberService.delete(id)) {
       throw new Exception("회원 삭제 오류입니다!");
     }
-
-    return "redirect:list";
   }
 
-//  @GetMapping("findid/{name}/{id}")
-//  @ResponseBody
-//  public String findId(@PathVariable("name") String name, @PathVariable("id") String id) throws Exception {
-//    Map<String, String> map = new HashMap();
-//    map.put("name", name);
-//    map.put("email", email);
-//
-//    Member member = memberService.findId(map);
-//
-//    if(member ==null){
-//      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
-//    }
-//    return member.getId() ;
-//  }
-//
-//  @GetMapping("findid")
-//  public void findId()  throws Exception {
-//
-//  }
+  @GetMapping("findid")
+  @ResponseBody
+  public String findId(@RequestParam("name") String name,
+                       @RequestParam("birthday") Date birthday,
+                       @RequestParam("gender") int gender) throws Exception {
+    Member member = memberService.findId(name, birthday, gender);
+
+    if(member ==null){
+      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
+    }
+    return member.getId() ;
+  }
+  
 //
 //
 //

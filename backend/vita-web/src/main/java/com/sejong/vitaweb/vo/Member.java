@@ -20,7 +20,7 @@ public class Member implements Serializable {
 //  private String email;
   private String phoneNo;
   private Date birthDay;
-  private String gender;
+  private int gender;
 
 
 }

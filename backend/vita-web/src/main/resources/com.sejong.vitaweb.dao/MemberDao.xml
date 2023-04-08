@@ -94,26 +94,25 @@
         id=#{id};
     </update>
 
-    <select id="findId" parameterType="map" resultMap="memberMap">
+    <select id="findId" resultMap="memberMap">
         select
-        *
+            *
         from
             vita_member
         where
-            name = #{name} and
-            phn= #{phoneNo}
+            name = #{name}, birthday=#{birthday}, gender=#{gender}
     </select>
 
-    <select id="findpwd" parameterType="map" resultMap="memberMap">
-        select
-        *
-        from
-            vita_member
-        where
-        id=#{id} and
-        name = #{name} and
-        phn= #{phoneNo}
-    </select>
+<!--    <select id="findpwd" parameterType="map" resultMap="memberMap">-->
+<!--        select-->
+<!--        *-->
+<!--        from-->
+<!--            vita_member-->
+<!--        where-->
+<!--        id=#{id} and-->
+<!--        name = #{name} and-->
+<!--        phn= #{phoneNo}-->
+<!--    </select>-->
 
     <update id="findpwdupdate" parameterType="map">
         update vita_member set

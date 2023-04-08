@@ -4,6 +4,7 @@ package com.sejong.vitaweb.service;
 import com.sejong.vitaweb.vo.Member;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -31,8 +32,8 @@ public interface MemberService {
 
   boolean update(Member member) throws Exception;
 
-  Member findId(Map<String, String> map) throws Exception;
+  Member findId(String name, Date birthday, int gender) throws Exception;
 
-  Member findpwd(Map<String, String> map) throws Exception;
+//  Member findpwd(Map<String, String> map) throws Exception;
 
 }
