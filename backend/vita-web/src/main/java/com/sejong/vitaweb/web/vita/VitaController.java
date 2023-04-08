@@ -49,5 +49,10 @@ public class VitaController {
         vitaService.setVitaFormulation();
     }
 
+    @PostMapping("init-vita-detail")
+    public void initVitaDetail() throws Exception {
+        vitaService.setVitaDetail();
+    }
+
 
 }

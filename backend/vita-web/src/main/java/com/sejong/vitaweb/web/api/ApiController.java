@@ -39,9 +39,7 @@ public class ApiController {
         model.addAttribute("naverProductList", naverProductDtos);
 
         vitaService.insertVitaDB(naverProductDtos); // 지우면 안돼요
-        vitaService.setVitaDetail(); // 지우면 안돼요
         vitaService.setVitaFormulation(); // 지우면 안돼요
-        vitaService.setVitaFunction(); // 지우면 안돼요
 
         return naverProductDtos;
     }
