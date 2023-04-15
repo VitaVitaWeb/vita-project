@@ -1,7 +1,7 @@
 .surveyMainBorder {
   width: 100%;
-  margin-top: 90px;
-  height: 610px;
+  margin-top: 40px;
+  height: 665px;
   display: flex;
 }
 .surveyMainTextTitle {
@@ -14,9 +14,6 @@
   font-size: 20px;
   white-space: pre-wrap;
 }
-.surveyMainButtonArea {
-  width: 700px;
+.rightAlign {
   margin-left: auto;
-  overflow-x: visible;
-  overflow-y: auto;
 }

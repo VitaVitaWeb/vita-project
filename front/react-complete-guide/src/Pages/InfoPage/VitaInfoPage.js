@@ -8,13 +8,12 @@ import InfoRecommendNeedSection from './InfoSections/InfoRecommendNeedSection';
 function VitaInfoPage() {
     return (
         <div>
-            <InfoBeforeSection></InfoBeforeSection>
+            <InfoBeforeSection />
             <InfoIntroSection
-                src={"https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210425133213465_600.jpg&w=256&q=75"}>
-            </InfoIntroSection>
-            <InfoDetailsSection></InfoDetailsSection>
-            <InfoRecommendAnotherSection></InfoRecommendAnotherSection>
-            <InfoRecommendNeedSection></InfoRecommendNeedSection>
+                src={"https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210425133213465_600.jpg&w=256&q=75"} />
+            <InfoDetailsSection />
+            <InfoRecommendAnotherSection />
+            <InfoRecommendNeedSection />
         </div>
     );
 }

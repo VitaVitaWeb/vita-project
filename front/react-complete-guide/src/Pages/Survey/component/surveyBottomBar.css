@@ -9,13 +9,13 @@
 }
 .surveyBottomBarFrontButton {
   width: 250px;
-  margin-left: 10%;
+  margin-left: 200px;
   display: flex;
 }
 .surveyBottomBarRearButton {
   width: 250px;
   margin-left: auto;
-  margin-right: 10%;
+  margin-right: 200px;
   display: flex;
 }
 .surveyBottomBarButton {

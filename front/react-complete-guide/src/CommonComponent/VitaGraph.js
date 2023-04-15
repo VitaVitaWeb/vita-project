@@ -1,24 +1,24 @@
 import './VitaGraphStyle.css';
 
-function VitaGraph(props) {
-    if (props.type === "compare") {
+function VitaGraph({type, content}) {
+    if (type === "compare") {
         return (
             <div>
                 <span class="compare-nutrient-range"></span>
                 <span class="compare-nutrient-content">
-                    <div class="nutrient-content-text">{props.content}mg</div>
+                    <div class="nutrient-content-text">{content}mg</div>
                 </span>
                 <span class="compare-today-range1"></span>
                 <span class="compare-today-range2"></span>
             </div>
         );
     }
-    else if (props.type === "info") {
+    else if (type === "info") {
         return (
             <div>
                 <span class="info-nutrient-range"></span>
                 <span class="info-nutrient-content">
-                    <div class="nutrient-content-text">{props.content}</div>
+                    <div class="nutrient-content-text">{content}</div>
                 </span>
                 <span class="info-today-range1"></span>
                 <span class="info-today-range2"></span>

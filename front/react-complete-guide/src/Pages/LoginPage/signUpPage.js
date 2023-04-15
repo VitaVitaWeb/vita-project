@@ -1,20 +1,23 @@
 import TopBar from "../../CommonComponent/TopBar/topBar";
-import "./component/signUpPage.css";
+import "./component/loginPage.css";
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CustomerInfo from "../../customerInfo";
 function SignUpPage() {
   const userInfo = useContext(CustomerInfo);
+  const [inputId, setId] = useState();
   const [idCheck, setIdCheck] = useState(true);
   const [idCheckText, setIdCheckText] = useState();
 
   const [inputPassword, setPassword] = useState();
   const [inputCheckPassword, setCheckPassword] = useState();
 
+  const [inputNickname, setNickname] = useState();
   const [nicknameCheck, setnicknameCheck] = useState(false);
   const [idCheckNicknameText, setIdCheckNicknameText] = useState();
 
+  const [inputPhone, setPhone] = useState();
   const [PhoneCheck, setPhoneCheck] = useState(false);
   const [idCheckPhoneText, setIdCheckPhoneText] = useState();
 
@@ -54,14 +57,16 @@ function SignUpPage() {
 
   const onChangeNickname = (val) => {
     //닉네임 입력시 중복 체크 및 갱신
+    setNickname(val.target.value);
     inputUserInfo.name = val.target.value;
-    onTryCheckNickname(val.target.value);
+    onTryCheckNickname();
   };
 
   const onChangeId = (val) => {
     //아이디 입력시 중복 체크 및 갱신
+    setId(val.target.value);
     inputUserInfo.id = val.target.value;
-    onTryCheckId(val.target.value);
+    onTryCheckId();
   };
 
   const onChangePassword = (val) => {
@@ -102,15 +107,16 @@ function SignUpPage() {
 
   const onChangePhone = (val) => {
     //폰번호 입력시 갱신
+    setPhone(val.target.value);
     inputUserInfo.phoneNo = val.target.value;
-    onTryCheckPhone(val.target.value);
+    onTryCheckPhone();
   };
 
-  const onTryCheckId = async (val) => {
+  const onTryCheckId = async () => {
     // 아이디 중복 체크
     try {
       const data = await axios.get("/auth/idCheck", {
-        params: { id: val },
+        params: { id: inputId },
       });
       if (data) {
         setIdCheck(true);
@@ -124,11 +130,11 @@ function SignUpPage() {
     }
   };
 
-  const onTryCheckNickname = async (val) => {
+  const onTryCheckNickname = async () => {
     // 닉네임 중복 체크
     try {
-      const data = await axios.get("/auth/nameCheck", {
-        params: { name: val },
+      const data = await axios.get("/auth/nickNameCheck", {
+        params: { nickName: inputNickname },
       });
       if (data) {
         setnicknameCheck(true);
@@ -160,11 +166,11 @@ function SignUpPage() {
     else return true;
   };
 
-  const onTryCheckPhone = async (val) => {
+  const onTryCheckPhone = async () => {
     // 폰번호 중복 체크
     try {
       const data = await axios.get("/auth/phoneNoCheck", {
-        params: { phoneNo: val },
+        params: { phoneNo: inputPhone },
       });
       if (data) {
         setPhoneCheck(true);
@@ -180,7 +186,6 @@ function SignUpPage() {
 
   const onTrySignUp = async () => {
     // 가입 시도할때
-    console.log(inputUserInfo);
     if (!nicknameCheck) {
       setSignUpCheck(false);
       setIdCheckSignUpText("올바르지 않은 가입 정보");
@@ -199,6 +204,7 @@ function SignUpPage() {
     } else {
       try {
         inputUserInfo.createdDate = new Date();
+        console.log(inputUserInfo);
         const data = await axios.post("/auth/join", { ...inputUserInfo });
         console.log(data);
         userInfo.birthDay = inputUserInfo.birthDay;
@@ -217,105 +223,105 @@ function SignUpPage() {
 
   return (
     <div>
-      <div className="signUpPageMain">
-        <div className="signUpPageBox">
+      <div className="loginPageMain">
+        <div className="loginPageBox">
           <input
-            className="signUpPageInput"
+            className="loginPageInput"
             placeholder="닉네임:"
             onChange={onChangeNickname}
           ></input>
           <div
             className={
-              nicknameCheck ? "signUpPageCheckTrue" : "signUpPageCheckFalse"
+              nicknameCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"
             }
           >
             {idCheckNicknameText}
           </div>
         </div>
-        <div className="signUpPageBox">
+        <div className="loginPageBox">
           <input
-            className="signUpPageInput"
+            className="loginPageInput"
             placeholder="아이디:"
             onChange={onChangeId}
           ></input>
           <div
-            className={idCheck ? "signUpPageCheckTrue" : "signUpPageCheckFalse"}
+            className={idCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"}
           >
             {idCheckText}
           </div>
         </div>
-        <div className="signUpPageBox">
+        <div className="loginPageBox">
           <input
             type="password"
-            className="signUpPageInput"
+            className="loginPageInput"
             placeholder="비밀번호:"
             onChange={onChangePassword}
           ></input>
         </div>
-        <div className="signUpPageBox">
+        <div className="loginPageBox">
           <input
             type="password"
-            className="signUpPageInput"
+            className="loginPageInput"
             placeholder="비밀번호 확인:"
             onChange={onChangePasswordCheck}
           ></input>
         </div>
-        <div className="signUpPageBox">
+        <div className="loginPageBox">
           <input
             type="checkbox"
             checked={isMale ? true : false}
-            className="signUpPageCheckBox"
+            className="loginPageCheckBox"
             onChange={onChangeMale}
           ></input>
-          <p className="signUpPageCheckBoxText">남</p>
+          <p className="loginPageCheckBoxText">남</p>
           <input
             type="checkbox"
             checked={isFemale ? true : false}
-            className="signUpPageCheckBox"
+            className="loginPageCheckBox"
             onChange={onChangeFemale}
           ></input>
-          <p className="signUpPageCheckBoxText">여</p>
+          <p className="loginPageCheckBoxText">여</p>
         </div>
-        <div className="signUpPageBox">
+        <div className="loginPageBox">
           <input
-            className="signUpPageInputShort"
+            className="loginPageInputShort"
             placeholder="생일(년):"
             onChange={onChangeYear}
           ></input>
-          <select className="signUpPageInputMonthDay" onChange={onChangeMonth}>
+          <select className="loginPageInputMonthDay" onChange={onChangeMonth}>
             {monthOptions.map((option) => (
               <option value={option.value}>{option.name}</option>
             ))}
           </select>
           <input
-            className="signUpPageInputMonthDay"
+            className="loginPageInputMonthDay"
             placeholder="생일(일):"
             onChange={onChangeDay}
           ></input>
         </div>
-        <div className="signUpPageBox">
+        <div className="loginPageBox">
           <input
-            className="signUpPageInput"
+            className="loginPageInput"
             placeholder="전화번호:"
             onChange={onChangePhone}
           ></input>
           <div
             className={
-              PhoneCheck ? "signUpPageCheckTrue" : "signUpPageCheckFalse"
+              PhoneCheck ? "loginPageCheckTrue" : "loginPageCheckFalse"
             }
           >
             {idCheckPhoneText}
           </div>
         </div>
         <div className="displayFlex">
-          <button className="signUpPageSignUpButton" onClick={onTrySignUp}>
+          <button className="loginPageSignUpButton" onClick={onTrySignUp}>
             만들기
           </button>
           <div
             className={
               signUpCheck
-                ? "signUpPageCheckSignUpTrue"
-                : "signUpPageCheckSignUpFalse"
+                ? "loginPageCheckSignUpTrue"
+                : "loginPageCheckSignUpFalse"
             }
           >
             {idCheckSignUpText}

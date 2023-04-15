@@ -4,12 +4,6 @@
   display: flex;
   margin-left: auto;
 }
-.surveyBoxRowBorderSmall {
-  width: 350px;
-  height: 150px;
-  display: flex;
-  margin-left: auto;
-}
 .surveyBoxRowWindow {
   width: 100px;
   height: 140px;

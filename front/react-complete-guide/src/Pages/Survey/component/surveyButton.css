@@ -1,7 +1,7 @@
 .surveyButton {
   width: 90px;
   height: 90px;
-  right: 0;
+  margin: auto;
   margin-top: 5px;
   border-style: hidden;
   background-color: bisque;
