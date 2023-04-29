@@ -18,7 +18,8 @@ public class SearchController {
     private final SearchService searchService;
 
     @GetMapping
-    public List<Vitamin> getVitaminSearch(@RequestParam String searchValue) {
+    public List<Vitamin> getVitaminSearch(@RequestParam("q") String searchValue) {
+        log.info("검색어 = {}", q);
         return searchService.searchVitamin(searchValue);
     }
 
