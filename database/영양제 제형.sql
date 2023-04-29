@@ -33,6 +33,13 @@ INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES
 INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES (22,1,0,0,0,0,0,0,0);
 INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES (23,1,0,0,0,0,0,0,0);
 INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES (24,1,0,0,0,0,0,0,0);
+DECLARE @vno INT = 58;
+WHILE (@vno <= 70)
+BEGIN
+  INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES (@vno,0,1,0,0,0,0,0,0);
+  SET @vno = @vno + 1;
+END
+
 INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES (25,1,0,0,0,0,0,0,0);
 INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES (26,1,0,0,0,0,0,0,0);
 INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) VALUES (27,1,0,0,0,0,0,0,0);
