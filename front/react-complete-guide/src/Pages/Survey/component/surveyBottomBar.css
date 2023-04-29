@@ -9,14 +9,16 @@
 }
 .surveyBottomBarFrontButton {
   width: 250px;
-  margin-left: 200px;
+  margin-left: 10%;
   display: flex;
+  cursor: pointer;
 }
 .surveyBottomBarRearButton {
   width: 250px;
   margin-left: auto;
-  margin-right: 200px;
+  margin-right: 10%;
   display: flex;
+  cursor: pointer;
 }
 .surveyBottomBarButton {
   width: 200px;
@@ -27,4 +29,5 @@
   background-color: orange;
   border-style: hidden;
   margin: auto;
+  cursor: pointer;
 }

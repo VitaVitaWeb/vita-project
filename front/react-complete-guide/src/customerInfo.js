@@ -1,5 +1,5 @@
 import { createContext } from "react";
-const initState = {
+const CustomerInfo = createContext({
   id: null,
   password: null,
   createdDate: null,
@@ -7,8 +7,6 @@ const initState = {
   phoneNo: null,
   birthDay: null,
   gender: null,
-  setContext: () => {},
-}
-
-const CustomerInfo = createContext(initState);
+  setContextApi: () => {},
+});
 export default CustomerInfo;
