@@ -1,10 +1,22 @@
 import "./surveyButton.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import SurveyListApi from "../SurveyListApi";
 function SurveyButton(props) {
   const [isClicked, setState] = useState(false);
+  const surveyList = useContext(SurveyListApi);
+  const nameConst = { name: props.name };
 
   const OnButtonClick = () => {
-    isClicked ? setState(false) : setState(true);
+    if (isClicked === true) {
+      setState(false);
+      surveyList.addList(
+        surveyList.surveyInfo.filter((name) => name.name != props.name)
+      );
+    } else {
+      setState(true);
+      surveyList.addList([nameConst, ...surveyList.surveyInfo]);
+    }
+    console.log(surveyList.surveyInfo);
   };
   return (
     <div>
