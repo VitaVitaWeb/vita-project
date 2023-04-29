@@ -1,70 +1,72 @@
-UPDATE `vitadb`.`vita_function` SET `vno` = '15', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '21');
-UPDATE `vitadb`.`vita_function` SET `vno` = '16', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '22');
-UPDATE `vitadb`.`vita_function` SET `vno` = '18', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '23');
-UPDATE `vitadb`.`vita_function` SET `vno` = '19', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '24');
-UPDATE `vitadb`.`vita_function` SET `vno` = '20', `act` = '1', `eye` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '25');
-UPDATE `vitadb`.`vita_function` SET `vno` = '31', `act` = '0', `oxy` = '1', `bone` = '1' WHERE (`vno` = '26');
-UPDATE `vitadb`.`vita_function` SET `vno` = '32', `act` = '0', `oxy` = '1' WHERE (`vno` = '27');
-UPDATE `vitadb`.`vita_function` SET `vno` = '33', `oxy` = '1' WHERE (`vno` = '28');
-UPDATE `vitadb`.`vita_function` SET `vno` = '34', `oxy` = '1' WHERE (`vno` = '29');
-UPDATE `vitadb`.`vita_function` SET `vno` = '35', `oxy` = '1' WHERE (`vno` = '30');
-UPDATE `vitadb`.`vita_function` SET `vno` = '36', `oxy` = '1' WHERE (`vno` = '31');
-UPDATE `vitadb`.`vita_function` SET `vno` = '37', `oxy` = '1' WHERE (`vno` = '32');
-UPDATE `vitadb`.`vita_function` SET `vno` = '38', `oxy` = '1' WHERE (`vno` = '33');
-UPDATE `vitadb`.`vita_function` SET `vno` = '39', `oxy` = '1' WHERE (`vno` = '34');
-UPDATE `vitadb`.`vita_function` SET `vno` = '40', `oxy` = '1' WHERE (`vno` = '35');
-UPDATE `vitadb`.`vita_function` SET `vno` = '51', `act` = '1', `oxy` = '0' WHERE (`vno` = '36');
-UPDATE `vitadb`.`vita_function` SET `vno` = '52', `act` = '1', `oxy` = '0' WHERE (`vno` = '37');
-UPDATE `vitadb`.`vita_function` SET `vno` = '53', `act` = '1', `oxy` = '0' WHERE (`vno` = '38');
-UPDATE `vitadb`.`vita_function` SET `vno` = '54', `act` = '1' WHERE (`vno` = '39');
-UPDATE `vitadb`.`vita_function` SET `vno` = '55', `act` = '1' WHERE (`vno` = '40');
-UPDATE `vitadb`.`vita_function` SET `vno` = '56', `act` = '1' WHERE (`vno` = '41');
-UPDATE `vitadb`.`vita_function` SET `vno` = '57', `act` = '1' WHERE (`vno` = '42');
-UPDATE `vitadb`.`vita_function` SET `vno` = '58', `act` = '1' WHERE (`vno` = '43');
-UPDATE `vitadb`.`vita_function` SET `vno` = '59', `act` = '1' WHERE (`vno` = '44');
-UPDATE `vitadb`.`vita_function` SET `vno` = '60', `act` = '1' WHERE (`vno` = '45');
-UPDATE `vitadb`.`vita_function` SET `vno` = '61', `act` = '0', `gan` = '1' WHERE (`vno` = '46');
-UPDATE `vitadb`.`vita_function` SET `vno` = '62', `act` = '0', `gan` = '1' WHERE (`vno` = '47');
-UPDATE `vitadb`.`vita_function` SET `vno` = '63', `act` = '1', `gan` = '1' WHERE (`vno` = '48');
-UPDATE `vitadb`.`vita_function` SET `vno` = '64', `gan` = '1' WHERE (`vno` = '49');
-UPDATE `vitadb`.`vita_function` SET `vno` = '65', `gan` = '1' WHERE (`vno` = '50');
-UPDATE `vitadb`.`vita_function` SET `vno` = '66', `act` = '0', `gan` = '1' WHERE (`vno` = '61');
-UPDATE `vitadb`.`vita_function` SET `vno` = '67', `gan` = '1' WHERE (`vno` = '62');
-UPDATE `vitadb`.`vita_function` SET `vno` = '68', `gan` = '1' WHERE (`vno` = '63');
-UPDATE `vitadb`.`vita_function` SET `vno` = '69', `gan` = '1' WHERE (`vno` = '64');
-UPDATE `vitadb`.`vita_function` SET `vno` = '70', `eye` = '1', `sight` = '1', `gan` = '0' WHERE (`vno` = '65');
-UPDATE `vitadb`.`vita_function` SET `vno` = '71', `eye` = '1', `sight` = '1', `gan` = '0' WHERE (`vno` = '66');
-UPDATE `vitadb`.`vita_function` SET `vno` = '72', `eye` = '1', `sight` = '1', `gan` = '0' WHERE (`vno` = '67');
-UPDATE `vitadb`.`vita_function` SET `vno` = '73', `eye` = '1', `sight` = '1', `gan` = '0', `vmid` = '0' WHERE (`vno` = '68');
-UPDATE `vitadb`.`vita_function` SET `vno` = '74', `eye` = '1', `sight` = '1', `prs` = '1', `col` = '1', `vmid` = '1' WHERE (`vno` = '69');
-UPDATE `vitadb`.`vita_function` SET `vno` = '75', `eye` = '1', `sight` = '1', `prs` = '1', `col` = '1', `vmid` = '1' WHERE (`vno` = '70');
-UPDATE `vitadb`.`vita_function` SET `vno` = '76', `eye` = '1', `sight` = '1', `prs` = '1', `col` = '1', `vmid` = '1' WHERE (`vno` = '71');
-UPDATE `vitadb`.`vita_function` SET `vno` = '77', `eye` = '1', `sight` = '1', `prs` = '1', `col` = '1', `vmid` = '1' WHERE (`vno` = '72');
-UPDATE `vitadb`.`vita_function` SET `vno` = '78', `eye` = '1', `sight` = '1', `prs` = '1', `col` = '1', `vmid` = '1' WHERE (`vno` = '73');
-UPDATE `vitadb`.`vita_function` SET `vno` = '79', `eye` = '1', `sight` = '1', `prs` = '1', `col` = '1', `vmid` = '1' WHERE (`vno` = '74');
-UPDATE `vitadb`.`vita_function` SET `vno` = '80', `eye` = '1', `sight` = '1', `prs` = '1', `col` = '1', `vmid` = '1' WHERE (`vno` = '75');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '76');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '77');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '78');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '79');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '80');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '81');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '82');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '83');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '84');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '85');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '86');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '87');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '88');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '89');
-DELETE FROM `vitadb`.`vita_function` WHERE (`vno` = '90');
-UPDATE `vitadb`.`vita_function` SET `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '1');
-UPDATE `vitadb`.`vita_function` SET `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '2');
-UPDATE `vitadb`.`vita_function` SET `vno` = '4', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '3');
-UPDATE `vitadb`.`vita_function` SET `vno` = '5', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '4');
-UPDATE `vitadb`.`vita_function` SET `vno` = '7', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '5');
-UPDATE `vitadb`.`vita_function` SET `vno` = '9', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '6');
-UPDATE `vitadb`.`vita_function` SET `vno` = '10', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '7');
-UPDATE `vitadb`.`vita_function` SET `vno` = '11', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '8');
-UPDATE `vitadb`.`vita_function` SET `vno` = '12', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '9');
-UPDATE `vitadb`.`vita_function` SET `vno` = '13', `act` = '1', `oxy` = '1', `bone` = '1' WHERE (`vno` = '10');
+CREATE TABLE vatadb.vita_function(
+   vno   INT  NOT NULL PRIMARY KEY 
+  ,sc    BOOLEAN  NOT NULL
+  ,act   BOOLEAN  NOT NULL
+  ,eye   BOOLEAN  NOT NULL
+  ,joint BOOLEAN  NOT NULL
+  ,oxy   BOOLEAN  NOT NULL
+  ,sight BOOLEAN  NOT NULL
+  ,skin  BOOLEAN  NOT NULL
+  ,imn   BOOLEAN  NOT NULL
+  ,jang  BOOLEAN  NOT NULL
+  ,gan   BOOLEAN  NOT NULL
+  ,prs   BOOLEAN  NOT NULL
+  ,bone  BOOLEAN  NOT NULL
+  ,col   BOOLEAN  NOT NULL
+  ,vmid  BOOLEAN  NOT NULL
+);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (1,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (2,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (4,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (5,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (7,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (9,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (10,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (11,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (12,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (13,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (15,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (16,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (18,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (19,0,1,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (20,0,1,1,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (31,0,0,0,0,1,0,0,0,0,0,0,1,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (32,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (33,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (34,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (35,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (36,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (37,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (38,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (39,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (40,0,0,0,0,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (51,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (52,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (53,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (54,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (55,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (56,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (57,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (58,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (59,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (60,0,1,0,0,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (61,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (62,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (63,0,1,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (64,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (65,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (66,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (67,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (68,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (69,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (70,0,0,1,0,0,1,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (71,0,0,1,0,0,1,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (72,0,0,1,0,0,1,0,0,0,0,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (73,0,0,1,0,0,1,0,0,0,1,0,0,0,0);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (74,0,0,1,0,0,1,0,0,0,0,1,0,1,1);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (75,0,0,1,0,0,1,0,0,0,0,1,0,1,1);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (76,0,0,1,0,0,1,0,0,0,0,1,0,1,1);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (77,0,0,1,0,0,1,0,0,0,0,1,0,1,1);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (78,0,0,1,0,0,1,0,0,0,0,1,0,1,1);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (79,0,0,1,0,0,1,0,0,0,0,1,0,1,1);
+INSERT INTO vatadb.vita_function(vno,sc,act,eye,joint,oxy,sight,skin,imn,jang,gan,prs,bone,col,vmid) VALUES (80,0,0,1,0,0,1,0,0,0,0,1,0,1,1);
