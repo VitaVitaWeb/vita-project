@@ -1,13 +1,13 @@
 import './CompareVitaSpaceStyle.css';
 import VitaBlock from '../../../../CommonComponent/VitaBlock';
 
-function CompareVitaSpace() {
+function CompareVitaSpace(props) {
     return (
         <div id="compare-vita-space">
-            <VitaBlock src={"https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210922173604436_600.jpg&w=256&q=75"} x={true}></VitaBlock>
-            <VitaBlock src={"https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210117120537015_600.jpg&w=1080&q=100"} x={true}></VitaBlock>
-            <VitaBlock src={false} x={false}></VitaBlock>
-        </div>
+            <VitaBlock vitaImage={props.vitaImage[0]} x={true} vitaWishCount={props.vitaWishCount[0]} vitaCompany={props.vitaCompany[0]} vitaName={props.vitaName[0]}></VitaBlock>
+            <VitaBlock vitaImage={props.vitaImage[1]} x={true} vitaWishCount={props.vitaWishCount[1]} vitaCompany={props.vitaCompany[1]} vitaName={props.vitaName[1]}></VitaBlock>
+            <VitaBlock vitaImage={props.vitaImage[2]} x={true} vitaWishCount={props.vitaWishCount[2]} vitaCompany={props.vitaCompany[2]} vitaName={props.vitaName[2]}></VitaBlock>
+        </div >
     );
 }
 

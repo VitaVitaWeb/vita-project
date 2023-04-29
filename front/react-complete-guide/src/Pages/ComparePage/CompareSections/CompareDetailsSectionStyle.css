@@ -13,3 +13,21 @@
     margin: 32px 0px;
     justify-content: center;
 }
+
+#compare-button-space {
+    width: auto;
+    height: auto;
+    margin-top: 30px;
+}
+
+#compare-button {
+    width: 1278px;
+    height: 60px;
+    border: none;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #ff8667;
+    font-size: large;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

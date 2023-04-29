@@ -1,0 +1,77 @@
+.vita-need-choice-image {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+
+    cursor: pointer;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 630px;
+    height: 800px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 50px;
+
+    z-index: 100;
+}
+
+#popup-top-space {
+    display: flex;
+    position: relative;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#popup-close-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+
+    cursor: pointer;
+}
+
+#popup-form {
+    position: relative;
+}
+
+#search-form {
+    width: 530px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(255, 239, 235, 0.2);
+}
+
+#search-button {
+    height: 48px;
+    border: none;
+    background-color: transparent;
+
+    position: absolute;
+    right: 5px;
+    top: 0px;
+
+    cursor: pointer;
+}
+
+#popup-bottom-space {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    margin-top: 30px;
+}
+
+.temporary-product {
+    width: 530px;
+    height: 60px;
+
+    cursor: pointer;
+}
