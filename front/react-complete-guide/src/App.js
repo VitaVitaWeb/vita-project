@@ -8,6 +8,7 @@ import LoginPage from "./Pages/LoginPage/loginPage";
 import SignUpPage from "./Pages/LoginPage/signUpPage";
 import CustomerInfo from "./customerInfo";
 import SurveyListApi from "./Pages/Survey/SurveyListApi";
+import MyPage from "./Pages/MyPage/MyPage"
 import React, { useState, createContext } from "react";
 function App() {
   const [user, setUser] = useState({});
@@ -26,6 +27,7 @@ function App() {
           <Route path={"/InfoPage"} element={<VitaInfoPage />}></Route>
           <Route path={"/loginPage"} element={<LoginPage />}></Route>
           <Route path={"/signUpPage"} element={<SignUpPage />}></Route>
+          <Route path={"/myPage"} element={<MyPage />} />
         </Routes>
       </BrowserRouter>
     </CustomerInfo.Provider>

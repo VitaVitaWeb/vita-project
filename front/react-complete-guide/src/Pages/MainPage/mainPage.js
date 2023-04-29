@@ -4,6 +4,7 @@ import MainSec from "./component/mainSec";
 import MainBestItem from "./component/mainBestItem";
 import MainThird from "./component/mainThird";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import CustomerInfo from "../../customerInfo";
 import React, { useContext, useState } from "react";
 
@@ -23,10 +24,15 @@ function MainPage() {
     userInfo.setContextApi((prevState) => ({ ...prevState, id: "ASDF" }));
     console.log(userInfo);
   };
+  const movePage = useNavigate();
+  function goMainPage() {
+    movePage("/myPage");
+  }
   return (
     <div>
       <button onClick={asdf}>asdf</button>
       <button onClick={loga}>log</button>
+      <button onClick={goMainPage}>my</button>
       {userInfo.user.id}
       {
         /* <Main></Main>
