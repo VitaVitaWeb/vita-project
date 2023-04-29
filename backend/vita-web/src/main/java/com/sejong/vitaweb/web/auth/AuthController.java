@@ -80,7 +80,9 @@ public class AuthController {
           HttpServletResponse response,
           HttpSession session) throws Exception {
 
+    log.info("id = {} , pwd = {}", id, password);
     Member member = memberService.getMemberByIdAndPwd(id, password);
+    log.info("member = {}", member);
 
     if (member != null) {
       session.setAttribute("loginMember", member); // 로그인한 멤버 정보를 세션 보관소에 저장

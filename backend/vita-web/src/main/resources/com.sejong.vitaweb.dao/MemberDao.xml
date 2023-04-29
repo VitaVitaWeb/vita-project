@@ -23,7 +23,7 @@
 
     <!--로그인 조회-->
     <select id="login" resultMap="memberMap">
-        select * from vita_member where id=#{id} and pwd=sha2(#{password},256)
+        select * from vita_member where id=#{id} and pwd=#{password}
     </select>
 
     <!--            ID=#{id} and PWD=sha2(#{password},256)-->
