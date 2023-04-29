@@ -1,16 +1,30 @@
 import './WishStyle.css';
+import { useState } from 'react';
+import WishButton from './WishButton';
 
-function Wish() {
+function Wish(props) {
+    const [isLiked, setIsLiked] = useState(props.vitaWish); // 찜하기 여부
+    const [likeCount, setLikeCount] = useState(props.vitaWishCount); // 찜 개수
+
+    const handleLikeButtonClick = () => {
+        if (isLiked) {
+            setLikeCount(likeCount - 1);
+        } else {
+            setLikeCount(likeCount + 1);
+        }
+        setIsLiked(!isLiked);
+    };
+
     return (
-        <div class="wish">
+        <div className="wish">
             <span>
-                <h4>찜 개수</h4>
+                <p>찜 개수</p>
             </span>
-            <span>1234</span>
-            <button type="button" class="wish-button">
-                <img src="https://cdn-icons-png.flaticon.com/128/138/138533.png" alt="heart-icon" width="19px" height="19px"></img>
-            </button>
-        </div>
+            <span>{likeCount}</span>
+            <button type="button" className="wish-button" onClick={handleLikeButtonClick}>
+                <WishButton></WishButton>
+            </button >
+        </div >
     );
 }
 

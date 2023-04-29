@@ -2,21 +2,19 @@ import './CompareNutrientGraphStyle.css';
 import VitaGraph from '../../../../CommonComponent/VitaGraph';
 
 function CompareNutrientGraph(props) {
-    if (props.select === true) {
-        return (
-            <div class="compare-nutrient-graph">
-                <div class="compare-nutrient-graph-space">
-                    <VitaGraph type={"compare"} content={props.content}>mg</VitaGraph>
-                </div>
+    return (
+        <div className="compare-nutrient-graph">
+            <div className="compare-nutrient-graph-space">
+                {
+                    props.isSelected === true ?
+                        <VitaGraph type={"compare"} content={props.content} today1={props.today1} today2={props.today2}>mg</VitaGraph>
+                        :
+                        <></>
+                }
             </div>
-        );
-    }
-    else {
-        return (
-            <div class="compare-nutrient-graph">
-                <div class="compare-nutrient-graph-space"></div>
-            </div>);
-    }
+        </div>
+    );
+
 }
 
 export default CompareNutrientGraph;

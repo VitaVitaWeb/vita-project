@@ -1,14 +1,14 @@
 import './CompareFormsStyle.css';
 
 function CompareForms(props) {
-    if (props.select === true) {
+    if (props.formIconSrc != null) {
         return (
             <ul id="compare-form-ul">
-                <li class="compare-form-li">
+                <li className="compare-form-li">
                     <img
-                        src={props.src}
+                        src={props.formIconSrc}
                         alt="icon" width="55" height="55" />
-                    <span class="list-text">정</span>
+                    <span className="list-text">{props.formIconName}</span>
                 </li>
             </ul>
         );

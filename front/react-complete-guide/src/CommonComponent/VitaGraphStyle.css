@@ -5,11 +5,13 @@
     width: 350px;
     height: 20px;
 
-    border: 1px solid #000000;
+    border: 1px solid #a7a7a7;
     border-radius: 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 1;
 }
 
 .compare-today-range1 {
@@ -19,12 +21,14 @@
     width: 200px;
     height: 20px;
 
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #000000;
+    background-color: transparent;
+    border: 1px solid #a7a7a7;
     border-radius: 50px 0px 0px 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 4;
 }
 
 .compare-today-range2 {
@@ -34,12 +38,14 @@
     width: 300px;
     height: 20px;
 
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #000000;
+    background-color: transparent;
+    border: 1px solid #a7a7a7;
     border-radius: 50px 0px 0px 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 3;
 }
 
 .compare-nutrient-content {
@@ -50,11 +56,13 @@
     height: 20px;
 
     background-color: #FF5C35;
-    border: 1px solid #000000;
-    border-radius: 50px 0px 0px 50px;
+    border: 1px solid #a7a7a7;
+    border-radius: 50px 50px 50px 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 2;
 }
 
 .info-nutrient-range {
@@ -64,11 +72,13 @@
     width: 700px;
     height: 20px;
 
-    border: 1px solid #000000;
+    border: 1px solid #a7a7a7;
     border-radius: 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 1;
 }
 
 .info-today-range1 {
@@ -78,12 +88,14 @@
     width: 400px;
     height: 20px;
 
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #000000;
+    background-color: transparent;
+    border: 1px solid #a7a7a7;
     border-radius: 50px 0px 0px 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 4;
 }
 
 .info-today-range2 {
@@ -93,12 +105,14 @@
     width: 500px;
     height: 20px;
 
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #000000;
+    background-color: transparent;
+    border: 1px solid #a7a7a7;
     border-radius: 50px 0px 0px 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 3;
 }
 
 .info-nutrient-content {
@@ -109,15 +123,17 @@
     height: 20px;
 
     background-color: #FF5C35;
-    border: 1px solid #000000;
-    border-radius: 50px 0px 0px 50px;
+    border-radius: 50px 50px 50px 50px;
 
     left: 38px;
     top: 0px;
+
+    z-index: 2;
 }
 
 .nutrient-content-text {
     position: absolute;
+    font-weight: bolder;
     left: 100%;
     top: 30px;
 }

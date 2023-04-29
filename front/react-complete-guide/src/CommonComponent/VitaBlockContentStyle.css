@@ -17,6 +17,10 @@
     padding: 0px;
 
     margin: auto;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .wish-button-space {
@@ -48,4 +52,41 @@
     flex-direction: column;
     gap: 10px;
     margin: 20px 10px;
+}
+
+.vita-name {
+    font-weight: bold;
+    white-space: nowrap;
+    /* 줄바꿈 없이 한 줄에 출력 */
+    overflow: hidden;
+    /* 너비를 벗어나는 영역은 숨김 처리 */
+    text-overflow: ellipsis;
+    /* 너비를 벗어나는 텍스트는 ...으로 표시 */
+}
+
+.vita-company {
+    white-space: nowrap;
+    /* 줄바꿈 없이 한 줄에 출력 */
+    overflow: hidden;
+    /* 너비를 벗어나는 영역은 숨김 처리 */
+    text-overflow: ellipsis;
+    /* 너비를 벗어나는 텍스트는 ...으로 표시 */
+}
+
+.vita-wish-space {
+    display: flex;
+    gap: 12px;
+}
+
+.vita-block-wish {
+    display: flex;
+    height: 21px;
+    align-items: center;
+    gap: 7px;
+}
+
+.vita-block-heart-icon {
+    height: 17px;
+    width: 17px;
+    margin: 0;
 }

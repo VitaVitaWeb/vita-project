@@ -9,6 +9,8 @@
 #compare-each-caution-space {
     display: flex;
     padding: 10px 0;
+
+    width: auto;
 }
 
 .compare-caution-precautions {
@@ -16,4 +18,6 @@
     margin: auto;
     justify-content: center;
     flex: 1;
+
+    padding: 0 40px;
 }
