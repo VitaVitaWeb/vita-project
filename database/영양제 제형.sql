@@ -55,18 +55,18 @@ INSERT INTO vitadb.vita_formulation(vno,cap,pill,pow,liq,chew) VALUES (54,0,1,0,
 INSERT INTO vitadb.vita_formulation(vno,cap,pill,pow,liq,chew) VALUES (55,0,1,0,0,0);
 INSERT INTO vitadb.vita_formulation(vno,cap,pill,pow,liq,chew) VALUES (56,0,1,0,0,0);
 INSERT INTO vitadb.vita_formulation(vno,cap,pill,pow,liq,chew) VALUES (57,0,1,0,0,0);
-INSERT INTO vatadb.vita_function(vno,cap,pill,pow,liq,chew,jell,pho,ball) 
+INSERT INTO vitadb.vita_formulation(vno,cap,pill,pow,liq,chew) 
 VALUES 
-(58,0,1,0,0,0,0,0,0),
-(59,0,1,0,0,0,0,0,0),
-(60,0,1,0,0,0,0,0,0),
-(61,0,1,0,0,0,0,0,0),
-(62,0,1,0,0,0,0,0,0),
-(63,0,1,0,0,0,0,0,0),
-(64,0,1,0,0,0,0,0,0),
-(65,0,1,0,0,0,0,0,0),
-(66,0,1,0,0,0,0,0,0),
-(67,0,1,0,0,0,0,0,0),
-(68,0,1,0,0,0,0,0,0),
-(69,0,1,0,0,0,0,0,0),
-(70,0,1,0,0,0,0,0,0);
+(58,0,1,0,0,0),
+(59,0,1,0,0,0),
+(60,0,1,0,0,0),
+(61,0,1,0,0,0),
+(62,0,1,0,0,0),
+(63,0,1,0,0,0),
+(64,0,1,0,0,0),
+(65,0,1,0,0,0),
+(66,0,1,0,0,0),
+(67,0,1,0,0,0),
+(68,0,1,0,0,0),
+(69,0,1,0,0,0),
+(70,0,1,0,0,0);
