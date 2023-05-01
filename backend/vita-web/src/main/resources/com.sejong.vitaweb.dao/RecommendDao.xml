@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sejong.vitaweb.dao.VitaDao">
+    <resultMap id="recommend" type="recommendDto">
+        <result column="e" property="e"/>
+        <result column="d" property="d"/>
+        <result column="a" property="a"/>
+        <result column="b1" property="b1"/>
+        <result column="b2" property="b2"/>
+        <result column="b3" property="b3"/>
+        <result column="b7" property="b7"/>
+        <result column="b9" property="b9"/>
+        <result column="b12" property="b12"/>
+        <result column="c" property="c"/>
+        <result column="cr" property="cr"/>
+        <result column="mo" property="mo"/>
+        <result column="i" property="i"/>
+        <result column="mn" property="mn"/>
+        <result column="se" property="se"/>
+        <result column="cu" property="cu"/>
+        <result column="zn" property="zn"/>
+        <result column="fe" property="fe"/>
+        <result column="mg" property="mg"/>
+        <result column="ca" property="ca"/>
+        <result column="lacto" property="lacto"/>
+        <result column="lutein" property="lutein"/>
+        <result column="milk_thistle" property="milk_thistle"/>
+        <result column="omega3" property="omega3"/>
+        <result column="msm" property="msm"/>
+        <result column="propolis" property="propolis"/>
+        <result column="collagen" property="collagen"/>
+        <result column="theanine" property="theanine"/>
+    </resultMap>
+
+    <select id="recommendAll" resultMap="recommend">
+        select
+        *
+        from
+        vita_recommend;
+    </select>
+</mapper>
