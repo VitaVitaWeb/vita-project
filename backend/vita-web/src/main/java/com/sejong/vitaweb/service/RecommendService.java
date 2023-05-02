@@ -9,5 +9,5 @@ import java.util.List;
 
 @Service
 public interface RecommendService {
-     List<RecommendDto> recommendAll() throws Exception;
+     RecommendDto recommendAll() throws Exception;
 }

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/vitalike")
 public class VitaLikeController {
     private final VitaLikeService vitaLikeService;
 
@@ -13,7 +13,7 @@ public class VitaLikeController {
         this.vitaLikeService = vitaLikeService;
     }
 
-    @PostMapping("/api/v1/vitalike")
+    @PostMapping
     public void addVitaLike(@RequestParam String status, @RequestParam String id, @RequestParam int vno) {
         vitaLikeService.addVitaLike(status, id, vno);
     }
