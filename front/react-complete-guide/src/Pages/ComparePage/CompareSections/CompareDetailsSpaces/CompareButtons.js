@@ -6,10 +6,10 @@ function CompareButtons(props) {
         return (
             <div id="compare-buttons">
                 <Link to="/Infopage">
-                    <button class="compare-button">살펴보기 버튼</button>
+                    <button className="compare-button">살펴보기 버튼</button>
                 </Link>
                 <Link to="https://shopping.naver.com/home">
-                    <button class="compare-button">구매하기 버튼</button>
+                    <button className="compare-button">구매하기 버튼</button>
                 </Link>
             </div>
         );

@@ -12,10 +12,6 @@
     padding: 0px;
     border: none;
     background-color:transparent;
-}
 
-.heart-icon {
-    height: 19px;
-    width: 19px;
-    margin: auto;
+    cursor: pointer;
 }

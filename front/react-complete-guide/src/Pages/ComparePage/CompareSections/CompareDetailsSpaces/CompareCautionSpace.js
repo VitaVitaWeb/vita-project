@@ -1,15 +1,11 @@
 import './CompareCautionSpaceStyle.css';
 
-function CompareCautionSpace() {
-    const cautionList = [
-        "섭취 시 유의사항에 대한 내용이 들어갑니다1",
-        "섭취 시 유의사항에 대한 내용이 들어갑니다2",
-        ""
-    ];
+function CompareCautionSpace(props) {
+    const cautionList = props.vitaCaution;
 
     const cautionSource = cautionList.map((cautionSrc) => (
-        <div class="compare-caution-precautions">
-            <p>{cautionSrc}</p>
+        <div className="compare-caution-precautions">
+            {cautionSrc}
         </div>
     ))
 

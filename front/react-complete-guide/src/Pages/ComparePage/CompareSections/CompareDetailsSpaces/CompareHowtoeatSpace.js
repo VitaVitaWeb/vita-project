@@ -1,15 +1,11 @@
 import './CompareHowtoeatSpaceStyle.css';
 
-function CompareHowtoeatSpace() {
-    const howtoeatList = [
-        "섭취 방법에 대한 설명이 들어갑니다1",
-        "섭취 방법에 대한 설명이 들어갑니다2",
-        ""
-    ];
+function CompareHowtoeatSpace(props) {
+    const howtoeatList = props.vitaHowtoeat;
 
     const howtoeatSource = howtoeatList.map((howtoeatSrc) => (
-        <div class="compare-howtoeat-description">
-            <p>{howtoeatSrc}</p>
+        <div className="compare-howtoeat-description">
+            {howtoeatSrc}
         </div>
     ))
 

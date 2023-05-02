@@ -1,16 +1,13 @@
 import './CompareFunctionalitySpaceStyle.css';
 import CompareFunctionality from './CompareFunctionality';
 
-function CompareFunctionalitySpace() {
-    const functionalityList = [
-        true,
-        true,
-        false
-    ];
+function CompareFunctionalitySpace(props) {
+    const functionalityList = props.vitaFunctionality;
+    console.log(functionalityList);
 
-    const functionalitySource = functionalityList.map((functionalitySrc) => (
-        <CompareFunctionality select={functionalitySrc}></CompareFunctionality>
-    ))
+    const functionalityListSource = functionalityList.map((functionalitySrc) => (
+        <CompareFunctionality functionalityListIcon={functionalitySrc}></CompareFunctionality>
+    ));
 
     return (
         <div id="compare-functionality-space">
@@ -18,7 +15,7 @@ function CompareFunctionalitySpace() {
                 <h4>기능성</h4>
             </div>
             <div id="compare-each-functionality-space">
-                {functionalitySource}
+                {functionalityListSource}
             </div>
         </div>
     );

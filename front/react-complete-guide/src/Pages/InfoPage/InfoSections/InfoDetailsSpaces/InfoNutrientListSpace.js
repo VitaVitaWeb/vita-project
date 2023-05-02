@@ -1,19 +1,14 @@
 import './InfoNutrientListSpaceStyle.css';
 import VitaGraph from '../../../../CommonComponent/VitaGraph';
 
-function InfoNutrientListSpace() {
-    const nutrientList = [
-        ["영양소1", 50],
-        ["영양소2", 70],
-        ["영양소3", 30],
-        ["영양소4", 40]
-    ];
+function InfoNutrientListSpace(props) {
+    const nutrientList = props.vitaNutrient
 
     const nutrientSource = nutrientList.map((nutrientSrc) => (
-        <div class="info-nutrient-name-graph">
-            <div class="info-nutrient-name">{nutrientSrc[0]}</div>
-            <div class="info-nutrient-graph-space">
-                <VitaGraph type={"info"} content={nutrientSrc[1]}>mg</VitaGraph>
+        <div className="info-nutrient-name-graph">
+            <div className="info-nutrient-name">{nutrientSrc[0]}</div>
+            <div className="info-nutrient-graph-space">
+                <VitaGraph type={"info"} content={nutrientSrc[1]} today1={nutrientSrc[2]} today2={nutrientSrc[3]}></VitaGraph>
             </div>
         </div>
     ))

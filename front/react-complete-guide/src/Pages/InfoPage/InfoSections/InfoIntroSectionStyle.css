@@ -9,6 +9,8 @@
 
 #info-image-space {
     border: 1px solid;
+    border-radius: 10px;
+
     width: 411px;
     height: auto;
     padding: 77px;
@@ -24,7 +26,7 @@
     height: 411px;
 }
 
-#name-explain-space {
+#name-description-space {
     width: 737px;
     height: 217px;
 }
@@ -34,10 +36,16 @@
     width: 737px;
     height: 36px;
     margin-bottom: 10px;
-    gap: 400px;
+    justify-content: space-between;
 }
 
-#vita-explain {
+#info-vita-name {
+    font-size: larger;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#vita-description {
     width: 737px;
     height: 100px;
 }

@@ -13,6 +13,12 @@
     height: 52px;
 
     background: #FFFFFF;
-    border: 2px solid #FF5C35;
+    border: 3px solid #FF5C35;
     border-radius: 10px;
+
+    color: #FF5C35;
+    font-weight: bolder;
+    font-size: larger;
+
+    cursor: pointer;
 }

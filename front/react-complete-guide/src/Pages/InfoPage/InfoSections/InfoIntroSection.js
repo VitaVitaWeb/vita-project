@@ -8,22 +8,21 @@ function InfoIntroSection(props) {
             <div id="info-image-space">
                 <div id="info-image">
                     <img
-                        src={props.src}
+                        src={props.vitaImage}
                         alt="영양제 이미지" />
                 </div>
             </div>
             <div id="info-intro-space">
-                <div id="name-explain-space">
+                <div id="name-description-space">
                     <div id="name-wish-space">
-                        <div>
-                            <h2>영양제 이름</h2>
+                        <div id="info-vita-name">
+                            {props.vitaName}
                         </div>
-                        <Wish></Wish>
+                        <Wish vitaWish={props.vitaWish} vitaWishCount={props.vitaWishCount}></Wish>
                     </div>
                     <hr></hr>
-                    <div id="vita-explain">
-                        <p>영양제에 대한 간단한 설명이 들어갑니다.영양제에 대한 간단한 설명이 들어갑니다.
-                            영양제에 대한 간단한 설명이 들어갑니다.영양제에 대한 간단한 설명이 들어갑니다.</p>
+                    <div id="vita-description">
+                        {props.vitaDescription}
                     </div>
                 </div>
                 <InfoButtons></InfoButtons>

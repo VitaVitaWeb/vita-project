@@ -1,21 +1,50 @@
 import './InfoFunctionalitySpaceStyle.css';
+import axios from "axios"
+import React, { useState, useEffect } from 'react';
 
-function InfoFunctionalitySpace() {
-    const functionalityImageList = [
-        ["https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fic_PROP_STAT_3.233e75b8.svg&w=64&q=75", "활력 증진"],
-        ["https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fic_PROP_STAT_5.6c3da29b.svg&w=64&q=75", "향산화"],
-        ["https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fic_PROP_STAT_15.d4341f14.svg&w=64&q=75", "뼈 건강"],
-        ["https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fic_PROP_STAT_9.fefc359b.svg&w=64&q=75", "면역력 증진"]
-    ];
+function InfoFunctionalitySpace(props) {
+    const [vitaFunction, setvitaFunction] = useState(null);
 
-    const functionalityIconSource = functionalityImageList.map((iconSrc) => (
-        <li class="info-functionality-li">
+    useEffect(() => {
+        async function fetchData() {
+            const result = await axios.get(`/vita/function/${props.vitaNumber}`);
+            console.log(result.data);
+            setvitaFunction(result.data);
+        }
+        fetchData();
+    }, [props.vitaNumber]);
+
+    if (!vitaFunction) {
+        return <div>Loading...</div>;
+    }
+
+    const englishToKorean = {
+        'act': '활력 증진',
+        'bone': '뼈 건강',
+        'col': '콜레스트롤',
+        'eye': '눈 건강',
+        'gan': '간 건강',
+        'imn': '면역 증진',
+        'jang': '장 건강',
+        'joint': '관절',
+        'oxy': '향산화',
+        'prs': '혈행 개선',
+        'sc': '스트레스 케어',
+        'sight': '시력 및 눈 피로 개선',
+        'skin': '피부',
+        'vmid': '혈중 중성 지질',
+    };
+
+    const trueValues = Object.entries(vitaFunction).filter(([key, value]) => value === true);
+
+    const functionalityIconSource = trueValues.map(([key, value]) => (
+        <li className="info-functionality-li">
             <img
-                src={iconSrc[0]}
+                src="https://cdn-icons-png.flaticon.com/512/3352/3352631.png" // replace this with the correct icon URL
                 alt="icon" width="55" height="55" />
-            <span class="list-text">{iconSrc[1]}</span>
+            <span className="list-text">{englishToKorean[key]}</span>
         </li>
-    ))
+    ));
 
     return (
         <div id="info-functionality-space">
