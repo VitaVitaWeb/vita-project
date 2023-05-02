@@ -2,6 +2,7 @@ package com.sejong.vitaweb.service;
 
 import com.sejong.vitaweb.dao.MemberDao;
 import com.sejong.vitaweb.vo.Member;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

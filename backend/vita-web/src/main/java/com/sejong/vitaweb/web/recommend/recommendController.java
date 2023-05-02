@@ -17,10 +17,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class recommendController {
 
+    @Autowired
     RecommendService recommendService;
 
     @GetMapping
-    public List<RecommendDto> recommendAll() throws Exception {
+    public RecommendDto recommendAll() throws Exception {
         return recommendService.recommendAll();
     }
 
