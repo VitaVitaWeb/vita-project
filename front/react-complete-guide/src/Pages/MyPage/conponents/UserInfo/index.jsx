@@ -30,7 +30,7 @@ const UserInfo = () => {
 //   },[userInfo.id])
 
 //   if (!userInfo.id) return null;
-//  // 닉네임 추가 ---------- 유저인포 값바뀐 거에 따라서 
+//  // 닉네임 추가 ---------- custmerInfo.js 수정에 따른 코드 수정해야 함 -->  setContextApi가 추가됨 
   return (
     <div>
       <div>
