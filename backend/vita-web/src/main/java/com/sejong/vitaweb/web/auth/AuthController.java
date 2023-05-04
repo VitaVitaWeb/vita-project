@@ -35,6 +35,8 @@ public class AuthController {
   public Boolean nameCheck(@RequestParam String name) throws Exception {
     Member result = memberService.nameCheck(name);
 
+    log.info("member = {}", result);
+
     return inputCheck(name, result);
   }
 
@@ -49,10 +51,12 @@ public class AuthController {
   @ResponseBody
   @GetMapping("phoneNoCheck")
   public Boolean phoneNoCheck(String phoneNo) throws Exception {
+    log.info("phoneNo = {}", phoneNo);
     if (phoneNo.length() < 11) {
       return false;
     }
     Member result = memberService.phoneNoCheck(phoneNo);
+    log.info("member = {}", result);
     if (result == null) {
       return true;
     } else {

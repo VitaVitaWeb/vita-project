@@ -1,4 +1,5 @@
 import './InfoFormSpaceStyle.css';
+import {useState, useEffect, axios} from "react"
 
 function InfoFormSpace(props) {
     const [vitaForm, setvitaForm] = useState(null);
