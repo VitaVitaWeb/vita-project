@@ -1,6 +1,5 @@
 import UserInfo from '../MyPage/conponents/UserInfo'
 import { Select } from 'antd'
-import Calculate from '../CalculatePage/Calculate'
 
 const options = [
   {
@@ -121,7 +120,7 @@ const MyPage = () => {
           options={options}
         />
       </div>
-      <Calculate/>
+      
     </div>
     
   )
