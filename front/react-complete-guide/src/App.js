@@ -28,8 +28,8 @@ function App() {
           <Route path={"/InfoPage"} element={<VitaInfoPage />}></Route>
           <Route path={"/loginPage"} element={<LoginPage />}></Route>
           <Route path={"/signUpPage"} element={<SignUpPage />}></Route>
-          <Route path={"/myPage"} element={<MyPage />} />
-          <Route path={"/cal"} element={<Calculate />} />
+          <Route path={"/myPage"} element={<MyPage/>} />
+          <Route path={"/cal"} element={<Calculate/>} />
           
         </Routes>
       </BrowserRouter>
