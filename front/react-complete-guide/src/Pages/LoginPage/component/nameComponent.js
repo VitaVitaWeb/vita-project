@@ -7,7 +7,7 @@ function NameComponent(props) {
   const onTryCheckNickname = async (val) => {
     // 닉네임 중복 체크
     try {
-      const data = await axios.get("/auth/nameCheck", {
+      const data = await axios.get("/auth/nameCheck/", {
         params: { name: val },
       });
       console.log(data);

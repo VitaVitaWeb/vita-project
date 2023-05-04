@@ -12,31 +12,26 @@
 .signUpPageInput {
   width: 400px;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
 }
 .signUpPageInputShort {
   width: 150px;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
 }
 .signUpPageInputEmailBox {
   width: 200px;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
 }
 .signUpPageInputEmailFont {
   font-size: 30px;
 }
-.signUpPageInputEmailBoxSec {
-  width: 170px;
-  height: 40px;
-  font-size: 30px;
-}
 .signUpPageInputMonthDay {
   width: 120px;
-  margin-left: 5px;
+  margin-left: 10px;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
 }
 .signUpPageLoginButton {
   height: 30px;

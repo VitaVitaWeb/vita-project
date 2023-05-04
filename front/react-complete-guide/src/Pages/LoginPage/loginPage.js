@@ -15,7 +15,9 @@ function Login() {
   function goSignUpPage() {
     movePage("/signUpPage");
   }
-
+  function goMainPage() {
+    movePage("/mainPage");
+  }
   const onChangeId = (val) => {
     //아이디 입력시 갱신
     inputInfo.id = val.target.value;
@@ -34,7 +36,7 @@ function Login() {
         },
       });
       console.log(data);
-      if (data === true) {
+      if (data.data) {
         onLogin();
       } else {
         setLoginErrorMessage("올바르지 않은 정보");
@@ -44,8 +46,16 @@ function Login() {
     }
   };
 
-  const onLogin = () => {
-    //로그인 성공시
+  const onLogin = async () => {
+    try {
+      const data = await axios.get("/member/detail", {
+        params: { id: inputInfo.id },
+      });
+      userInfo.setContextApi(data.data);
+      goMainPage();
+    } catch {
+      console.log("error in get member detail");
+    }
   };
 
   return (
