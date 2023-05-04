@@ -23,14 +23,14 @@ const UserInfo = () => {
   }
 
 
-  // useEffect(() => { 
-  //   if (!userInfo.id) {
-  //     navigate('/');
-  //   };
-  // },[userInfo.id])
+//    useEffect(() => { 
+//      if (!userInfo.id) {
+//        navigate('/');
+//      };
+//   },[userInfo.id])
 
-  // if (!userInfo.id) return null;
- // 닉네임 추가 ----------
+//   if (!userInfo.id) return null;
+//  // 닉네임 추가 ---------- 유저인포 값바뀐 거에 따라서 
   return (
     <div>
       <div>
