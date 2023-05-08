@@ -1,6 +1,6 @@
 import TopBar from "../../CommonComponent/TopBar/topBar";
 import "./component/signUpPage.css";
-import React, { useContext, useState, useMemo } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CustomerInfo from "../../customerInfo";
@@ -18,6 +18,7 @@ function SignUpPage() {
 
   const [inputPassword, setPassword] = useState();
   const [inputCheckPassword, setCheckPassword] = useState();
+  const [passCheck, setPassCheck] = useState(false);
 
   const [phoneCheck, setPhoneCheck] = useState(false);
 
@@ -127,6 +128,7 @@ function SignUpPage() {
           setValue={setInputUserInfo}
           setPassword={setPassword}
           setCheckPassword={setCheckPassword}
+          setPassCheck={setPassCheck}
         />
         <GenderComponent
           setValue={setInputUserInfo}

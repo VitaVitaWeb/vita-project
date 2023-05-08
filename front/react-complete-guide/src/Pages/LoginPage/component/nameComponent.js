@@ -1,22 +1,34 @@
 import axios from "axios";
 import "./signUpPage.css";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function NameComponent(props) {
   const [nameCheckText, setCheckText] = useState();
+  const [nameVal, setNameVal] = useState();
+  const [checkHidden, setCheckHidden] = useState(false);
+  const [focusOut, setfocusOut] = useState(false);
   const onTryCheckNickname = async (val) => {
+    console.log(val);
     // 닉네임 중복 체크
     try {
-      const data = await axios.get("/auth/nameCheck/", {
-        params: { name: val },
-      });
-      console.log(data);
-      if (data.data) {
-        props.setNameCheck(true);
-        setCheckText("사용 가능한 닉네임 입니다.");
-      } else {
+      if (val.length < 5) {
         props.setNameCheck(false);
-        setCheckText("사용 불가능한 닉네임 입니다.");
+        setCheckText("5글자 이상이어야 합니다.");
+      } else {
+        const data = await axios.get("/auth/nameCheck/", {
+          params: { name: val },
+        });
+        if (data.data && val.length > 4) {
+          props.setNameCheck(true);
+          setCheckText("사용 가능한 닉네임 입니다.");
+          props.setValue((prevState) => ({
+            ...prevState,
+            name: val,
+          }));
+        } else {
+          props.setNameCheck(false);
+          setCheckText("이미 사용중인 닉네임 입니다.");
+        }
       }
     } catch {
       console.log("error in checkId");
@@ -24,10 +36,30 @@ function NameComponent(props) {
   };
 
   const onChangeNickname = (val) => {
-    //닉네임 입력시 중복 체크 및 갱신
-    props.setValue((prevState) => ({ ...prevState, name: val.target.value }));
-    onTryCheckNickname(val.target.value);
+    setNameVal(val.target.value);
   };
+  const onClickNickname = () => {
+    setfocusOut(false);
+  };
+
+  const inputRef = useRef(null);
+  useEffect(() => {
+    function handleOutside(e) {
+      if (inputRef.current && !inputRef.current.contains(e.target)) {
+        setCheckHidden(true);
+        setfocusOut(true);
+      }
+    }
+    onTryCheckNickname(nameVal);
+    document.addEventListener("mousedown", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+    };
+  }, [inputRef]);
+
+  useEffect(() => {
+    if (focusOut === true) onTryCheckNickname(nameVal);
+  }, [focusOut]);
 
   return (
     <div className="signUpPageBox">
@@ -35,13 +67,17 @@ function NameComponent(props) {
         className="signUpPageInput"
         placeholder="닉네임:"
         onChange={onChangeNickname}
+        onClick={onClickNickname}
+        ref={inputRef}
       ></input>
       <div
         className={
           props.nameCheck ? "signUpPageCheckTrue" : "signUpPageCheckFalse"
         }
       >
-        {nameCheckText}
+        <div className={checkHidden ? "testUnHidden" : "testHidden"}>
+          {nameCheckText}
+        </div>
       </div>
     </div>
   );
