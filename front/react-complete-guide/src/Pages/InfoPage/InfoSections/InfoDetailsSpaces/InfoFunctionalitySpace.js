@@ -3,13 +3,13 @@ import axios from "axios"
 import React, { useState, useEffect } from 'react';
 
 function InfoFunctionalitySpace(props) {
-    const [vitaFunction, setvitaFunction] = useState(null);
+    const [vitaFunction, setVitaFunction] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
             const result = await axios.get(`/vita/function/${props.vitaNumber}`);
             console.log(result.data);
-            setvitaFunction(result.data);
+            setVitaFunction(result.data);
         }
         fetchData();
     }, [props.vitaNumber]);
@@ -40,7 +40,7 @@ function InfoFunctionalitySpace(props) {
     const functionalityIconSource = trueValues.map(([key, value]) => (
         <li className="info-functionality-li">
             <img
-                src="https://cdn-icons-png.flaticon.com/512/3352/3352631.png" // replace this with the correct icon URL
+                src="https://cdn-icons-png.flaticon.com/512/10008/10008824.png" // replace this with the correct icon URL
                 alt="icon" width="55" height="55" />
             <span className="list-text">{englishToKorean[key]}</span>
         </li>

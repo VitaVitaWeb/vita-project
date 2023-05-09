@@ -12,13 +12,13 @@ function InfoDetailsSection(props) {
                 <h4>상세정보</h4>
             </div>
             <div id="info-details-space">
-                <InfoFunctionalitySpace vitaFunctionality={props.vitaFunctionality}></InfoFunctionalitySpace>
+                <InfoFunctionalitySpace vitaNumber={props.vitaNumber} vitaFunctionality={props.vitaFunctionality}></InfoFunctionalitySpace>
                 <hr width="1050px"></hr>
-                <InfoFormSpace vitaForm={props.vitaForm}></InfoFormSpace>
+                <InfoFormSpace vitaNumber={props.vitaNumber} vitaForm={props.vitaForm}></InfoFormSpace>
                 <hr width="1050px"></hr>
                 <InfoHowtoeatSpace vitaHowtoeat={props.vitaHowtoeat}></InfoHowtoeatSpace>
                 <hr width="1050px"></hr>
-                <InfoNutrientListSpace vitaNutrient={props.vitaNutrient}></InfoNutrientListSpace>
+                <InfoNutrientListSpace vitaNumber={props.vitaNumber} vitaNutrient={props.vitaNutrient}></InfoNutrientListSpace>
                 <hr width="1050px"></hr>
                 <InfoCautionSpace vitaCaution={props.vitaCaution}></InfoCautionSpace>
             </div>

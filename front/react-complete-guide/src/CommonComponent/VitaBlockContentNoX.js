@@ -1,7 +1,7 @@
 import './VitaBlockContentStyle.css'
 import WishButton from './WishButton';
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 function VitaBlockContentNoX(props) {
@@ -29,9 +29,6 @@ function VitaBlockContentNoX(props) {
                 </div>
             </div>
             <div className="vita-component-down">
-                <div className="vita-company">
-                    {props.vitaCompany}
-                </div>
                 <div className="vita-name">
                     {props.vitaName}
                 </div>

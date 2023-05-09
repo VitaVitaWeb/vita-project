@@ -34,9 +34,6 @@ function VitaBlockContent(props) {
                 </div>
             </div>
             <div className="vita-component-down">
-                <div className="vita-company">
-                    {props.vitaCompany}
-                </div>
                 <div className="vita-name">
                     {props.vitaName}
                 </div>

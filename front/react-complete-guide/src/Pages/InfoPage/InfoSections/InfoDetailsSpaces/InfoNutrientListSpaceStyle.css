@@ -23,8 +23,8 @@
 .info-nutrient-name {
     display: flex;
     align-items: center;
-    min-width: 68px;
-    max-width: 68px;
+    min-width: 81px;
+    max-width: 81px;
 }
 
 .info-nutrient-graph-space {
