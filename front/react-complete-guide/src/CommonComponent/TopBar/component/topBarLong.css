@@ -7,6 +7,7 @@
   right: 0;
   position: fixed;
   box-shadow: 0px 0px 8px rgb(105, 105, 105);
+  z-index: 9999;
 }
 .topMainLong {
   width: 80%;

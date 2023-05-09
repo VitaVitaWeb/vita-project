@@ -1,13 +1,13 @@
 import './InfoButtonsStyle.css';
 import { Link } from 'react-router-dom';
 
-function InfoButtons() {
+function InfoButtons(props) {
     return (
         <div id="info-buttons">
             <Link to='/ComparePage'>
                 <button className="info-button">비교하기</button>
             </Link>
-            <Link to="https://shopping.naver.com/home">
+            <Link to={props.buyLink}>
                 <button className="info-button">구매하기</button>
             </Link>
             <Link to="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EA%B3%84%EC%82%B0%EA%B8%B0">

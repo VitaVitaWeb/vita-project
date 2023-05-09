@@ -45,7 +45,64 @@
     white-space: nowrap;
 }
 
-#vita-description {
-    width: 737px;
-    height: 100px;
+#vita-category {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+
+.category-block {
+    border-radius: 50px;
+    width: auto;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+.category-food {
+    background-color: #f9a828;
+}
+
+.category-health-food {
+    background-color: #48b983;
+}
+
+.category-nutrient {
+    background-color: #7d8ae6;
+}
+
+.category-etc {
+    background-color: #c5428b;
+}
+
+.category-msm {
+    background-color: #e1c61f;
+}
+
+.category-diet {
+    background-color: #2f8eab;
+}
+
+.category-collagen {
+    background-color: #d4604f;
+}
+
+.category-calcium {
+    background-color: #8d56b4;
+}
+
+.category-omega3 {
+    background-color: #4b8a29;
+}
+
+.category-vitamin {
+    background-color: #7b8f54;
+}
+
+.category-multi-vitamin {
+    background-color: #9d5e2b;
+}
+
+.category-probiotics {
+    background-color: #5f7499;
 }

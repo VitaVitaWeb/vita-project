@@ -6,14 +6,14 @@ function VitaBlock(props) {
     if (props.x === true) {
         return (
             <div className="vita-component-space">
-                <VitaBlockContent vitaImage={props.vitaImage} vitaCompany={props.vitaCompany} vitaName={props.vitaName} vitaWishCount={props.vitaWishCount} vitaWish={props.vitaWish}></VitaBlockContent>
+                <VitaBlockContent vitaImage={props.vitaImage} vitaName={props.vitaName} vitaWishCount={props.vitaWishCount} vitaWish={props.vitaWish}></VitaBlockContent>
             </div>
         );
     }
     else {
         return (
             <div className="vita-component-space">
-                <VitaBlockContentNoX vitaImage={props.vitaImage} vitaCompany={props.vitaCompany} vitaName={props.vitaName} vitaWishCount={props.vitaWishCount} vitaWish={props.vitaWish}></VitaBlockContentNoX>
+                <VitaBlockContentNoX vitaImage={props.vitaImage} vitaName={props.vitaName} vitaWishCount={props.vitaWishCount} vitaWish={props.vitaWish}></VitaBlockContentNoX>
             </div>
         )
     }

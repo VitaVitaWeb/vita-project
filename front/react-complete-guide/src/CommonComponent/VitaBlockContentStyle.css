@@ -56,21 +56,6 @@
 
 .vita-name {
     font-weight: bold;
-    white-space: nowrap;
-    /* 줄바꿈 없이 한 줄에 출력 */
-    overflow: hidden;
-    /* 너비를 벗어나는 영역은 숨김 처리 */
-    text-overflow: ellipsis;
-    /* 너비를 벗어나는 텍스트는 ...으로 표시 */
-}
-
-.vita-company {
-    white-space: nowrap;
-    /* 줄바꿈 없이 한 줄에 출력 */
-    overflow: hidden;
-    /* 너비를 벗어나는 영역은 숨김 처리 */
-    text-overflow: ellipsis;
-    /* 너비를 벗어나는 텍스트는 ...으로 표시 */
 }
 
 .vita-wish-space {

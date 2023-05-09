@@ -1,10 +1,11 @@
-import React from "react";
 import Slider from "react-slick";
+import axios from "axios"
+import React, { useState, useEffect } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import VitaBlock from '../../../CommonComponent/VitaBlock';
 
-const SimpleSlider = () => {
+const SimpleSlider = (props) => {
 
     const customStyles = `
         .slick-prev:before, .slick-next:before {
@@ -40,18 +41,38 @@ const SimpleSlider = () => {
         slidesToScroll: 1,
     };
 
-    const vitaList = [
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210922173604436_600.jpg&w=1080&q=100", "종근당건강", "락토핏 생유산균 골드"],
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210117120537015_600.jpg&w=1080&q=100", "고려은단", "비타민C 1000"],
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210620173154233_600.jpg&w=1080&q=100", "얼라이브", "원스데일리 포 우먼"],
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F3520201226182920097_600.jpg&w=1080&q=100", "Sports Research 스포츠리서치", "Triple Strength omega-3 fish oil 1250mg"],
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F1606555889844_vRv.jpg&w=256&q=75", "센트룸", "포 우먼 멀티 비타민 미네랄"],
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F1920201226184538623_600.jpg&w=256&q=75", "Life Extension 라이프익스텐션", "투 퍼 데이 캡슐"],
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F%EC%BA%A1%EC%B2%9820210421124529113_600.jpg&w=256&q=75", "GC녹십자", "비맥스메타"],
-        ["https://aimee.kr/_next/image?url=https%3A%2F%2Flive-aimee-photo.s3.ap-northeast-2.amazonaws.com%2Fthumb600%2F13452217992.2020121415423920210307125854254_600.jpg&w=256&q=75", "종근당", "칼슘앤마그네슘비타민D아연"]
-    ];
+    const [vitaListData, setVitaListData] = useState(null);
 
-    const vitaSource = vitaList.map((vitaSrc) => (<div><VitaBlock vitaImage={vitaSrc[0]} x={false} vitaWishCount={0} vitaCompany={vitaSrc[1]} vitaName={vitaSrc[2]}></VitaBlock></div>))
+    useEffect(() => {
+        async function fetchData() {
+            const result = await axios.get('/vita/list');
+            console.log(result.data); // 로그 추가
+
+            // category3에 해당하는 영양제만 필터링
+            const filteredData = result.data.filter(
+                (vita) => vita.category3 === props.vitaCat
+            );
+
+            setVitaListData(filteredData);
+        }
+        fetchData();
+    }, [props.vitaCat]);
+
+
+    if (!vitaListData) {
+        return <div>Loading...</div>;
+    }
+
+    const vitaSource = vitaListData.map((vitaSrc) => (
+        <div>
+            <VitaBlock
+                vitaImage={vitaSrc.img_path}
+                x={false}
+                vitaWishCount={0}
+                vitaName={vitaSrc.name}
+            ></VitaBlock>
+        </div>
+    ));
 
     return (
         <div>
