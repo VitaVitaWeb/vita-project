@@ -7,9 +7,9 @@ import VitaComparePage from "./Pages/ComparePage/VitaComparePage";
 import LoginPage from "./Pages/LoginPage/loginPage";
 import SignUpPage from "./Pages/LoginPage/signUpPage";
 import CustomerInfo from "./customerInfo";
-import SurveyListApi from "./Pages/Survey/SurveyListApi";
-import MyPage from "./Pages/MyPage/MyPage"
-import React, { useState, createContext } from "react";
+import MyPage from "./Pages/MyPage/MyPage";
+import SearchPage from "./Pages/IdPwSearchPage/searchPage";
+import React, { useState } from "react";
 function App() {
   const [user, setUser] = useState({});
   return (
@@ -28,6 +28,7 @@ function App() {
           <Route path={"/loginPage"} element={<LoginPage />}></Route>
           <Route path={"/signUpPage"} element={<SignUpPage />}></Route>
           <Route path={"/myPage"} element={<MyPage />} />
+          <Route path={"/searchPage"} element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </CustomerInfo.Provider>

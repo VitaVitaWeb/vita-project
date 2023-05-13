@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const userInfo = useContext(CustomerInfo);
   const [inputInfo, setinputInfo] = useState({ id: null, password: null });
+  const [isLoginFailed, setIsLoginFailed] = useState(false);
   const [loginErrorMessage, setLoginErrorMessage] = useState(null);
 
   const movePage = useNavigate();
@@ -17,6 +18,16 @@ function Login() {
   }
   function goMainPage() {
     movePage("/mainPage");
+  }
+  function goIdSearch() {
+    movePage("/searchPage", {
+      state: { status: true },
+    });
+  }
+  function goPassSearch() {
+    movePage("/searchPage", {
+      state: { status: false },
+    });
   }
   const onChangeId = (val) => {
     //아이디 입력시 갱신
@@ -39,7 +50,8 @@ function Login() {
       if (data.data) {
         onLogin();
       } else {
-        setLoginErrorMessage("올바르지 않은 정보");
+        setIsLoginFailed(true);
+        setLoginErrorMessage("아이디 또는 비밀번호를 잘못 입력하셨습니다.");
       }
     } catch {
       console.log("error in login");
@@ -73,17 +85,26 @@ function Login() {
             onChange={onChangePassword}
             className="loginPageInput"
             placeholder="비밀번호:"
+            type="password"
           ></input>
+        </div>
+        <div className={isLoginFailed ? "loginPageLoginFalse" : null}>
+          {loginErrorMessage}
         </div>
         <div className="displayFlex">
           <button className="loginPageButton" onClick={onTryLogin}>
             로그인
           </button>
-          <button className="loginPageSignUpButton" onClick={goSignUpPage}>
-            회원가입
-          </button>
         </div>
-        <div className="loginPageLoginFalse">{loginErrorMessage}</div>
+        <button className="loginPageIdSearchButton" onClick={goIdSearch}>
+          아이디 찾기
+        </button>
+        <button className="loginPagePassSearchButton" onClick={goPassSearch}>
+          비밀번호 찾기
+        </button>
+        <button className="loginPageSignUpButton" onClick={goSignUpPage}>
+          회원가입
+        </button>
       </div>
       <TopBar></TopBar>
     </div>

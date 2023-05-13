@@ -35,10 +35,6 @@ function PhoneComponent(props) {
     }
   };
 
-  const onClickPhone = () => {
-    setfocusOut(false);
-  };
-
   const inputRef = useRef(null);
   useEffect(() => {
     function handleOutside(e) {
@@ -60,6 +56,7 @@ function PhoneComponent(props) {
   const onChangePhone = (val) => {
     //폰번호 입력시 갱신
     setPhoneVal(val.target.value);
+    setfocusOut(false);
   };
 
   return (
@@ -68,7 +65,6 @@ function PhoneComponent(props) {
         className="signUpPageInput"
         placeholder="전화번호:"
         onChange={onChangePhone}
-        onClick={onClickPhone}
         ref={inputRef}
       ></input>
       <div

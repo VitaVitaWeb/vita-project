@@ -1,11 +1,12 @@
 import "./signUpPage.css";
 import Select from "react-select";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 function EmailComponent(props) {
   const [checkText, setCheckText] = useState();
   const [isComEnabled, setIsComEnabled] = useState(false);
+  const [focusOut, setfocusOut] = useState(false);
   const emailOption = [
     { value: "1", label: "naver.com" },
     { value: "2", label: "gmail.com" },
@@ -57,17 +58,38 @@ function EmailComponent(props) {
       console.log("error in checkId123");
     }
   };
+
+  const inputRef = useRef(null);
+  useEffect(() => {
+    function handleOutside(e) {
+      if (inputRef.current && !inputRef.current.contains(e.target)) {
+        setfocusOut(true);
+      }
+    }
+    document.addEventListener("mousedown", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+    };
+  }, [inputRef]);
+
+  useEffect(() => {
+    console.log(focusOut + " " + isComEnabled);
+    if (focusOut && isComEnabled) {
+      onTryCheckEmail();
+    }
+  }, [focusOut]);
+
   const onChangeEmail = (val) => {
     props.email.email = val.target.value;
-    if (isComEnabled) onTryCheckEmail();
+    setfocusOut(false);
   };
   const onChangeEmailCom = (val) => {
     props.email.emailCom = val.label;
     setIsComEnabled(true);
-    if (props.email.emailCom !== "null") onTryCheckEmail();
+    if (props.email.email !== null) onTryCheckEmail();
   };
   return (
-    <div className="signUpPageBox">
+    <div className="signUpPageBox" ref={inputRef}>
       <input
         className="signUpPageInputEmailBox"
         placeholder="이메일:"

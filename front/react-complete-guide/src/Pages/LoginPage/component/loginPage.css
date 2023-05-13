@@ -15,8 +15,8 @@
   font-size: 30px;
 }
 .loginPageButton {
-  height: 30px;
-  width: 100px;
+  height: 40px;
+  width: 400px;
   margin-left: 100px;
   background-color: orange;
   border-radius: 10px;
@@ -24,25 +24,39 @@
   font-size: 20px;
   text-align: center;
   color: white;
+  cursor: pointer;
+}
+.loginPageIdSearchButton {
+  color: grey;
+  margin-left: 114px;
+  font-size: 18px;
+  margin-top: 10px;
+  background: none;
+  border-style: none;
+  cursor: pointer;
+}
+.loginPagePassSearchButton {
+  color: grey;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 25px;
+  background: none;
+  border-style: none;
   cursor: pointer;
 }
 .loginPageSignUpButton {
+  color: grey;
   height: 30px;
-  width: 100px;
-  margin-left: 200px;
-  background-color: orange;
-  border-radius: 10px;
-  border-style: none;
-  font-size: 20px;
+  font-size: 18px;
+  margin-left: 25px;
   text-align: center;
-  color: white;
+  background: none;
+  border-style: none;
   cursor: pointer;
 }
 .loginPageLoginFalse {
-  position: absolute;
   font-size: 20px;
-  text-align: center;
   margin-left: 100px;
-  margin-top: 10px;
+  margin-bottom: 10px;
   color: red;
 }

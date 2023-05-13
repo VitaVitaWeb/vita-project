@@ -13,7 +13,7 @@ function MainPage() {
   const asdf = async () => {
     try {
       const data = await axios.get("/member/detail", {
-        params: { id: "swjwpower" },
+        params: { id: "swjwpower@gmail.com" },
       });
       console.log(data);
     } catch {

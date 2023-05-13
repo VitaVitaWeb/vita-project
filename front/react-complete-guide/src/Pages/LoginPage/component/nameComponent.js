@@ -7,13 +7,14 @@ function NameComponent(props) {
   const [nameVal, setNameVal] = useState();
   const [checkHidden, setCheckHidden] = useState(false);
   const [focusOut, setfocusOut] = useState(false);
+  const nameReg = /^[A-Za-z0-9]{5,15}$/;
   const onTryCheckNickname = async (val) => {
     console.log(val);
     // 닉네임 중복 체크
     try {
-      if (val.length < 5) {
+      if (val.match(nameReg) === null) {
         props.setNameCheck(false);
-        setCheckText("5글자 이상이어야 합니다.");
+        setCheckText("5자 이상, 15자 이하의 숫자와 영어이어야 합니다.");
       } else {
         const data = await axios.get("/auth/nameCheck/", {
           params: { name: val },
@@ -37,11 +38,8 @@ function NameComponent(props) {
 
   const onChangeNickname = (val) => {
     setNameVal(val.target.value);
-  };
-  const onClickNickname = () => {
     setfocusOut(false);
   };
-
   const inputRef = useRef(null);
   useEffect(() => {
     function handleOutside(e) {
@@ -67,7 +65,6 @@ function NameComponent(props) {
         className="signUpPageInput"
         placeholder="닉네임:"
         onChange={onChangeNickname}
-        onClick={onClickNickname}
         ref={inputRef}
       ></input>
       <div

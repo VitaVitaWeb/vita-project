@@ -17,15 +17,17 @@ function PasswordComponent(props) {
   const onChangePassword = (val) => {
     props.setPassword(val.target.value);
     setPassVal(val.target.value);
+    setfocusOut(false);
   };
 
   const onChangePasswordCheck = (val) => {
     props.setCheckPassword(val.target.value);
     setPassCheckVal(val.target.value);
+    setfocusOut(false);
   };
 
   const onTryCheckPassword = (val) => {
-    if (true) {
+    if (val.match(passwordRegEx) === null && val.length > 0) {
       setCheckText("비밀번호는 6자 이상의 영어와 숫자이어야 합니다.");
       setCheck(false);
       props.setPassCheck(false);
@@ -41,7 +43,7 @@ function PasswordComponent(props) {
   };
 
   const onTryCheckPasswordCheck = (val) => {
-    if (passVal !== val) {
+    if (passVal !== val && val.length > 0) {
       setCheckTextTwo("비밀번호가 일치하지 않습니다.");
       setCheckTwo(true);
       props.setPassCheck(true);
@@ -75,10 +77,10 @@ function PasswordComponent(props) {
   }, [focusOut]);
 
   const onClickPass = () => {
-    setfocusOut(false);
+    onTryCheckPasswordCheck(passCheckVal);
   };
   const onClickPassCheck = () => {
-    setfocusOut(false);
+    onTryCheckPassword(passVal);
   };
 
   return (

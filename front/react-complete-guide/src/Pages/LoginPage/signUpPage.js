@@ -1,6 +1,6 @@
 import TopBar from "../../CommonComponent/TopBar/topBar";
 import "./component/signUpPage.css";
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CustomerInfo from "../../customerInfo";

@@ -1,0 +1,130 @@
+.searchPageMain {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  margin-top: 100px;
+}
+.searchPageIdPwButtom {
+  height: 51px;
+}
+.searchPageInputArea {
+  position: absolute;
+  width: 800px;
+  height: 400px;
+  top: 250px;
+  border-style: solid;
+  border-top-style: none;
+}
+.searchPageIdButton {
+  width: 400px;
+  height: 50px;
+  border-top-left-radius: 10px;
+  background-color: white;
+  color: orange;
+  border-right-style: none;
+  border-bottom-style: none;
+  font-size: 20px;
+}
+.searchPageIdButtonDisabled {
+  width: 400px;
+  height: 50px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: rgb(244, 244, 244);
+  color: orange;
+  font-size: 20px;
+}
+.searchPagePwButton {
+  width: 400px;
+  height: 50px;
+  border-top-right-radius: 10px;
+  background-color: white;
+  color: orange;
+  border-left-style: none;
+  border-bottom-style: none;
+  font-size: 20px;
+}
+.searchPagePwButtonDisabled {
+  width: 400px;
+  height: 50px;
+  color: orange;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgb(244, 244, 244);
+  font-size: 20px;
+}
+.idSearchPageBox {
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  margin-top: 110px;
+}
+.idSearchPageBirthBox {
+  width: 400px;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  margin-top: 10px;
+}
+
+.idSearchPageInputYear {
+  width: 130px;
+  height: 40px;
+  font-size: 20px;
+  margin-left: 25px;
+}
+.idSearchPageInputMonthDay {
+  width: 110px;
+  margin-left: 10px;
+  height: 40px;
+  font-size: 20px;
+}
+.idSearchPageCheckBoxArea {
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+}
+.idSearchPageInput {
+  margin-left: 25px;
+  width: 350px;
+  height: 40px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.idSearchPageCheckBox {
+  margin-bottom: 15px;
+  width: 20px;
+  margin-left: 25px;
+}
+.idSearchPageCheckBoxText {
+  margin-top: auto;
+  font-size: 20px;
+  margin-left: 5px;
+}
+.searchPageIdSearchButton {
+  height: 30px;
+  width: 120px;
+  background-color: orange;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  margin-left: 25px;
+}
+.searchPageCodeButton {
+  position: absolute;
+  height: 30px;
+  width: 170px;
+  margin-left: 10px;
+  margin-top: 15px;
+  background-color: orange;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
