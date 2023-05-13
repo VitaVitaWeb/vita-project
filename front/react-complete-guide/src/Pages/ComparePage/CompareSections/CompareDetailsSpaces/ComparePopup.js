@@ -18,7 +18,7 @@ function ComparePopup({ onSelectedProduct }) {
     // api로 상품 정보 받아오기
     const searchProducts = async (keyword) => {
         try {
-            const response = await axios.get('/api/products/search', { params: { q: keyword } });
+            const response = await axios.get('/search', { params: { q: keyword } });
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -37,8 +37,9 @@ function ComparePopup({ onSelectedProduct }) {
     };
 
     // 상품 선택하기 버튼
-    function handleSelectProduct() {
-        onSelectedProduct(true);
+    function handleSelectProduct(product) {
+        console.log('Selected Product in popup:', product);
+        onSelectedProduct(product);
         setIsPopupOpen(false);
         setIsImageVisible(false);
     }
@@ -82,7 +83,8 @@ function ComparePopup({ onSelectedProduct }) {
                                 <button
                                     key={product.id}
                                     className="temporary-product"
-                                    onClick={() => handleSelectProduct(product)}>
+                                    onClick={() => handleSelectProduct(product)}
+                                >
                                     {product.name}
                                 </button>
                             ))}
