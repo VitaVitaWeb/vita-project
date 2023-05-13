@@ -33,6 +33,7 @@
   background-color: rgb(244, 244, 244);
   color: orange;
   font-size: 20px;
+  cursor: pointer;
 }
 .searchPagePwButton {
   width: 400px;
@@ -52,6 +53,7 @@
   border-top-right-radius: 10px;
   background-color: rgb(244, 244, 244);
   font-size: 20px;
+  cursor: pointer;
 }
 .idSearchPageBox {
   width: 400px;

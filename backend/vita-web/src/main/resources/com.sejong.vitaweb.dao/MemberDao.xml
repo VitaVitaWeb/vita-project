@@ -96,7 +96,7 @@
         from
             vita_member
         where
-            name = #{name}, birthday=#{birthday}, gender=#{gender}
+            name = #{name} and bth=#{birthday} and gen=#{gender}
     </select>
 
 <!--    <select id="findpwd" parameterType="map" resultMap="memberMap">-->

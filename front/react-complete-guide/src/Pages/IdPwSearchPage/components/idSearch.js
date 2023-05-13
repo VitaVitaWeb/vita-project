@@ -7,7 +7,7 @@ import axios from "axios";
 function IdSearch(props) {
   const [userInfo, setUserInfo] = useState({
     name: null,
-    date: null,
+    date: new Date(),
     gender: null,
   });
   const [date, setDate] = useState(new Date());
@@ -28,14 +28,15 @@ function IdSearch(props) {
       name: val.target.value,
     }));
   };
-
   const OnTrySearch = async () => {
-    console.log(userInfo.name + " " + userInfo.gender + " " + userInfo.date);
     try {
       const data = await axios.get("/member/findid/", {
         params: {
           name: userInfo.name,
-          birthday: date,
+          birthday: new Date(userInfo.date)
+            .toLocaleDateString()
+            .replace(/\./g, "")
+            .replace(/\s/g, "-"),
           gender: userInfo.gender,
         },
       });

@@ -1,6 +1,7 @@
 package com.sejong.vitaweb.web.auth;
 
 import com.sejong.vitaweb.service.MemberService;
+import com.sejong.vitaweb.vo.DateDto;
 import com.sejong.vitaweb.vo.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -60,7 +61,7 @@ public class MemberController {
     Member member = memberService.findId(name, birthday, gender);
 
     if(member ==null){
-      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
+      return null;
     }
     return member.getId() ;
   }

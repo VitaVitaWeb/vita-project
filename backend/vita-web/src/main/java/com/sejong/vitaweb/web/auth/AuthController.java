@@ -21,6 +21,50 @@ import java.util.regex.Pattern;
 public class AuthController {
   private final MemberService memberService;
 
+  @ResponseBody
+  @GetMapping("idCheck")
+  public Boolean idCheck(@RequestParam("id") String id) throws Exception {
+    log.info("통신 성공! = {}", id);
+    Member result = memberService.idCheck(id);
+    return inputCheck(id, result);
+  }
+
+  @ResponseBody
+  @GetMapping("nameCheck")
+  public Boolean nameCheck(@RequestParam String name) throws Exception {
+    Member result = memberService.nameCheck(name);
+
+    log.info("member = {}", result);
+
+    return inputCheck(name, result);
+  }
+
+  private Boolean inputCheck(String inputString, Member result) throws Exception {
+    if (result == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @ResponseBody
+  @GetMapping("phoneNoCheck")
+  public Boolean phoneNoCheck(String phoneNo) throws Exception {
+    log.info("phoneNo = {}", phoneNo);
+    if (phoneNo.length() < 11) {
+      return false;
+    }
+    Member result = memberService.phoneNoCheck(phoneNo);
+    log.info("member = {}", result);
+    if (result == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+
   @PostMapping("join")
   public Boolean join(@RequestBody Member member, Model model) throws Exception {
     log.info("member = {}", member);
