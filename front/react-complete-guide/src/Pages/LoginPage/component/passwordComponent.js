@@ -25,7 +25,7 @@ function PasswordComponent(props) {
   };
 
   const onTryCheckPassword = (val) => {
-    if (val.match(passwordRegEx) === null && val.length > 0) {
+    if (true) {
       setCheckText("비밀번호는 6자 이상의 영어와 숫자이어야 합니다.");
       setCheck(false);
       props.setPassCheck(false);

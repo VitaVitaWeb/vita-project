@@ -18,7 +18,7 @@
     <!--회원 추가-->
     <insert id="join" parameterType="Member">
         insert into vita_member(ID,PWD,NAME, PHN, BTH, GEN)
-        values(#{id},sha2(#{password},256),#{name},#{phoneNo}, #{birthDay}, #{gender})
+        values(#{id},#{password},#{name},#{phoneNo}, #{birthDay}, #{gender})
     </insert>
 
     <!--로그인 조회-->
