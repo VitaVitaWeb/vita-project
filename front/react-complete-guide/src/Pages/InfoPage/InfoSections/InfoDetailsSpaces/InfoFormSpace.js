@@ -1,10 +1,6 @@
 import './InfoFormSpaceStyle.css';
-<<<<<<< HEAD
-import {useState, useEffect, axios} from "react"
-=======
 import axios from "axios"
 import React, { useState, useEffect } from 'react';
->>>>>>> front-chan4
 
 function InfoFormSpace(props) {
     const [vitaForm, setVitaForm] = useState(null);

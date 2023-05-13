@@ -1,14 +1,14 @@
 import './CompareDetailsSectionStyle.css';
 import CompareSearchButton from './CompareDetailsSpaces/CompareSearchButton';
-import CompareVitaSpace from './CompareDetailsSpaces/CompareVitaSpace';
 import CompareFunctionalitySpace from './CompareDetailsSpaces/CompareFunctionalitySpace';
 import CompareFormSpace from './CompareDetailsSpaces/CompareFormSpace';
 import CompareHowtoeatSpace from './CompareDetailsSpaces/CompareHowtoeatSpace';
 import CompareNutrientSpace from './CompareDetailsSpaces/CompareNutrientSpace';
 import CompareCautionSpace from './CompareDetailsSpaces/CompareCautionSpace';
 import CompareButtonsSpace from './CompareDetailsSpaces/CompareButtonsSpace';
+import VitaBlock from '../../../CommonComponent/VitaBlock';
 import { useSelector, useDispatch } from 'react-redux';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function CompareDetailsSection() {
     const dummyVita = [
@@ -76,10 +76,11 @@ function CompareDetailsSection() {
 
     // 상품 선택 여부
     // selectedProduct에 상품 정보 저장됨
-    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [selectedProducts, setSelectedProducts] = useState([]);
 
     const handleProductSelected = (product) => {
-        setSelectedProduct(product);
+        console.log('Selected Products in Detail Sections:', product);
+        setSelectedProducts([...selectedProducts, product]);
     };
 
     // 비교하기 버튼
@@ -90,30 +91,36 @@ function CompareDetailsSection() {
         dispatch({ type: 'toggle' });
     };
 
+    useEffect(() => {
+        console.log('selectedProducts:', selectedProducts);
+    }, [selectedProducts]);
+
     return (
         <section id="compare-details-section">
             <div id="compare-details-title">
                 <h2>제품을 선택해 비교해보세요</h2>
             </div>
             <div>
-                {selectedProduct == null ?
-                    <div id="compare-vita-space">
+                <div id="compare-vita-space">
+                    {!selectedProducts[0] ?
                         <CompareSearchButton onProductSelected={handleProductSelected}
                         ></CompareSearchButton>
+                        :
+                        <VitaBlock vitaName={selectedProducts[0].name} x={true} vitaWishCount={dummyVita[0].vitaWishCounts} vitaImage={selectedProducts[0].img_path}></VitaBlock>
+                    }
+                    {!selectedProducts[1] ?
                         <CompareSearchButton onProductSelected={handleProductSelected}
                         ></CompareSearchButton>
+                        :
+                        <VitaBlock vitaName={selectedProducts[1].name} x={true} vitaWishCount={dummyVita[1].vitaWishCounts} vitaImage={selectedProducts[1].img_path}></VitaBlock>
+                    }
+                    {!selectedProducts[2] ?
                         <CompareSearchButton onProductSelected={handleProductSelected}
                         ></CompareSearchButton>
-                    </div>
-                    :
-                    <CompareVitaSpace
-                        vitaName={[dummyVita[0].vitaName, dummyVita[1].vitaName, dummyVita[2].vitaName]}
-                        vitaCompany={[dummyVita[0].vitaCompany, dummyVita[1].vitaCompany, dummyVita[2].vitaCompany]}
-                        vitaWishCount={[dummyVita[0].vitaWishCount, dummyVita[1].vitaWishCount, dummyVita[2].vitaWishCount]}
-                        vitaWish={[dummyVita[0].vitaWish, dummyVita[1].vitaWish, dummyVita[2].vitaWish]}
-                        vitaImage={[dummyVita[0].vitaImage, dummyVita[1].vitaImage, dummyVita[2].vitaImage]}
-                        vitaCompareSelected={[dummyVita[0].vitaCompareSelected, dummyVita[1].vitaCompareSelected, dummyVita[2].vitaCompareSelected]}
-                    ></CompareVitaSpace>}
+                        :
+                        <VitaBlock vitaName={selectedProducts[2].name} x={true} vitaWishCount={dummyVita[2].vitaWishCounts} vitaImage={selectedProducts[2].img_path}></VitaBlock>
+                    }
+                </div>
                 {!showCompareButton &&
                     <div id="compare-button-space">
                         <button type="button" onClick={handleCompareButtonClick} id="compare-button">비교하기</button>
