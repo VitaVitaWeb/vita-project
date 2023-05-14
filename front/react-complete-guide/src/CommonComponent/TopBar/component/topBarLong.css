@@ -10,7 +10,7 @@
   z-index: 9999;
 }
 .topMainLong {
-  width: 80%;
+  width: 85%;
   height: 100px;
   margin: auto;
   align-content: center;
@@ -23,7 +23,7 @@
   align-content: center;
   display: flex;
 }
-.mainPageButton {
+.topBarLPageButton {
   height: 100%;
   width: 200px;
   font-size: 50px;
@@ -32,7 +32,7 @@
   color: orange;
   cursor: pointer;
 }
-.mainPageSearchBorder {
+.topBarLPageSearchBorder {
   width: 50%;
   height: 50%;
   border: 4px;
@@ -42,7 +42,7 @@
   border-radius: 20px;
   align-self: center;
 }
-.mainPageSearch {
+.topBarLPageSearch {
   font-size: 25px;
   position: relative;
   left: 16px;
@@ -53,7 +53,7 @@
   outline: none;
   background-color: transparent;
 }
-.mainCompareButton {
+.topBarLCompareButton {
   height: 100px;
   width: 150px;
   font-size: 24px;
@@ -63,10 +63,21 @@
   text-align: center;
   cursor: pointer;
 }
-.mainLoginButton {
+.topBarLLoginButton {
   height: 100%;
   width: 150px;
   font-size: 30px;
+  background-color: white;
+  border: none;
+  color: orange;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+}
+.topBarLLoginButtonMyPage {
+  height: 100%;
+  width: 170px;
+  font-size: 24px;
   background-color: white;
   border: none;
   color: orange;

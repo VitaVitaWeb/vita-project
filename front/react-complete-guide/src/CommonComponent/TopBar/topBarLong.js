@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./component/topBarLong.css";
-function TopBarLong() {
+function TopBarLong(props) {
   const movePage = useNavigate();
   function goMain() {
     movePage("/mainPage");
@@ -15,6 +15,9 @@ function TopBarLong() {
   }
   function goLogin() {
     movePage("/loginPage");
+  }
+  function goMyPage() {
+    movePage("/myPage");
   }
 
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
@@ -29,21 +32,26 @@ function TopBarLong() {
   return (
     <div className="topBarLong">
       <div className={innerWidth > 1300 ? "topMainLong" : "topMainLongFix"}>
-        <button onClick={goMain} className="mainPageButton">
+        <button onClick={goMain} className="topBarLPageButton">
           VitaWeb
         </button>
-        <div className="mainPageSearchBorder">
-          <input className="mainPageSearch"></input>
+        <div className="topBarLPageSearchBorder">
+          <input className="topBarLPageSearch"></input>
         </div>
-        <button onClick={goSurvey} className="mainCompareButton">
+        <button onClick={goSurvey} className="topBarLCompareButton">
           분석하기
         </button>
-        <button onClick={goCompare} className="mainCompareButton">
+        <button onClick={goCompare} className="topBarLCompareButton">
           비교하기
         </button>
-        <button className="mainCompareButton">계산하기</button>
-        <button onClick={goLogin} className="mainLoginButton">
-          로그인
+        <button className="topBarLCompareButton">계산하기</button>
+        <button
+          onClick={props.isLogined ? goMyPage : goLogin}
+          className={
+            props.isLogined ? "topBarLLoginButtonMyPage" : "topBarSLoginButton"
+          }
+        >
+          {props.isLogined ? "마이페이지" : "로그인"}
         </button>
       </div>
     </div>

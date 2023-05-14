@@ -1,10 +1,12 @@
-import { useMediaQuery } from "react-responsive";
 import TopBarShort from "./topBarShort";
 import TopBarLong from "./topBarLong";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import CustomerInfo from "../../customerInfo";
+
 function TopBar() {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const userInfo = useContext(CustomerInfo);
+  const [isLogined, setIsLogined] = useState(false);
 
   useEffect(() => {
     const resizeListener = () => {
@@ -13,10 +15,17 @@ function TopBar() {
     window.addEventListener("resize", resizeListener);
   });
 
-  return innerWidth > 1000 ? (
-    <TopBarLong></TopBarLong>
+  useEffect(() => {
+    if (userInfo.user.id !== null) {
+      setIsLogined(true);
+      console.log(userInfo.user.id);
+    } else setIsLogined(false);
+  }, []);
+
+  return innerWidth > 1300 ? (
+    <TopBarLong isLogined={isLogined} />
   ) : (
-    <TopBarShort></TopBarShort>
+    <TopBarShort isLogined={isLogined} />
   );
 }
 export default TopBar;

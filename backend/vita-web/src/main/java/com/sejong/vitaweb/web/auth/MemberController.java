@@ -1,7 +1,6 @@
 package com.sejong.vitaweb.web.auth;
 
 import com.sejong.vitaweb.service.MemberService;
-import com.sejong.vitaweb.vo.DateDto;
 import com.sejong.vitaweb.vo.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

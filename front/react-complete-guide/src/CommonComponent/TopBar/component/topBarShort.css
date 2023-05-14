@@ -24,7 +24,7 @@
   margin-bottom: 20px;
   display: flex;
 }
-.mainPageButton {
+.topBarSButton {
   height: 100%;
   width: 200px;
   font-size: 50px;
@@ -33,7 +33,7 @@
   color: orange;
   cursor: pointer;
 }
-.mainPageSearchBorderShort {
+.topBarSSearchBorderShort {
   position: relative;
   width: 750px;
   height: 100%;
@@ -47,7 +47,7 @@
   margin-left: 15px;
   background-color: transparent;
 }
-.mainPageSearchShort {
+.topBarSSearchShort {
   font-size: 25px;
   position: relative;
   left: 17px;
@@ -58,7 +58,7 @@
   margin: auto;
   background-color: transparent;
 }
-.mainCompareButtonShort {
+.topBarSCompareButtonShort {
   height: 100px;
   width: 150px;
   font-size: 30px;
@@ -68,10 +68,21 @@
   text-align: center;
   cursor: pointer;
 }
-.mainLoginButtonShort {
+.topBarSButtonShort {
   height: 100%;
   width: 150px;
   font-size: 30px;
+  background-color: white;
+  border: none;
+  color: orange;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+}
+.topBarSButtonMyPage {
+  height: 100%;
+  width: 150px;
+  font-size: 24px;
   background-color: white;
   border: none;
   color: orange;

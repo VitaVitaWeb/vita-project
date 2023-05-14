@@ -11,17 +11,6 @@ import React, { useContext, useState } from "react";
 function MainPage() {
   const userInfo = useContext(CustomerInfo);
   const asdf = async () => {
-    try {
-      const data = await axios.get("/member/detail", {
-        params: { id: "swjwpower@gmail.com" },
-      });
-      console.log(data);
-    } catch {
-      console.log("error in checkId");
-    }
-  };
-  const loga = () => {
-    userInfo.setContextApi((prevState) => ({ ...prevState, id: "ASDF" }));
     console.log(userInfo);
   };
   const movePage = useNavigate();
@@ -31,7 +20,6 @@ function MainPage() {
   return (
     <div>
       <button onClick={asdf}>asdf</button>
-      <button onClick={loga}>log</button>
       <button onClick={goMainPage}>my</button>
       {userInfo.user.id}
       {

@@ -1,6 +1,6 @@
 import "./component/topBarShort.css";
 import { useNavigate } from "react-router-dom";
-function TopBarShort() {
+function TopBarShort(props) {
   const movePage = useNavigate();
   function goMain() {
     movePage("/mainPage");
@@ -14,26 +14,34 @@ function TopBarShort() {
   function goLogin() {
     movePage("/loginPage");
   }
+  function goMyPage() {
+    movePage("/myPage");
+  }
   return (
     <div className="topBarShort">
       <div className="topMainShort">
-        <button onClick={goMain} className="mainPageButton">
+        <button onClick={goMain} className="topBarSButton">
           VitaWeb
         </button>
-        <button onClick={goSurvey} className="mainCompareButtonShort">
+        <button onClick={goSurvey} className="topBarSCompareButtonShort">
           분석하기
         </button>
-        <button onClick={goCompare} className="mainCompareButtonShort">
+        <button onClick={goCompare} className="topBarSCompareButtonShort">
           비교하기
         </button>
-        <button className="mainCompareButtonShort">계산하기</button>
-        <button onClick={goLogin} className="mainLoginButtonShort">
-          로그인
+        <button className="topBarSCompareButtonShort">계산하기</button>
+        <button
+          onClick={props.isLogined ? goMyPage : goLogin}
+          className={
+            props.isLogined ? "topBarSButtonMyPage" : "topBarSLoginButton"
+          }
+        >
+          {props.isLogined ? "마이페이지" : "로그인"}
         </button>
       </div>
       <div className="topMainShortSec">
-        <div className="mainPageSearchBorderShort">
-          <input className="mainPageSearchShort"></input>
+        <div className="topBarSSearchBorderShort">
+          <input className="topBarSSearchShort"></input>
         </div>
       </div>
     </div>

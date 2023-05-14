@@ -11,7 +11,7 @@ import MyPage from "./Pages/MyPage/MyPage";
 import SearchPage from "./Pages/IdPwSearchPage/searchPage";
 import React, { useState } from "react";
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ id: null });
   return (
     <CustomerInfo.Provider value={{ user: user, setContextApi: setUser }}>
       <BrowserRouter>
