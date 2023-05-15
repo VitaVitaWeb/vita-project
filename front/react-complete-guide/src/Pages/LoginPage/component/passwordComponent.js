@@ -1,5 +1,7 @@
 import "./signUpPage.css";
 import React, { useState, useEffect, useRef } from "react";
+import CheckTextComponent from "./checkTextComponent";
+import CheckTextShortComponent from "./checkTextShortComponent";
 
 function PasswordComponent(props) {
   const [checkHidden, setCheckHidden] = useState(false);
@@ -29,6 +31,7 @@ function PasswordComponent(props) {
   const onTryCheckPassword = (val) => {
     if (val.match(passwordRegEx) === null && val.length > 0) {
       setCheckText("비밀번호는 6자 이상의 영어와 숫자이어야 합니다.");
+      setCheckHidden(true);
       setCheck(false);
       props.setPassCheck(false);
     } else {
@@ -37,6 +40,7 @@ function PasswordComponent(props) {
         password: val,
       }));
       setCheckText("");
+      setCheckHidden(false);
       setCheck(true);
       if (checkTwo) props.setPassCheck(true);
     }
@@ -45,10 +49,12 @@ function PasswordComponent(props) {
   const onTryCheckPasswordCheck = (val) => {
     if (passVal !== val && val.length > 0) {
       setCheckTextTwo("비밀번호가 일치하지 않습니다.");
+      setCheckHiddenTwo(true);
       setCheckTwo(true);
       props.setPassCheck(true);
     } else {
       setCheckTextTwo("");
+      setCheckHiddenTwo(false);
       setCheckTwo(true);
       if (check) props.setPassCheck(true);
     }
@@ -58,9 +64,7 @@ function PasswordComponent(props) {
   useEffect(() => {
     function handleOutside(e) {
       if (inputRef.current && !inputRef.current.contains(e.target)) {
-        setCheckHidden(true);
         setfocusOut(true);
-        setCheckHiddenTwo(true);
       }
     }
     document.addEventListener("mousedown", handleOutside);
@@ -83,7 +87,16 @@ function PasswordComponent(props) {
     onTryCheckPassword(passVal);
   };
 
-  return (
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const resizeListener = () => {
+      setInnerWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", resizeListener);
+  });
+
+  return innerWidth > 1300 ? (
     <div ref={inputRef}>
       <div className="signUpPagePassBox">
         <input
@@ -93,15 +106,11 @@ function PasswordComponent(props) {
           onChange={onChangePassword}
           onClick={onClickPass}
         ></input>
-        <div
-          className={
-            props.passCheck ? "signUpPageCheckTrue" : "signUpPageCheckFalse"
-          }
-        >
-          <div className={checkHidden ? "testUnHidden" : "testHidden"}>
-            {passCheckText}
-          </div>
-        </div>
+        <CheckTextComponent
+          nameCheck={false}
+          checkHidden={checkHidden}
+          nameCheckText={passCheckText}
+        />
       </div>
       <div className="signUpPagePassBox">
         <input
@@ -111,16 +120,43 @@ function PasswordComponent(props) {
           onChange={onChangePasswordCheck}
           onClick={onClickPassCheck}
         ></input>
-        <div
-          className={
-            props.passCheck ? "signUpPageCheckTrue" : "signUpPageCheckFalse"
-          }
-        >
-          <div className={checkHiddenTwo ? "testUnHidden" : "testHidden"}>
-            {passCheckTextTwo}
-          </div>
-        </div>
+        <CheckTextComponent
+          nameCheck={false}
+          checkHidden={checkHiddenTwo}
+          nameCheckText={passCheckTextTwo}
+        />
       </div>
+    </div>
+  ) : (
+    <div ref={inputRef}>
+      <div className="signUpPagePassBox">
+        <input
+          type="password"
+          className="signUpPageInput"
+          placeholder="비밀번호:"
+          onChange={onChangePassword}
+          onClick={onClickPass}
+        ></input>
+      </div>
+      <CheckTextShortComponent
+        nameCheck={false}
+        checkHidden={checkHidden}
+        nameCheckText={passCheckText}
+      />
+      <div className="signUpPagePassBox">
+        <input
+          type="password"
+          className="signUpPageInput"
+          placeholder="비밀번호 확인:"
+          onChange={onChangePasswordCheck}
+          onClick={onClickPassCheck}
+        ></input>
+      </div>
+      <CheckTextShortComponent
+        nameCheck={false}
+        checkHidden={checkHiddenTwo}
+        nameCheckText={passCheckTextTwo}
+      />
     </div>
   );
 }

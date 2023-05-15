@@ -1,6 +1,8 @@
 import axios from "axios";
 import "./signUpPage.css";
 import React, { useState, useEffect, useRef } from "react";
+import CheckTextComponent from "./checkTextComponent";
+import CheckTextShortComponent from "./checkTextShortComponent";
 
 function PhoneComponent(props) {
   const [phoneCheckText, setCheckText] = useState();
@@ -14,6 +16,7 @@ function PhoneComponent(props) {
       if (val.length != 11) {
         props.setPhoneCheck(false);
         setCheckText("올바르지 않은 전화번호 입니다.");
+        setCheckHidden(true);
       } else {
         const data = await axios.get("/auth/phoneNoCheck/", {
           params: { phoneNo: val },
@@ -21,6 +24,7 @@ function PhoneComponent(props) {
         if (data.data) {
           props.setPhoneCheck(true);
           setCheckText("사용 가능한 전화번호 입니다.");
+          setCheckHidden(true);
           props.setValue((prevState) => ({
             ...prevState,
             phoneNo: val,
@@ -28,6 +32,7 @@ function PhoneComponent(props) {
         } else {
           props.setPhoneCheck(false);
           setCheckText("이미 사용중인 전화번호 입니다.");
+          setCheckHidden(true);
         }
       }
     } catch {
@@ -39,7 +44,6 @@ function PhoneComponent(props) {
   useEffect(() => {
     function handleOutside(e) {
       if (inputRef.current && !inputRef.current.contains(e.target)) {
-        setCheckHidden(true);
         setfocusOut(true);
       }
     }
@@ -50,7 +54,9 @@ function PhoneComponent(props) {
   }, [inputRef]);
 
   useEffect(() => {
-    if (focusOut === true) onTryCheckPhone(phoneVal);
+    if (focusOut === true) {
+      onTryCheckPhone(phoneVal);
+    }
   }, [focusOut]);
 
   const onChangePhone = (val) => {
@@ -59,7 +65,16 @@ function PhoneComponent(props) {
     setfocusOut(false);
   };
 
-  return (
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const resizeListener = () => {
+      setInnerWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", resizeListener);
+  });
+
+  return innerWidth > 1300 ? (
     <div className="signUpPageBox">
       <input
         className="signUpPageInput"
@@ -67,15 +82,27 @@ function PhoneComponent(props) {
         onChange={onChangePhone}
         ref={inputRef}
       ></input>
-      <div
-        className={
-          props.phoneCheck ? "signUpPageCheckTrue" : "signUpPageCheckFalse"
-        }
-      >
-        <div className={checkHidden ? "testUnHidden" : "testHidden"}>
-          {phoneCheckText}
-        </div>
+      <CheckTextComponent
+        nameCheck={props.phoneCheck}
+        checkHidden={checkHidden}
+        nameCheckText={phoneCheckText}
+      />
+    </div>
+  ) : (
+    <div>
+      <div className="signUpPageBox">
+        <input
+          className="signUpPageInput"
+          placeholder="전화번호:"
+          onChange={onChangePhone}
+          ref={inputRef}
+        ></input>
       </div>
+      <CheckTextShortComponent
+        nameCheck={props.phoneCheck}
+        checkHidden={checkHidden}
+        nameCheckText={phoneCheckText}
+      />
     </div>
   );
 }
