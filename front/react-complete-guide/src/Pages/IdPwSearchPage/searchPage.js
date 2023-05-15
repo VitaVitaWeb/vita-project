@@ -1,7 +1,7 @@
 import TopBar from "../../CommonComponent/TopBar/topBar";
 import { useNavigate, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import "./searchPage.css";
+import "./components/searchPage.css";
 import GenderComponent from "./components/genderComponent";
 import IdSearch from "./components/idSearch";
 import PassSearch from "./components/passSearch";

@@ -1,10 +1,12 @@
-import "../searchPage.css";
+import "./searchPage.css";
 import TopBar from "../../../CommonComponent/TopBar/topBar";
 import GenderComponent from "./genderComponent";
 import React, { useState, useEffect } from "react";
 import BirthComponent from "./birthComponent";
 import axios from "axios";
 function IdSearch(props) {
+  const [searchText, setSearchText] = useState();
+  const [searchTextTrue, setSearchTextTrue] = useState(false);
   const [userInfo, setUserInfo] = useState({
     name: null,
     date: new Date(),
@@ -40,7 +42,13 @@ function IdSearch(props) {
           gender: userInfo.gender,
         },
       });
-      console.log(data);
+      if (data.data.length > 6) {
+        setSearchText("등록된 아이디:" + data.data);
+        setSearchTextTrue(true);
+      } else {
+        setSearchText("존재하지 않는 정보입니다.");
+        setSearchTextTrue(false);
+      }
     } catch {
       console.log("error in searchId");
     }
@@ -87,6 +95,13 @@ function IdSearch(props) {
             <button className="searchPageIdSearchButton" onClick={OnTrySearch}>
               아이디 찾기
             </button>
+            <div
+              className={
+                searchTextTrue ? "searchPageTextTrue" : "searchPageTextFalse"
+              }
+            >
+              {searchText}
+            </div>
           </div>
         </div>
       </div>

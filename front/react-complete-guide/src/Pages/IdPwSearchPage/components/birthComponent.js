@@ -1,5 +1,5 @@
 import "../../LoginPage/component/signUpPage.css";
-import "../searchPage.css";
+import "./searchPage.css";
 import Select from "react-select";
 import { useMemo } from "react";
 

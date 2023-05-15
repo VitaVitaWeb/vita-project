@@ -48,7 +48,7 @@ function TopBarLong(props) {
         <button
           onClick={props.isLogined ? goMyPage : goLogin}
           className={
-            props.isLogined ? "topBarLLoginButtonMyPage" : "topBarSLoginButton"
+            props.isLogined ? "topBarLLoginButtonMyPage" : "topBarLLoginButton"
           }
         >
           {props.isLogined ? "마이페이지" : "로그인"}

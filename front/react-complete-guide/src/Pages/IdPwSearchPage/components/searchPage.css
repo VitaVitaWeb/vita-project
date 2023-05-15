@@ -130,3 +130,14 @@
   color: white;
   cursor: pointer;
 }
+.searchPageTextFalse {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 20px;
+  color: red;
+}
+.searchPageTextTrue {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 20px;
+}

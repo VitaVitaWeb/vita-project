@@ -1,4 +1,4 @@
-import "../searchPage.css";
+import "./searchPage.css";
 
 function GenderComponent(props) {
   const onChangeMale = () => {

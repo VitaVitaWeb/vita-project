@@ -33,7 +33,7 @@ function TopBarShort(props) {
         <button
           onClick={props.isLogined ? goMyPage : goLogin}
           className={
-            props.isLogined ? "topBarSButtonMyPage" : "topBarSLoginButton"
+            props.isLogined ? "topBarSButtonMyPage" : "topBarSButtonShort"
           }
         >
           {props.isLogined ? "마이페이지" : "로그인"}

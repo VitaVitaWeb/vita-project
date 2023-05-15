@@ -16,11 +16,11 @@ function TopBar() {
   });
 
   useEffect(() => {
-    if (userInfo.user.id !== null) {
+    if (userInfo.user.id) {
       setIsLogined(true);
       console.log(userInfo.user.id);
     } else setIsLogined(false);
-  }, []);
+  }, [userInfo]);
 
   return innerWidth > 1300 ? (
     <TopBarLong isLogined={isLogined} />

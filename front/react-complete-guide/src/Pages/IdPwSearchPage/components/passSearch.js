@@ -1,4 +1,4 @@
-import "../searchPage.css";
+import "./searchPage.css";
 import TopBar from "../../../CommonComponent/TopBar/topBar";
 function PassSearch(props) {
   const OnclickIdButton = () => {

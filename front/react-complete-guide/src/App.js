@@ -9,9 +9,21 @@ import SignUpPage from "./Pages/LoginPage/signUpPage";
 import CustomerInfo from "./customerInfo";
 import MyPage from "./Pages/MyPage/MyPage";
 import SearchPage from "./Pages/IdPwSearchPage/searchPage";
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 function App() {
-  const [user, setUser] = useState({ id: null });
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        const data = await axios.get("/auth/checkLogin");
+        setUser(data.data);
+      } catch {
+        console.log("error in login");
+      }
+    };
+    checkLogin();
+  }, []);
   return (
     <CustomerInfo.Provider value={{ user: user, setContextApi: setUser }}>
       <BrowserRouter>
