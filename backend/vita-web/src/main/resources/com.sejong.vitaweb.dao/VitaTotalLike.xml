@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sejong.vitaweb.dao.VitaLikeTotalDao">
+    <select id="findVitaByKey" resultMap="VitaLikeTotalDto">
+        select
+        *
+        from
+        vitatotallike
+        where
+        VNO=#{VNO}
+    </select>
+
+    <update id="updateCntByKey">
+        update
+        vitatotallike
+        set
+        cnt = cnt +1
+        where
+        VNO=#{VNO}
+    </update>
+
+
+    <resultMap id="VitaLikeTotalDto" type="com.sejong.vitaweb.vo.VitaLikeTotalDto">
+        <id property="vno" column="vno" />
+        <result property="cnt" column="cnt" />
+    </resultMap>
+</mapper>
