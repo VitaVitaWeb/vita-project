@@ -1,5 +1,5 @@
 
-x	java:S116+"WRename this field "milk_thistle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ª—®üÿÿÿÿ8’ÓÆı0
-X	java:S125"<This block of commented-out lines of code should be removed.(§˜Íš8¡’ÓÆı0
+x	java:S116+"WRename this field "milk_thistle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ª—®üÿÿÿÿ8‰ÅâÂ‚1
+X	java:S125"<This block of commented-out lines of code should be removed.(§˜Íš8“ÅâÂ‚1
 p
-java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.RequestMapping'.(ö»¿ë8ÚÎåÆı0
+java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.RequestMapping'.(ö»¿ë8–ÅâÂ‚1
