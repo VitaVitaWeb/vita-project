@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import "./InfoFormSpaceStyle.css";
-=======
 import './InfoFormSpaceStyle.css';
->>>>>>> front-chan7
 import axios from "axios";
 import React, { useState, useEffect } from 'react';
 
@@ -13,11 +9,8 @@ function InfoFormSpace(props) {
     async function fetchData() {
       const result = await axios.get(`/vita/formulation/${props.vitaNumber}`);
       console.log(result.data);
-<<<<<<< HEAD
-      setvitaForm(result.data);
-=======
+
       setVitaForm(result.data);
->>>>>>> front-chan7
     }
     fetchData();
   }, [props.vitaNumber]);
@@ -27,19 +20,11 @@ function InfoFormSpace(props) {
   }
 
   const englishToKorean = {
-<<<<<<< HEAD
-    cap: "캡슐",
-    chew: "츄어블",
-    liq: "액상",
-    pill: "정",
-    pow: "가루",
-=======
-    'cap': '캡슐',
-    'chew': '츄어블',
-    'liq': '액상',
-    'pill': '정',
-    'pow': '가루',
->>>>>>> front-chan7
+    'cap': { text: '캡슐', iconUrl: 'https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_3.7d3cda98.svg&w=64&q=75' },
+    'chew': { text: '츄어블', iconUrl: 'https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_6.daf8a0bd.svg&w=64&q=75' },
+    'liq': { text: '액상', iconUrl: 'https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_7.03773d70.svg&w=64&q=75' },
+    'pill': { text: '정', iconUrl: 'https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_1.cd6875f2.svg&w=64&q=75' },
+    'pow': { text: '분말', iconUrl: 'https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_8.92adae6b.svg&w=64&q=75' },
   };
 
   const trueValues = Object.entries(vitaForm).filter(([key, value]) => value === true);
@@ -47,16 +32,9 @@ function InfoFormSpace(props) {
   const FormIconSource = trueValues.map(([key, value]) => (
     <li className="info-form-li">
       <img
-        src="https://cdn-icons-png.flaticon.com/512/10008/10008824.png" // replace this with the correct icon URL
-<<<<<<< HEAD
-        alt="icon"
-        width="55"
-        height="55"
-      />
-=======
+        src={englishToKorean[key].iconUrl} 
         alt="icon" width="55" height="55" />
->>>>>>> front-chan7
-      <span className="list-text">{englishToKorean[key]}</span>
+      <span className="list-text">{englishToKorean[key].text}</span>
     </li>
   ));
 

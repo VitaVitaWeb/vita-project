@@ -1,12 +1,12 @@
 import './CompareCautionSpaceStyle.css';
+import CompareCaution from './CompareCaution';
 
 function CompareCautionSpace(props) {
-    const cautionList = props.vitaCaution;
+    const vitaNumberlist = props.vitaNumbers;
+    console.log('cautionSpace:', vitaNumberlist);
 
-    const cautionSource = cautionList.map((cautionSrc) => (
-        <div className="compare-caution-precautions">
-            {cautionSrc}
-        </div>
+    const cautionSource = vitaNumberlist.map((vitaNumber) => (
+        <CompareCaution vitaNumber={vitaNumber}></CompareCaution>
     ))
 
     return (
@@ -16,6 +16,7 @@ function CompareCautionSpace(props) {
             </div>
             <div id="compare-each-caution-space">
                 {cautionSource}
+                {props.productCnt === 2 && <ul className="compare-caution-precautions"></ul>}
             </div>
         </div>
     );
