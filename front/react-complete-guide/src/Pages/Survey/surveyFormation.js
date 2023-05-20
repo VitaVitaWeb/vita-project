@@ -4,23 +4,36 @@ import SurveyBottomBar from "./component/surveyBottomBar";
 import "./component/surveyBackground.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import SurveyListApi from "./SurveyListApi";
+import SurveyFormationApi from "./surveyFormationApi";
+import CustomerInfo from "../../customerInfo";
 
 function SurveyFormation() {
   const lists = [
-    ["상관없음", "캡슐", "정", "가루"],
-    ["액상", "츄어블", "젤리", "포"],
-    ["환"],
+    [
+      { name: "캡슐", dbName: "cap" },
+      { name: "정", dbName: "pill" },
+      { name: "가루", dbName: "pow" },
+      { name: "액상", dbName: "liq" },
+    ],
+    [{ name: "츄어블", dbName: "chew" }],
   ];
   const shortLists = [
-    ["상관없음", "캡슐", "정"],
-    ["가루", "액상", "츄어블"],
-    ["환", "젤리", "포"],
+    [
+      { name: "캡슐", dbName: "cap" },
+      { name: "정", dbName: "pill" },
+      { name: "가루", dbName: "pow" },
+    ],
+    [
+      { name: "액상", dbName: "liq" },
+      { name: "츄어블", dbName: "chew" },
+    ],
   ];
+
   const text = {
     title: "어떤 제형을 선호하시나요?",
-    content: "중복 선택이 가능합니다. (최대 5개)",
+    content: "중복 선택이 가능합니다.",
   };
+
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   useEffect(() => {
     const resizeListener = () => {
@@ -31,16 +44,26 @@ function SurveyFormation() {
 
   const movePage = useNavigate();
   function goNextPage() {
-    movePage("/surveyPurpose");
+    movePage("/surveyPurpose", { state: { surveyFor: surveyInfo } });
   }
   function goPrevPage() {
     movePage("/mainPage");
   }
+  const customerInfo = useContext(CustomerInfo);
+  const [surveyInfo, setSurveyInfo] = useState({
+    cap: false,
+    pill: false,
+    pow: false,
+    liq: false,
+    chew: false,
+  });
 
-  const [surveyInfo, setSurveyInfo] = useState([]);
   return (
-    <SurveyListApi.Provider
-      value={{ surveyInfo: surveyInfo, addList: setSurveyInfo }}
+    <SurveyFormationApi.Provider
+      value={{
+        surveyInfo: surveyInfo,
+        setContextApi: setSurveyInfo,
+      }}
     >
       <div className="surveyBackgroundBorder">
         <SurveyMain
@@ -53,7 +76,7 @@ function SurveyFormation() {
         prevNav={goPrevPage}
       ></SurveyBottomBar>
       <TopBar></TopBar>
-    </SurveyListApi.Provider>
+    </SurveyFormationApi.Provider>
   );
 }
 export default SurveyFormation;

@@ -17,7 +17,11 @@ function MainPage() {
   };
   const asdfe = async () => {
     try {
-      const data = await axios.get("/auth/checkLogin");
+      const data = await axios.get("/survey/function", {
+        params: {
+          id: userInfo.user.id,
+        },
+      });
       console.log(data);
     } catch {
       console.log("error in login");

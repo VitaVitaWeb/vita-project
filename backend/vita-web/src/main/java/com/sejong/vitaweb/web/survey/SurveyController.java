@@ -15,14 +15,15 @@ public class SurveyController {
     SurveyService surveyService;
 
     @PostMapping("insert")
-    public void insert(@RequestParam String id,
-                       @RequestBody VitaSurveyFunction vitaSurveyFunction,
-                       @RequestBody VitaSurveyFormulation vitaSurveyFormulation) {
-        surveyService.insertFunction(id, vitaSurveyFunction);
-        surveyService.insertFormulation(id, vitaSurveyFormulation);
-        int forno = surveyService.getForNo(id);
-        int funno = surveyService.getFuncNo(id);
-        surveyService.insertSurvey(forno, funno);
+    public void insert(@RequestBody VitaSurveyDto vitaSurveyDto) {
+        log.info("info = {}", vitaSurveyDto);
+        VitaSurveyFormulation vitaSurveyFormulation = new VitaSurveyFormulation(vitaSurveyDto);
+        VitaSurveyFunction vitaSurveyFunction = new VitaSurveyFunction(vitaSurveyDto);
+        surveyService.insertFunction(vitaSurveyDto.getId(), vitaSurveyFunction);
+//        surveyService.insertFormulation(vitaSurveyDto.getId(), vitaSurveyFormulation);
+//        int forno = surveyService.getForNo(vitaSurveyDto.getId());
+//        int funno = surveyService.getFuncNo(vitaSurveyDto.getId());
+//        surveyService.insertSurvey(forno, funno);
     }
 
     @GetMapping("function")

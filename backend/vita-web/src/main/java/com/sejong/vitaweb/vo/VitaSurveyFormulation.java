@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Setter
 @ToString
 public class VitaSurveyFormulation implements Serializable {
-    private int forno;
     boolean cap; // 캡슐 형태
     boolean pill; // 정 형태
     boolean pow; // 가루 형태
@@ -18,4 +17,12 @@ public class VitaSurveyFormulation implements Serializable {
     boolean chew; // 츄어블 형태
 
     String id;
+
+    public VitaSurveyFormulation(VitaSurveyDto vitaSurveyInfo) {
+        this.cap = vitaSurveyInfo.isCap();
+        this.pill = vitaSurveyInfo.isPill();
+        this.pow =vitaSurveyInfo.isPow();
+        this.liq = vitaSurveyInfo.isLiq();
+        this.chew = vitaSurveyInfo.isChew();
+    }
 }

@@ -66,7 +66,7 @@ public class AuthController {
 
 
   @PostMapping("join")
-  public Boolean join(@RequestBody Member member, Model model) throws Exception {
+  public Boolean join(@RequestBody Member member) throws Exception {
     log.info("member = {}", member);
 
     // 가입정보가 중복인지 확인하고 문제없다면 가입처리

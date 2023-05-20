@@ -1,22 +1,31 @@
 import "./surveyButton.css";
-import React, { useContext, useState } from "react";
-import SurveyListApi from "../SurveyListApi";
+import React, { useContext, useState, useEffect } from "react";
+import SurveyFormationApi from "../surveyFormationApi";
+import SurveyPurposeApi from "../surveyPurposeApi";
+import SurveyCheckName from "./surveyCheckName";
 function SurveyButton(props) {
   const [isClicked, setState] = useState(false);
-  const surveyList = useContext(SurveyListApi);
-  const nameConst = { name: props.name };
+  const surveyInfo = useContext(SurveyFormationApi);
+  const surveyInfoTwo = useContext(SurveyPurposeApi);
 
   const OnButtonClick = () => {
     if (isClicked === true) {
       setState(false);
-      surveyList.addList(
-        surveyList.surveyInfo.filter((name) => name.name != props.name)
-      );
+      SurveyCheckName({
+        name: props.name.dbName,
+        surveyInfo: surveyInfo,
+        surveyInfoTwo: surveyInfoTwo,
+        check: false,
+      });
     } else {
       setState(true);
-      surveyList.addList([nameConst, ...surveyList.surveyInfo]);
+      SurveyCheckName({
+        name: props.name.dbName,
+        surveyInfo: surveyInfo,
+        surveyInfoTwo: surveyInfoTwo,
+        check: true,
+      });
     }
-    console.log(surveyList.surveyInfo);
   };
   return (
     <div>
@@ -24,7 +33,7 @@ function SurveyButton(props) {
         className={isClicked ? "surveyButtonClicked" : "surveyButton"}
         onClick={OnButtonClick}
       ></button>
-      <div className="surveyButtonText">{props.name}</div>
+      <div className="surveyButtonText">{props.name.name}</div>
     </div>
   );
 }
