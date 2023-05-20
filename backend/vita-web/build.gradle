@@ -93,3 +93,8 @@ eclipse {
 		javaRuntimeName = "JavaSE-11"
 	}
 }
+
+// deploy
+jar {
+    enabled = false
+}
