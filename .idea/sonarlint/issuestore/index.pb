@@ -20,8 +20,6 @@ Lbackend/vita-web/src/main/java/com/sejong/vitaweb/web/filter/CORSFilter.java,7
 Ç
 Rbackend/vita-web/src/main/java/com/sejong/vitaweb/web/filter/AdminCheckFilter.java,7\3\737b8a4757b44517282d35ce28800d6d1c71cbf6
 Ç
-Rbackend/vita-web/src/main/java/com/sejong/vitaweb/web/like/VitaLikeController.java,9\f\9f2286cb877d9be03885b9f5291429379d01d0c2
-Ç
 Rbackend/vita-web/src/main/java/com/sejong/vitaweb/web/survey/SurveyController.java,b\0\b040b14b12e3195408ff527153ed08bc51472c02
 M
 backend/vita-web/build.gradle,7\8\78847909b824534d9594b1cd069475e3acfb08c8
@@ -95,11 +93,3 @@ Jbackend/vita-web/src/main/java/com/sejong/vitaweb/vo/VitaLikeTotalDto.java,1\5
 Xbackend/vita-web/src/main/java/com/sejong/vitaweb/web/becareful/BeCarefulController.java,7\a\7a0b35079871b590845a5bfabf6f2e6efb9c2892
 
 Obackend/vita-web/src/main/java/com/sejong/vitaweb/web/HelloWorldController.java,c\a\ca5744ff17537842ae51f7ec41c50c1ccbb4a811
-ä
-Zbackend/vita-web/src/main/java/com/sejong/vitaweb/service/DefaultVitaLikeTotalService.java,7\3\73764a1cd0b78df2dbede2391aa1ed947cc3c51c
-É
-Sbackend/vita-web/src/main/java/com/sejong/vitaweb/service/VitaLikeTotalService.java,f\b\fbc12ad2864c30a5e81acd54c2d35ad6888a41eb
-{
-Kbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/VitaLikeTotalDao.java,a\1\a19bfd4f7f9f3fcf3d42fe083f2b73b2be8ec2b9
-ê
-`backend/vita-web/src/main/java/com/sejong/vitaweb/web/vitatotallike/VitaTotalLikeController.java,f\6\f662819d19ea00d4ce50b9afd733c38122211ebf
