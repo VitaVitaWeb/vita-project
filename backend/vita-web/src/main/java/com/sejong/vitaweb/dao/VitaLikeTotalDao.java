@@ -12,4 +12,5 @@ public interface VitaLikeTotalDao {
 
     VitaLikeTotalDto findVitaByKey(int vno);
     int updateCntByKey(int vno);
+    int minusCntByKey(int vno);
 }

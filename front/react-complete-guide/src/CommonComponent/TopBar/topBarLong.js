@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./component/topBarLong.css";
 function TopBarLong(props) {
   const movePage = useNavigate();
@@ -27,7 +26,10 @@ function TopBarLong(props) {
       setInnerWidth(window.innerWidth);
     };
     window.addEventListener("resize", resizeListener);
-  });
+    return () => {
+      window.removeEventListener("resize", resizeListener);
+    };
+  }, []);
 
   return (
     <div className="topBarLong">
@@ -57,4 +59,5 @@ function TopBarLong(props) {
     </div>
   );
 }
+
 export default TopBarLong;

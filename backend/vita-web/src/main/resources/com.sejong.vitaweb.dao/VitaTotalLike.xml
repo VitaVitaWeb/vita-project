@@ -23,6 +23,14 @@
         VNO=#{VNO}
     </update>
 
+    <update id="minusCntByKey">
+        update
+        vitatotallike
+        set
+        cnt = cnt -1
+        where
+        VNO=#{VNO}
+    </update>
 
     <resultMap id="VitaLikeTotalDto" type="com.sejong.vitaweb.vo.VitaLikeTotalDto">
         <id property="vno" column="vno" />
