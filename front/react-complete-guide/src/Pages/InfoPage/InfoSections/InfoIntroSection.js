@@ -1,8 +1,26 @@
 import './InfoIntroSectionStyle.css';
 import InfoButtons from './InfoButtons';
 import Wish from '../../../CommonComponent/Wish';
+import axios from "axios";
+import React, { useState, useEffect } from 'react';
 
 function InfoIntroSection(props) {
+    const [vitaWishData, setVitaWishData] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const result = await axios.get(`/totallike/${props.vitaNumber}`);
+            console.log("Wish Count: ", result.data);
+            setVitaWishData(result.data);
+        }
+        fetchData();
+    }, [props.vitaNumber]);
+
+
+    if (!vitaWishData) {
+        return <div>Loading...</div>;
+    }
+
     const categoryClassMapping = {
         '식품': 'category-food',
         '건강식품': 'category-health-food',
@@ -34,7 +52,7 @@ function InfoIntroSection(props) {
                         <div id="info-vita-name">
                             {props.vitaName}
                         </div>
-                        <Wish vitaWish={props.vitaWish} vitaWishCount={props.vitaWishCount}></Wish>
+                        <Wish vitaNumber={props.vitaNumber }vitaWish={props.vitaWish} vitaWishCount={vitaWishData.cnt}></Wish>
                     </div>
                     <hr></hr>
                     <div id="vita-category">

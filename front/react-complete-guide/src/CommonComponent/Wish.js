@@ -22,7 +22,7 @@ function Wish(props) {
             </span>
             <span>{likeCount}</span>
             <button type="button" className="wish-button" onClick={handleLikeButtonClick}>
-                <WishButton></WishButton>
+                <WishButton vitaNumber={props.vitaNumber}></WishButton>
             </button >
         </div >
     );
