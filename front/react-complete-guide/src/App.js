@@ -36,7 +36,7 @@ function App() {
           ></Route>
           <Route path={"/surveyPurpose"} element={<SurveyPurpose />}></Route>
           <Route path={"/ComparePage"} element={<VitaComparePage />}></Route>
-          <Route path={"/InfoPage"} element={<VitaInfoPage />}></Route>
+          <Route path={"/InfoPage/:id"} element={<VitaInfoPage />}></Route>
           <Route path={"/loginPage"} element={<LoginPage />}></Route>
           <Route path={"/signUpPage"} element={<SignUpPage />}></Route>
           <Route path={"/myPage"} element={<MyPage />} />

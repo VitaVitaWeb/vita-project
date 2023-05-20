@@ -2,11 +2,11 @@ import './CompareFunctionalitySpaceStyle.css';
 import CompareFunctionality from './CompareFunctionality';
 
 function CompareFunctionalitySpace(props) {
-    const functionalityList = props.vitaFunctionality;
-    console.log(functionalityList);
+    const vitaNumberlist = props.vitaNumbers;
+    console.log('functionlitySpace:', vitaNumberlist);
 
-    const functionalityListSource = functionalityList.map((functionalitySrc) => (
-        <CompareFunctionality functionalityListIcon={functionalitySrc}></CompareFunctionality>
+    const functionalityListSource = vitaNumberlist.map((vitaNumber) => (
+        <CompareFunctionality vitaNumber={vitaNumber}></CompareFunctionality>
     ));
 
     return (
@@ -16,6 +16,7 @@ function CompareFunctionalitySpace(props) {
             </div>
             <div id="compare-each-functionality-space">
                 {functionalityListSource}
+                {props.productCnt === 2 && <ul className="compare-functionality-ul"></ul>}
             </div>
         </div>
     );

@@ -66,8 +66,8 @@ const SimpleSlider = (props) => {
     const vitaSource = vitaListData.map((vitaSrc) => (
         <div>
             <VitaBlock
+                vitaNumber={vitaSrc.vno}
                 vitaImage={vitaSrc.img_path}
-                x={false}
                 vitaWishCount={0}
                 vitaName={vitaSrc.name}
             ></VitaBlock>
