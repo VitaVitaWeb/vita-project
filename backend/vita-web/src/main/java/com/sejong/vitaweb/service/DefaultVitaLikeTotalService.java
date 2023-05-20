@@ -21,4 +21,9 @@ public class DefaultVitaLikeTotalService implements VitaLikeTotalService{
     public int updateCntByKey(int vno) throws Exception {
         return vitaLikeTotalDao.updateCntByKey(vno);
     }
+
+    @Override
+    public int minusCntByKey(int vno) throws Exception {
+        return vitaLikeTotalDao.minusCntByKey(vno);
+    }
 }

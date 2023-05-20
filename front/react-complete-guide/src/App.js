@@ -7,10 +7,14 @@ import VitaComparePage from "./Pages/ComparePage/VitaComparePage";
 import LoginPage from "./Pages/LoginPage/loginPage";
 import SignUpPage from "./Pages/LoginPage/signUpPage";
 import CustomerInfo from "./customerInfo";
+import SupplementList from "./Pages/ListPage/List";
+import SurveyListApi from "./Pages/Survey/SurveyListApi";
 import MyPage from "./Pages/MyPage/MyPage";
-import SearchPage from "./Pages/IdPwSearchPage/searchPage";
+import { useEffect } from "react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import SearchPage from "./Pages/IdPwSearchPage/searchPage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, createContext } from "react";
 function App() {
   const [user, setUser] = useState({});
   useEffect(() => {
@@ -34,6 +38,7 @@ function App() {
             path={"/surveyFormation"}
             element={<SurveyFormation />}
           ></Route>
+          <Route path={"/supplementList"} element={<SupplementList />} />
           <Route path={"/surveyPurpose"} element={<SurveyPurpose />}></Route>
           <Route path={"/ComparePage"} element={<VitaComparePage />}></Route>
           <Route path={"/InfoPage/:id"} element={<VitaInfoPage />}></Route>
