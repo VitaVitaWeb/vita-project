@@ -5,6 +5,7 @@ import InfoRecommendAnotherSection from './InfoSections/InfoRecommendAnotherSect
 import TopBar from '../../CommonComponent/TopBar/topBar';
 import axios from "axios"
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 function VitaInfoPage() {
     const dummyVita = [
@@ -31,16 +32,17 @@ function VitaInfoPage() {
         }
     ];
 
+    const { id } = useParams();
     const [vitaData, setVitaData] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
-            const result = await axios.get('/vita/1');
+            const result = await axios.get(`/vita/${id}`);
             console.log(result.data); // 로그 추가
             setVitaData(result.data);
         }
         fetchData();
-    }, []);
+    }, [id]);
 
 
     if (!vitaData) {

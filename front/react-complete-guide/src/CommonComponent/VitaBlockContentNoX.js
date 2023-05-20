@@ -21,7 +21,7 @@ function VitaBlockContentNoX(props) {
                     </button>
                 </div>
                 <div className="vita-component-image">
-                    <Link to='/InfoPage'>
+                    <Link to={`/InfoPage/${props.vitaNumber}`}>
                         <img
                             src={props.vitaImage}
                             alt="영양제 이미지" width="150" height="150" />

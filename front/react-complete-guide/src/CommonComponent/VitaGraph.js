@@ -83,7 +83,11 @@ function VitaGraph(props) {
                             <></>
                     }
                 </>
-                <span className="compare-today-range" style={compareTodayLength}></span>
+                <span className="compare-today-range" style={compareTodayLength}>
+                    <div className="nutrient-today-text">
+                        {props.today}{nutrientUnit}
+                    </div>
+                </span>
             </div>
         );
     }
@@ -104,7 +108,7 @@ function VitaGraph(props) {
                 </>
                 <span className="info-today-range" style={infoTodayLength}>
                     <div className="nutrient-today-text">
-                        {props.content}{nutrientUnit}
+                        {props.today}{nutrientUnit}
                     </div>
                 </span>
             </div>

@@ -2,10 +2,9 @@ import './ComparePopupStyle.css'
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
-function ComparePopup({ onSelectedProduct }) {
+function ComparePopup({ onProductSelected }) {
     const [isPopupOpen, setIsPopupOpen] = useState(false); // 팝업창 여부
     const [searchKeyword, setSearchKeyword] = useState(''); // 검색어
-    const [isAddImageVisible, setIsImageVisible] = useState(true); // 선택 이미지 여부
     const [products, setProducts] = useState([]); // 검색된 상품 목록
 
     // 검색 기능
@@ -39,21 +38,18 @@ function ComparePopup({ onSelectedProduct }) {
     // 상품 선택하기 버튼
     function handleSelectProduct(product) {
         console.log('Selected Product in popup:', product);
-        onSelectedProduct(product);
+        onProductSelected(product);
         setIsPopupOpen(false);
-        setIsImageVisible(false);
     }
 
     return (
         <>
-            {isAddImageVisible && (
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbTLeo4LDVGQRQgOJ7iF1O6HDhG0B53OSdQ&usqp=CAU"
-                    alt="영양제를 추가해주세요"
-                    className="vita-need-choice-image"
-                    onClick={handleSearchButtonClick}
-                />
-            )}
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbTLeo4LDVGQRQgOJ7iF1O6HDhG0B53OSdQ&usqp=CAU"
+                alt="영양제를 추가해주세요"
+                className="vita-need-choice-image"
+                onClick={handleSearchButtonClick}
+            />
             {
                 isPopupOpen && (
                     <div id="popup">

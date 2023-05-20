@@ -2,10 +2,11 @@ import './CompareFormSpaceStyle.css';
 import CompareForms from './CompareForms';
 
 function CompareFormSpace(props) {
-    const formList = props.vitaForm
+    const vitaNumberlist = props.vitaNumbers;
+    console.log('formSpace:', vitaNumberlist);
 
-    const formListSource = formList.map((formSrc) => (
-        <CompareForms formIconSrc={formSrc[0]} formIconName={formSrc[1]}></CompareForms>
+    const formListSource = vitaNumberlist.map((vitaNumber) => (
+        <CompareForms vitaNumber={vitaNumber}></CompareForms>
     ))
 
     return (
@@ -15,6 +16,7 @@ function CompareFormSpace(props) {
             </div>
             <div id="compare-each-form-space">
                 {formListSource}
+                {props.productCnt === 2 && <ul className="compare-form-ul"></ul>}
             </div>
         </div>
     );

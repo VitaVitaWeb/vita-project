@@ -4,15 +4,24 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import WishButton from './WishButton';
 
+// 폐기 코드
+
 function VitaBlockContent(props) {
     const likeCounter = useSelector(state => state.counter);
     const toggleCounterHandler = () => { };
+
+    // 선택 취소 버튼 클릭 시 선택된 상품을 null로 설정
+    const handleDeselectProduct = () => {
+        if (props.onProductSelected) {
+            props.onProductSelected(null);
+        }
+    }
 
     return (
         <div>
             <div className="vita-component-top">
                 <div className="x-button-space">
-                    <button type="button" className="x-button" onClick={() => props.setSelectedProduct(false)}>
+                    <button type="button" className="x-button" onClick={handleDeselectProduct}>
                         <img
                             src="https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ficon_close_24.f7ecbaef.svg&w=32&q=75"
                             alt="icon-X" />
@@ -26,7 +35,7 @@ function VitaBlockContent(props) {
                     </button>
                 </div>
                 <div className="vita-component-image">
-                    <Link to='/InfoPage'>
+                    <Link to={`/InfoPage/${props.vitaNumber}`}>
                         <img
                             src={props.vitaImage}
                             alt="영양제 이미지" width="150" height="150" />
