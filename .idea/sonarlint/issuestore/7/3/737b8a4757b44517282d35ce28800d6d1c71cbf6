@@ -1,0 +1,12 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(°¨¬
+]
+java:S1854"GRemove this useless assignment to local variable "httpServletResponse".(Ó¹°Ê
+N
+java:S1481"8Remove this unused "httpServletResponse" local variable.(Ó¹°Ê
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‡„µûÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ïß„Ù
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ô¡šäÿÿÿÿÿ
+P	java:S125"<This block of commented-out lines of code should be removed.(ô¼C
+O
+java:S1128"9Remove this unused import 'com.sejong.vitaweb.vo.Member'.(ƒ¡‰ˆ

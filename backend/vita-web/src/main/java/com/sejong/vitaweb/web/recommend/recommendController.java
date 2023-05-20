@@ -17,8 +17,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class recommendController {
 
-    @Autowired
     RecommendService recommendService;
+
+    @Autowired
+    public recommendController(RecommendService recommendService) {
+        this.recommendService = recommendService;
+    }
+
 
     @GetMapping
     public RecommendDto recommendAll() throws Exception {
