@@ -16,11 +16,11 @@ function InfoDetailsSection(props) {
                 <hr width="1050px"></hr>
                 <InfoFormSpace vitaNumber={props.vitaNumber}></InfoFormSpace>
                 <hr width="1050px"></hr>
-                <InfoHowtoeatSpace vitaHowtoeat={props.vitaHowtoeat}></InfoHowtoeatSpace>
+                <InfoHowtoeatSpace vitaNumber={props.vitaNumber}></InfoHowtoeatSpace>
                 <hr width="1050px"></hr>
                 <InfoNutrientListSpace vitaNumber={props.vitaNumber}></InfoNutrientListSpace>
                 <hr width="1050px"></hr>
-                <InfoCautionSpace vitaCaution={props.vitaCaution}></InfoCautionSpace>
+                <InfoCautionSpace vitaNumber={props.vitaNumber}></InfoCautionSpace>
             </div>
         </section>
     );
