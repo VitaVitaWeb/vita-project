@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 import "./InfoFormSpaceStyle.css";
-=======
-import './InfoFormSpaceStyle.css';
->>>>>>> front-chan7
 import axios from "axios";
 import React, { useState, useEffect } from 'react';
 
@@ -13,11 +10,7 @@ function InfoFormSpace(props) {
     async function fetchData() {
       const result = await axios.get(`/vita/formulation/${props.vitaNumber}`);
       console.log(result.data);
-<<<<<<< HEAD
       setvitaForm(result.data);
-=======
-      setVitaForm(result.data);
->>>>>>> front-chan7
     }
     fetchData();
   }, [props.vitaNumber]);
@@ -27,19 +20,12 @@ function InfoFormSpace(props) {
   }
 
   const englishToKorean = {
-<<<<<<< HEAD
     cap: "캡슐",
     chew: "츄어블",
     liq: "액상",
     pill: "정",
     pow: "가루",
-=======
-    'cap': '캡슐',
-    'chew': '츄어블',
-    'liq': '액상',
-    'pill': '정',
-    'pow': '가루',
->>>>>>> front-chan7
+
   };
 
   const trueValues = Object.entries(vitaForm).filter(([key, value]) => value === true);
@@ -48,14 +34,10 @@ function InfoFormSpace(props) {
     <li className="info-form-li">
       <img
         src="https://cdn-icons-png.flaticon.com/512/10008/10008824.png" // replace this with the correct icon URL
-<<<<<<< HEAD
         alt="icon"
         width="55"
         height="55"
       />
-=======
-        alt="icon" width="55" height="55" />
->>>>>>> front-chan7
       <span className="list-text">{englishToKorean[key]}</span>
     </li>
   ));
