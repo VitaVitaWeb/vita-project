@@ -1,10 +1,12 @@
 package com.sejong.vitaweb.web.auth;
 
+import com.sejong.vitaweb.service.MailService;
 import com.sejong.vitaweb.service.MemberService;
 import com.sejong.vitaweb.vo.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
@@ -16,6 +18,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberController {
   private final MemberService memberService;
+  private final MailService mailService;
+
 
   @GetMapping("list")
   public List<Member> list() throws Exception {
@@ -65,6 +69,12 @@ public class MemberController {
     return member.getId() ;
   }
 
+
+  @GetMapping("findpwd/{id}/{code}")
+  @ResponseBody
+  public void findpwd(@PathVariable("id") String id, @PathVariable("code")String code) throws Exception{
+    mailService.findPassword(id, code);
+  }
 //
 //
 //

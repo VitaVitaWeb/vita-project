@@ -13,4 +13,6 @@ public interface VitaLikeTotalService {
 
     VitaLikeTotalDto findVitaByKey(int vno) throws Exception;
     int updateCntByKey(int vno) throws Exception;
+
+    int minusCntByKey(int vno) throws Exception;
 }

@@ -5,6 +5,7 @@ import com.sejong.vitaweb.vo.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +22,8 @@ import java.util.Properties;
 public class DefaultMemberService implements MemberService {
   @Autowired
   private final MemberDao memberDao;
+
+
 
   @Autowired
   public DefaultMemberService(MemberDao memberDao) {
@@ -85,6 +88,7 @@ public class DefaultMemberService implements MemberService {
   public Member findId(String name, Date birthday, int gender) throws Exception {
     return memberDao.findId(name, birthday, gender);
   }
+
 
 
 //  @Override

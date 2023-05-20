@@ -60,6 +60,7 @@ dependencies {
 	// json
 	implementation 'org.json:json:20190722'
 	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
 }
 
 tasks.named('test') {
@@ -92,4 +93,9 @@ eclipse {
 		targetCompatibility = 11
 		javaRuntimeName = "JavaSE-11"
 	}
+}
+
+// deploy
+jar {
+    enabled = false
 }

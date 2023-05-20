@@ -12,6 +12,27 @@
     gap: 30px;
     margin: 32px 0px;
     justify-content: center;
+    position: relative;
+}
+
+#reset-button {
+    position: absolute;   /* 절대 위치를 설정 */
+    top: 50%;             /* 상단에서부터 50% 위치에 놓음 (버튼의 중앙이 부모 요소의 중앙과 맞춰짐) */
+    right: 20%;             
+    transform: translateY(-50%);  /* Y축으로 -50%만큼 이동 (버튼의 중앙이 부모 요소의 중앙과 맞춰짐) */
+    background-color: #ff8667;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#reset-button:hover {
+    background-color: #e75b40;
+    cursor: pointer;
 }
 
 #compare-vita-space {

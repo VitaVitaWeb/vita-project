@@ -1,16 +1,18 @@
 import './CompareButtonsSpaceStyle.css';
 import CompareButtons from './CompareButtons';
 
-function CompareButtonsSpace() {
-    const buttonList = [true, true, false];
+function CompareButtonsSpace(props) {
+    const vitaNumberlist = props.vitaNumbers;
+    console.log('ButtonsSpace:', vitaNumberlist);
 
-    const buttonSource = buttonList.map((buttonSrc) => (
-        <CompareButtons select={buttonSrc}></CompareButtons>
+    const buttonListSource = vitaNumberlist.map((vitaNumber) => (
+        <CompareButtons vitaNumber={vitaNumber}></CompareButtons>
     ))
 
     return (
         <div id="compare-buttons-space">
-            {buttonSource}
+            {buttonListSource}
+            {props.productCnt === 2 && <ul className="compare-buttons"></ul>}
         </div>
     );
 }

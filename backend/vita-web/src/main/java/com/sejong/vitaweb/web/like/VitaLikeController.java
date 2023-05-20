@@ -13,7 +13,8 @@ public class VitaLikeController {
         this.vitaLikeService = vitaLikeService;
     }
 
-    @PostMapping
+
+    @PostMapping("/{status}/{id}/{vno}")
     public void addVitaLike(@RequestParam String status, @RequestParam String id, @RequestParam int vno) {
         vitaLikeService.addVitaLike(status, id, vno);
     }

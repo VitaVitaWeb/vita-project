@@ -22,7 +22,7 @@ function InfoNutrientListSpace(props) {
             setVitaRecommend(resultRecommend.data);
         }
         fetchData();
-    }, [props.vitaNumber, props.anotherParameter]);
+    }, [props.vitaNumber]);
 
     if (!vitaNutrient || !vitaRecommend) {
         return <div>Loading...</div>;
@@ -70,7 +70,12 @@ function InfoNutrientListSpace(props) {
             <div className="info-nutrient-name-graph">
                 <div className="info-nutrient-name">{englishToKorean[key]}</div>
                 <div className="info-nutrient-graph-space">
-                    <VitaGraph type={"info"} nutrient={englishToKorean[key]} content={value} today={todayValue}></VitaGraph>
+                    <VitaGraph
+                        type={"info"}
+                        nutrient={englishToKorean[key]}
+                        content={value}
+                        today={todayValue}>
+                    </VitaGraph>
                 </div>
             </div>
         );

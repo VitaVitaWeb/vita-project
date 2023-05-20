@@ -82,10 +82,10 @@ function Login() {
         </div>
         <div className="loginPageBox">
           <input
+            type="password"
             onChange={onChangePassword}
             className="loginPageInput"
             placeholder="비밀번호:"
-            type="password"
           ></input>
         </div>
         <div className={isLoginFailed ? "loginPageLoginFalse" : null}>

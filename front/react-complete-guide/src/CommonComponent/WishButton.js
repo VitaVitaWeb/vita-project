@@ -1,17 +1,28 @@
 import './WishButtonStyle.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
-function WishButton() {
+function WishButton(props) {
     const [display, setDisplay] = useState(false);
     const dispatch = useDispatch();
 
-    const incrementHandler = () => {
-        dispatch({ type: 'increment' });
+    const incrementHandler = async () => {
+        try {
+            await axios.put(`/totallike/${props.vitaNumber}`);
+            dispatch({ type: 'increment' });
+        } catch (error) {
+            console.error('Failed to add like:', error);
+        }
     }
 
-    const decrementHandler = () => {
-        dispatch({ type: 'decrement' });
+    const decrementHandler = async () => {
+        try {
+            await axios.put(`/totallikeminus/${props.vitaNumber}`);
+            dispatch({ type: 'decrement' });
+        } catch (error) {
+            console.error('Failed to remove like:', error);
+        }
     }
 
     function changeHeart() {
@@ -21,20 +32,20 @@ function WishButton() {
     return (
         <div>
             {display ?
-                < img
+                <img
                     className="heart-icon"
                     src="https://cdn-icons-png.flaticon.com/128/138/138533.png"
-                    alt="icon-heart" onClick={() => {
-                        changeHeart()
-                        decrementHandler()
+                    alt="icon-heart" onClick={async () => {
+                        await decrementHandler();
+                        changeHeart();
                     }}></img>
                 :
-                < img
+                <img
                     className="heart-icon"
                     src="https://cdn-icons-png.flaticon.com/128/3717/3717486.png"
-                    alt="icon-heart" onClick={() => {
-                        changeHeart()
-                        incrementHandler()
+                    alt="icon-heart" onClick={async () => {
+                        await incrementHandler();
+                        changeHeart();
                     }}></img>
             }
         </div>

@@ -1,22 +1,35 @@
 import './CompareButtonsStyle.css';
+import axios from "axios"
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function CompareButtons(props) {
-    if (props.select === true) {
-        return (
-            <div id="compare-buttons">
-                <Link to="/Infopage">
-                    <button className="compare-button">살펴보기 버튼</button>
-                </Link>
-                <Link to="https://shopping.naver.com/home">
-                    <button className="compare-button">구매하기 버튼</button>
-                </Link>
-            </div>
-        );
+    const [vitaData, setVitaData] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const result = await axios.get(`/vita/${props.vitaNumber}`);
+            console.log(result.data); // 로그 추가
+            setVitaData(result.data);
+        }
+        fetchData();
+    }, []);
+
+
+    if (!vitaData) {
+        return <div>Loading...</div>;
     }
-    else {
-        return (<div id="compare-buttons"></div>);
-    }
+
+    return (
+        <div className="compare-buttons">
+            <Link to={`/InfoPage/${props.vitaNumber}`}>
+                <button className="compare-button">살펴보기 버튼</button>
+            </Link>
+            <Link to={vitaData.link}>
+                <button className="compare-button">구매하기 버튼</button>
+            </Link>
+        </div>
+    );
 }
 
 export default CompareButtons;
