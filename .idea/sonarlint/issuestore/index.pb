@@ -19,10 +19,6 @@ P
 Lbackend/vita-web/src/main/java/com/sejong/vitaweb/web/filter/CORSFilter.java,7\7\77f846969b6e9de6fc89bc946e89b8ec32b59d5f
 ‚
 Rbackend/vita-web/src/main/java/com/sejong/vitaweb/web/filter/AdminCheckFilter.java,7\3\737b8a4757b44517282d35ce28800d6d1c71cbf6
-‚
-Rbackend/vita-web/src/main/java/com/sejong/vitaweb/web/survey/SurveyController.java,b\0\b040b14b12e3195408ff527153ed08bc51472c02
-M
-backend/vita-web/build.gradle,7\8\78847909b824534d9594b1cd069475e3acfb08c8
 K
 backend/vita-web/.gitignore,8\c\8ce581c6525a5956d418511fc67d8c2ef0e88e7c
 y
@@ -63,8 +59,6 @@ Fbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/HowToEatDao.java,d\2\d2f
 Vbackend/vita-web/src/main/java/com/sejong/vitaweb/web/howtoeat/howtoeatController.java,2\6\26834fde6b861af9e8a211335afeb34ba60af888
 …
 Ubackend/vita-web/src/main/java/com/sejong/vitaweb/service/DefaultHowToEatService.java,8\7\8700677d5f83f4c0cbd52532ded792cbf781f804
-v
-Fbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/VitaLikeDao.java,5\e\5ee29f54942607a781ca77c15f0356be27d65f7a
 |
 Lbackend/vita-web/src/main/java/com/sejong/vitaweb/service/SurveyService.java,7\5\75144b6ed1ad915980297ca8d0ac14d9117333bc
 z
@@ -93,3 +87,9 @@ Jbackend/vita-web/src/main/java/com/sejong/vitaweb/vo/VitaLikeTotalDto.java,1\5
 Xbackend/vita-web/src/main/java/com/sejong/vitaweb/web/becareful/BeCarefulController.java,7\a\7a0b35079871b590845a5bfabf6f2e6efb9c2892
 
 Obackend/vita-web/src/main/java/com/sejong/vitaweb/web/HelloWorldController.java,c\a\ca5744ff17537842ae51f7ec41c50c1ccbb4a811
+~
+Nbackend/vita-web/src/main/java/com/sejong/vitaweb/web/auth/AuthController.java,2\0\204a4782541b19c190298a9d0194d5f892ee27ac
+€
+Pbackend/vita-web/src/main/java/com/sejong/vitaweb/web/auth/MemberController.java,7\9\795cc8ee746a4aea0fb9bd533d29a34615be4afa
+{
+Kbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/VitaLikeTotalDao.java,a\1\a19bfd4f7f9f3fcf3d42fe083f2b73b2be8ec2b9

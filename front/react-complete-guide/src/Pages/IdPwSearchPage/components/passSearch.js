@@ -10,6 +10,7 @@ function PassSearch(props) {
   };
   return (
     <div>
+      <TopBar></TopBar>
       <div className="searchPageMain">
         <div className="searchPageIdPwButtom">
           <button
@@ -41,7 +42,6 @@ function PassSearch(props) {
           </div>
         </div>
       </div>
-      <TopBar></TopBar>
     </div>
   );
 }

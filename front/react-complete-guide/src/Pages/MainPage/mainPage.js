@@ -7,7 +7,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CustomerInfo from "../../customerInfo";
 import React, { useContext, useState } from "react";
-
+import Footer from "../Footer/footer";
+import MainSlider from "./component/mainSlider";
 function MainPage() {
   const userInfo = useContext(CustomerInfo);
   const [some, setsome] = useState("false");
@@ -38,17 +39,18 @@ function MainPage() {
   const movePage = useNavigate();
   return (
     <div>
-      <button onClick={asdf}>asdf</button>
+      <TopBar></TopBar>
+      <MainSlider slides={slides} />
+      {/* <button onClick={asdf}>asdf</button>
       <button onClick={asdfe}>{some}</button>
-      <button onClick={asdfea}>asdfafa</button>
+      <button onClick={asdfea}>asdfafa</button> */}
       {userInfo.user.id}
-      {
-        /* <Main></Main>
-        <MainSec></MainSec>
-        <MainBestItem></MainBestItem>
-        <MainThird></MainThird> */
-        <TopBar></TopBar>
-      }
+
+      {/* <Main></Main>
+      <MainSec></MainSec>
+      <MainBestItem></MainBestItem>
+      <MainThird></MainThird> */}
+      <Footer />
     </div>
   );
 }
