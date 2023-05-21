@@ -39,21 +39,23 @@ function SurveyFormation() {
 
   const [surveyInfo, setSurveyInfo] = useState([]);
   return (
-    <SurveyListApi.Provider
-      value={{ surveyInfo: surveyInfo, addList: setSurveyInfo }}
-    >
-      <div className="surveyBackgroundBorder">
-        <SurveyMain
-          lists={innerWidth > 1000 ? lists : shortLists}
-          text={text}
-        ></SurveyMain>
-      </div>
-      <SurveyBottomBar
-        nextNav={goNextPage}
-        prevNav={goPrevPage}
-      ></SurveyBottomBar>
+    <div>
       <TopBar></TopBar>
-    </SurveyListApi.Provider>
+      <SurveyListApi.Provider
+        value={{ surveyInfo: surveyInfo, addList: setSurveyInfo }}
+      >
+        <div className="surveyBackgroundBorder">
+          <SurveyMain
+            lists={innerWidth > 1000 ? lists : shortLists}
+            text={text}
+          ></SurveyMain>
+        </div>
+        <SurveyBottomBar
+          nextNav={goNextPage}
+          prevNav={goPrevPage}
+        ></SurveyBottomBar>
+      </SurveyListApi.Provider>
+    </div>
   );
 }
 export default SurveyFormation;

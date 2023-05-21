@@ -2,6 +2,7 @@ package com.sejong.vitaweb.web.like;
 
 import com.sejong.vitaweb.service.VitaLikeService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,7 @@ public class VitaLikeController {
     }
 
 
-    @PostMapping("/{status}/{id}/{vno}")
+    @PutMapping
     public void addVitaLike(@RequestParam String status, @RequestParam String id, @RequestParam int vno) {
         vitaLikeService.addVitaLike(status, id, vno);
     }

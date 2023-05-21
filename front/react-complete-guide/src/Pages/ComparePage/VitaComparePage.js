@@ -1,14 +1,14 @@
-import TopBar from '../../CommonComponent/TopBar/topBar';
-import CompareDetailsSection from './CompareSections/CompareDetailsSection';
-import './VitaComparePageStyle.css';
+import TopBar from "../../CommonComponent/TopBar/topBar";
+import CompareDetailsSection from "./CompareSections/CompareDetailsSection";
+import "./VitaComparePageStyle.css";
 
 function VitaComparePage() {
-    return (
-        <div>
-            <CompareDetailsSection></CompareDetailsSection>
-            <TopBar></TopBar>
-        </div>
-    );
+  return (
+    <div>
+      <TopBar></TopBar>
+      <CompareDetailsSection></CompareDetailsSection>
+    </div>
+  );
 }
 
 export default VitaComparePage;

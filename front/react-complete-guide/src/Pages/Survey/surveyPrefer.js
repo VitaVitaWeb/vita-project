@@ -23,11 +23,11 @@ function SurveyPrefer() {
   }
   return (
     <div>
+      <TopBar></TopBar>
       <div className="surveyBackgroundBorder">
         <SurveyMain lists={lists} text={text}></SurveyMain>
       </div>
       <SurveyBottom nextNav={goNextPage} prevNav={goPrevPage}></SurveyBottom>
-      <TopBar></TopBar>
     </div>
   );
 }

@@ -72,6 +72,7 @@ function Login() {
 
   return (
     <div>
+      <TopBar></TopBar>
       <div className="loginPageMain">
         <div className="loginPageBox">
           <input
@@ -106,7 +107,6 @@ function Login() {
           회원가입
         </button>
       </div>
-      <TopBar></TopBar>
     </div>
   );
 }

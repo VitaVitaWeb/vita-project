@@ -1,0 +1,13 @@
+/* CSS 파일 */
+.carousel-item {
+  position: relative; /* 오버레이가 올바르게 위치하도록 설정 */
+}
+
+.carousel-item .overlay {
+  position: absolute; /* 오버레이가 슬라이드 전체를 덮도록 설정 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* 검은색 반투명 오버레이 설정 */
+}

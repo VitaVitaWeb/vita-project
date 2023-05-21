@@ -43,6 +43,7 @@ function SurveyPurpose() {
   }
   return (
     <div>
+      <TopBar></TopBar>
       <div className="surveyBackgroundBorder">
         <SurveyMain
           lists={innerWidth > 1000 ? lists : shortLists}
@@ -50,7 +51,6 @@ function SurveyPurpose() {
         ></SurveyMain>
       </div>
       <SurveyBottom nextNav={goNextPage} prevNav={goPrevPage}></SurveyBottom>
-      <TopBar></TopBar>
     </div>
   );
 }
