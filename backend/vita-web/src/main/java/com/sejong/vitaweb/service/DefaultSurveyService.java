@@ -1,13 +1,10 @@
 package com.sejong.vitaweb.service;
 
 import com.sejong.vitaweb.dao.SurveyDao;
-import com.sejong.vitaweb.dao.VitaDao;
 import com.sejong.vitaweb.vo.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -64,5 +61,11 @@ public class DefaultSurveyService implements SurveyService {
   @Override
   public int isFunctionNullById(String id) {
     return surveyDao.isFunctionNullById(id);
+  }
+
+  @Override
+  public boolean isDuplicatedSurvey(String id) {
+    if(surveyDao.isDuplicatedSurvey(id)>0) return true;
+    else return false;
   }
 }

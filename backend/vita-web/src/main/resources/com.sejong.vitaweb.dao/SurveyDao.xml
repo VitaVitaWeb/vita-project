@@ -47,13 +47,16 @@
     <insert id="insertFunction" parameterType="vitaSurveyFunction">
         insert into vita_sur_function(SC, ACT, EYE, JOINT, OXY, SIGHT, SKIN, IMN,
         JANG, GAN, PRS, BONE, COL, VMID, ID)
-        values(#{SC}, #{ACT}, #{EYE}, #{JOINT}, #{OXY}, #{SIGHT}, #{SKIN}, #{IMN},
-        #{JANG}, #{GAN}, #{PRS}, #{BONE}, #{COL}, #{VMID}, #{ID})
+        values(#{vitaSurveyFunction.sc}, #{vitaSurveyFunction.act}, #{vitaSurveyFunction.eye}, #{vitaSurveyFunction.joint}, #{vitaSurveyFunction.oxy}, #{vitaSurveyFunction.sight}, #{vitaSurveyFunction.skin}, #{vitaSurveyFunction.imn},
+        #{vitaSurveyFunction.jang}, #{vitaSurveyFunction.gan}, #{vitaSurveyFunction.prs}, #{vitaSurveyFunction.bone}, #{vitaSurveyFunction.col}, #{vitaSurveyFunction.vmid}, #{vitaSurveyFunction.id})
     </insert>
+
 
     <insert id="insertFormulation" parameterType="vitaSurveyFormulation">
         insert into vita_sur_formulation(CAP, PILL, POW, LIQ, CHEW, ID)
-        values(#{CAP}, #{PILL}, #{POW}, #{LIQ}, #{CHEW}, #{ID})
+        values(#{vitaSurveyFormulation.cap}, #{vitaSurveyFormulation.pill},
+        #{vitaSurveyFormulation.pow}, #{vitaSurveyFormulation.liq},
+        #{vitaSurveyFormulation.chew}, #{vitaSurveyFormulation.id})
     </insert>
 
     <insert id="insertSurvey" parameterType="vitaSurvey">
@@ -84,21 +87,31 @@
     <update id="updateFunction" parameterType="vitaSurveyFunction">
         update vita_sur_function
         set
-        SC=#{SC}, ACT=#{ACT}, EYE=#{EYE}, JOINT=#{JOINT}, OXY=#{OXY}, SIGHT=#{SIGHT},
-        SKIN=#{SKIN}, IMN=#{IMN}, JANG=#{JANG}, GAN=#{GAN}, PRS=#{PRS}, BONE=#{BONE},
-        COL=#{COL}, VMID=#{VMID}
+        SC=#{vitaSurveyFunction.sc}, ACT=#{vitaSurveyFunction.act},
+        EYE=#{vitaSurveyFunction.eye}, JOINT=#{vitaSurveyFunction.joint},
+        OXY=#{vitaSurveyFunction.oxy}, SIGHT=#{vitaSurveyFunction.sight},
+        SKIN=#{vitaSurveyFunction.skin}, IMN=#{vitaSurveyFunction.imn},
+        JANG=#{vitaSurveyFunction.jang}, GAN=#{vitaSurveyFunction.gan},
+        PRS=#{vitaSurveyFunction.prs}, BONE=#{vitaSurveyFunction.bone},
+        COL=#{vitaSurveyFunction.col}, VMID=#{vitaSurveyFunction.vmid}
         where
-        id = #{id};
+        id = #{vitaSurveyFunction.id};
     </update>
 
     <update id="updateFormulation" parameterType="vitaSurveyFormulation">
         update
             vita_sur_formulation
         set
-            CAP=#{CAP}, PILL=#{PILL}, POW=#{POW}, LIQ=#{LIQ}, CHEW=#{CHEW}
+            CAP=#{vitaSurveyFormulation.cap}, PILL=#{vitaSurveyFormulation.pill},
+            POW=#{vitaSurveyFormulation.pow}, LIQ=#{vitaSurveyFormulation.liq},
+            CHEW=#{vitaSurveyFormulation.chew}
         where
-            id = #{id};
+            id = #{vitaSurveyFormulation.id};
     </update>
+
+    <select id="isDuplicatedSurvey" resultType="int">
+        select count(*) from vita_sur_function where id = #{id}
+    </select>
 
 
 </mapper>

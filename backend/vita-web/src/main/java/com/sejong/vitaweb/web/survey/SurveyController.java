@@ -19,11 +19,16 @@ public class SurveyController {
         log.info("info = {}", vitaSurveyDto);
         VitaSurveyFormulation vitaSurveyFormulation = new VitaSurveyFormulation(vitaSurveyDto);
         VitaSurveyFunction vitaSurveyFunction = new VitaSurveyFunction(vitaSurveyDto);
-        surveyService.insertFunction(vitaSurveyDto.getId(), vitaSurveyFunction);
-//        surveyService.insertFormulation(vitaSurveyDto.getId(), vitaSurveyFormulation);
-//        int forno = surveyService.getForNo(vitaSurveyDto.getId());
-//        int funno = surveyService.getFuncNo(vitaSurveyDto.getId());
-//        surveyService.insertSurvey(forno, funno);
+        if(surveyService.isDuplicatedSurvey(vitaSurveyDto.getId())) {
+            surveyService.updateFunction(vitaSurveyDto.getId(), vitaSurveyFunction);
+            surveyService.updateFormulation(vitaSurveyDto.getId(), vitaSurveyFormulation);
+        } else{
+            surveyService.insertFunction(vitaSurveyDto.getId(), vitaSurveyFunction);
+            surveyService.insertFormulation(vitaSurveyDto.getId(), vitaSurveyFormulation);
+            int forno = surveyService.getForNo(vitaSurveyDto.getId());
+            int funno = surveyService.getFuncNo(vitaSurveyDto.getId());
+            surveyService.insertSurvey(forno, funno);
+        }
     }
 
     @GetMapping("function")
@@ -40,15 +45,15 @@ public class SurveyController {
         return surveyService.findFormulationById(id);
     }
 
-    @PutMapping("edit")
-    public void editSurvey(@RequestParam String id,
-                           @RequestBody VitaSurveyFunction vitaSurveyFunction,
-                           @RequestBody VitaSurveyFormulation vitaSurveyFormulation) {
-        int functionUpdate = surveyService.updateFunction(id, vitaSurveyFunction);
+    @PatchMapping("edit")
+    public void editSurvey(@RequestBody VitaSurveyDto vitaSurveyDto) {
+        VitaSurveyFormulation vitaSurveyFormulation = new VitaSurveyFormulation(vitaSurveyDto);
+        VitaSurveyFunction vitaSurveyFunction = new VitaSurveyFunction(vitaSurveyDto);
+        int functionUpdate = surveyService.updateFunction(vitaSurveyDto.getId(), vitaSurveyFunction);
         if(functionUpdate < 1) {
             throw new IllegalStateException("function 수정에 실패하였습니다.");
         }
-        int formulationUpdate = surveyService.updateFormulation(id, vitaSurveyFormulation);
+        int formulationUpdate = surveyService.updateFormulation(vitaSurveyDto.getId(), vitaSurveyFormulation);
         if(formulationUpdate < 1) {
             throw new IllegalStateException("formulation 수정에 실패하였습니다.");
         }

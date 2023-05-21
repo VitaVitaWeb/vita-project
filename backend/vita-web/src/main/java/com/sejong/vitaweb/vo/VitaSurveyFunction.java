@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class VitaSurveyFunction implements Serializable {
     private int funno;
 
-    private boolean SC; // stress-care
+    private boolean sc; // stress-care
     private boolean act; // 활력 증진
     private boolean eye; // 눈 건강
     private boolean joint; // 관절
@@ -31,7 +31,7 @@ public class VitaSurveyFunction implements Serializable {
 
     public VitaSurveyFunction(VitaSurveyDto vitaSurveyInfo) {
         this.act = vitaSurveyInfo.isAct();
-        this.SC = vitaSurveyInfo.isSc();
+        this.sc = vitaSurveyInfo.isSc();
         this.eye = vitaSurveyInfo.isEye();
         this.joint = vitaSurveyInfo.isJoint();
         this.oxy = vitaSurveyInfo.isOxy();

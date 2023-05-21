@@ -18,11 +18,15 @@ public class VitaSurveyFormulation implements Serializable {
 
     String id;
 
+    public VitaSurveyFormulation() {
+    }
+
     public VitaSurveyFormulation(VitaSurveyDto vitaSurveyInfo) {
         this.cap = vitaSurveyInfo.isCap();
         this.pill = vitaSurveyInfo.isPill();
         this.pow =vitaSurveyInfo.isPow();
         this.liq = vitaSurveyInfo.isLiq();
         this.chew = vitaSurveyInfo.isChew();
+        this.id = vitaSurveyInfo.getId();
     }
 }

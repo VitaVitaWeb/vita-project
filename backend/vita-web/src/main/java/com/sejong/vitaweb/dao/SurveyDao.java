@@ -28,4 +28,6 @@ public interface SurveyDao {
 
 
     int isFunctionNullById(String id);
+
+    int isDuplicatedSurvey(String id);
 }
