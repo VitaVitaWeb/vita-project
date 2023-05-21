@@ -13,7 +13,7 @@ import MyPage from "./Pages/MyPage/MyPage";
 import { useEffect } from "react";
 import axios from "axios";
 import SearchPage from "./Pages/IdPwSearchPage/searchPage";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, createContext } from "react";
 function App() {
   const [user, setUser] = useState({});

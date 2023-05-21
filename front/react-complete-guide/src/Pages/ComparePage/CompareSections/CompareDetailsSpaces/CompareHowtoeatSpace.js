@@ -1,12 +1,12 @@
 import './CompareHowtoeatSpaceStyle.css';
+import CompareHowtoeat from './CompareHowtoeat';
 
 function CompareHowtoeatSpace(props) {
-    const howtoeatList = props.vitaHowtoeat;
+    const vitaNumberlist = props.vitaNumbers;
+    console.log('howtoeatSpace:', vitaNumberlist);
 
-    const howtoeatSource = howtoeatList.map((howtoeatSrc) => (
-        <div className="compare-howtoeat-description">
-            {howtoeatSrc}
-        </div>
+    const howtoeatSource = vitaNumberlist.map((vitaNumber) => (
+        <CompareHowtoeat vitaNumber={vitaNumber}></CompareHowtoeat>
     ))
 
     return (
@@ -16,6 +16,7 @@ function CompareHowtoeatSpace(props) {
             </div>
             <div id="compare-each-howtoeat-space">
                 {howtoeatSource}
+                {props.productCnt === 2 && <ul className="compare-howtoeat-description"></ul>}
             </div>
         </div>
     );

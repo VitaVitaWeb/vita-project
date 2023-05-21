@@ -12,12 +12,3 @@
 
     width: auto;
 }
-
-.compare-howtoeat-description {
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    flex: 1;
-
-    padding: 0 40px;
-}
