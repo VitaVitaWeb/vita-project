@@ -21,8 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/becareful")
 public class BeCarefulController {
 
-    @Autowired
+
     private BecarefulService becarefulService;
+
+    @Autowired
+    public BeCarefulController(BecarefulService becarefulService) {
+        this.becarefulService = becarefulService;
+    }
 
     @GetMapping("/{vno}")
     public BecarefulDto findVitamin(@PathVariable int vno) throws Exception {

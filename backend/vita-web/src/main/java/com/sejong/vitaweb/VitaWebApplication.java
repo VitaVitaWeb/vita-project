@@ -19,9 +19,4 @@ public class VitaWebApplication {
 		System.out.println("vita-web project start!");
 	}
 
-//	@GetMapping("/")
-//	public String welcome() {
-//		return "main";
-//	}
-
 }

@@ -65,6 +65,8 @@ function SurveyFormation() {
         setContextApi: setSurveyInfo,
       }}
     >
+      {" "}
+      <TopBar></TopBar>
       <div className="surveyBackgroundBorder">
         <SurveyMain
           lists={innerWidth > 1000 ? lists : shortLists}
@@ -75,7 +77,6 @@ function SurveyFormation() {
         nextNav={goNextPage}
         prevNav={goPrevPage}
       ></SurveyBottomBar>
-      <TopBar></TopBar>
     </SurveyFormationApi.Provider>
   );
 }

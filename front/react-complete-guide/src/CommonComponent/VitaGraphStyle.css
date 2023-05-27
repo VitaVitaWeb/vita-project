@@ -1,104 +1,104 @@
 .compare-nutrient-range {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    position: absolute;
-    width: 350px;
-    height: 20px;
+  position: absolute;
+  width: 350px;
+  height: 20px;
 
-    border: 1px solid #a7a7a7;
-    border-radius: 50px;
+  border: 1px solid #a7a7a7;
+  border-radius: 50px;
 
-    left: 38px;
-    top: 0px;
+  left: 38px;
+  top: 0px;
 
-    z-index: 1;
+  z-index: 1;
 }
 
 .compare-today-range {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    position: absolute;
-    height: 20px;
+  position: absolute;
+  height: 20px;
 
-    background-color: transparent;
-    border: 1px solid #a7a7a7;
+  background-color: transparent;
+  border: 1px solid #a7a7a7;
 
-    left: 38px;
-    top: 0px;
+  left: 38px;
+  top: 0px;
 
-    z-index: 4;
+  z-index: 4;
 }
 
 .compare-nutrient-content {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    position: absolute;
-    height: 20px;
+  position: absolute;
+  height: 20px;
 
-    background-color: #FF5C35;
-    border: 1px solid #a7a7a7;
+  background-color: #ff5c35;
+  border: 1px solid #a7a7a7;
 
-    left: 38px;
-    top: 0px;
+  left: 38px;
+  top: 10px;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 .info-nutrient-range {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    position: absolute;
-    width: 700px;
-    height: 20px;
+  position: absolute;
+  width: 700px;
+  height: 20px;
 
-    border: 1px solid #a7a7a7;
-    border-radius: 50px;
+  border: 1px solid #a7a7a7;
+  border-radius: 50px;
 
-    left: 38px;
-    top: 0px;
+  left: 38px;
+  top: 0px;
 
-    z-index: 1;
+  z-index: 1;
 }
 
 .info-today-range {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    position: absolute;
-    height: 20px;
+  position: absolute;
+  height: 20px;
 
-    background-color: transparent;
-    border: 1px solid #a7a7a7;
+  background-color: transparent;
+  border: 1px solid #a7a7a7;
 
-    left: 38px;
-    top: 0px;
+  left: 38px;
+  top: 0px;
 
-    z-index: 4;
+  z-index: 4;
 }
 
 .info-nutrient-content {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    position: absolute;
-    height: 20px;
+  position: absolute;
+  height: 20px;
 
-    background-color: #FF5C35;
+  background-color: #ff5c35;
 
-    left: 38px;
-    top: 0px;
+  left: 38px;
+  top: 0px;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 .nutrient-content-text {
-    position: absolute;
-    font-weight: bolder;
-    left: 95%;
-    top: 30px;
+  position: absolute;
+  font-weight: bolder;
+  left: 95%;
+  top: 30px;
 }
 
 .nutrient-today-text {
-    position: absolute;
-    font-weight: bolder;
-    left: 95%;
-    top: 30px;
+  position: absolute;
+  font-weight: bolder;
+  left: 95%;
+  top: 30px;
 }
