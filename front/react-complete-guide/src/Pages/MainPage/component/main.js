@@ -9,7 +9,6 @@ function Main() {
           <img className="vitaminImg" alt="비타민" src="img/Vitamin2.png" />
           <img className="statusImg" alt="스탯" src="img/Status.png" />
         </div>
-        <button className="textBox">영양제 비교하러 가기</button>
       </div>
     </div>
   );

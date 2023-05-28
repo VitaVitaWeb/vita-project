@@ -6,15 +6,16 @@ import VitaInfoPage from "./Pages/InfoPage/VitaInfoPage";
 import VitaComparePage from "./Pages/ComparePage/VitaComparePage";
 import LoginPage from "./Pages/LoginPage/loginPage";
 import SignUpPage from "./Pages/LoginPage/signUpPage";
-import CustomerInfo from "./customerInfo";
+import { CustomerInfoProvider } from "./customerInfo";
 import SupplementList from "./Pages/ListPage/List";
-import SurveyListApi from "./Pages/Survey/SurveyListApi";
 import MyPage from "./Pages/MyPage/MyPage";
 import { useEffect } from "react";
 import axios from "axios";
+import TopBar from "./CommonComponent/TopBar/topBar";
 import SearchPage from "./Pages/IdPwSearchPage/searchPage";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, createContext } from "react";
+
 function App() {
   const [user, setUser] = useState({});
   useEffect(() => {
@@ -29,7 +30,7 @@ function App() {
     checkLogin();
   }, []);
   return (
-    <CustomerInfo.Provider value={{ user: user, setContextApi: setUser }}>
+    <CustomerInfoProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />}></Route>
@@ -48,7 +49,8 @@ function App() {
           <Route path={"/searchPage"} element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
-    </CustomerInfo.Provider>
+    </CustomerInfoProvider>
   );
 }
+
 export default App;

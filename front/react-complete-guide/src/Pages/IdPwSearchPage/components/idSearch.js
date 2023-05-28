@@ -63,6 +63,7 @@ function IdSearch(props) {
 
   return (
     <div>
+      <TopBar></TopBar>
       <div className="searchPageMain">
         <div className="searchPageIdPwButtom">
           <button className="searchPageIdButton" onClick={OnclickIdButton}>
@@ -105,7 +106,6 @@ function IdSearch(props) {
           </div>
         </div>
       </div>
-      <TopBar></TopBar>
     </div>
   );
 }

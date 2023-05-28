@@ -29,13 +29,12 @@ function Login() {
       state: { status: false },
     });
   }
-  const onChangeId = (val) => {
-    //아이디 입력시 갱신
-    inputInfo.id = val.target.value;
+  const onChangeId = (event) => {
+    setinputInfo((prev) => ({ ...prev, id: event.target.value }));
   };
-  const onChangePassword = (val) => {
-    //비밀번호 입력시 갱신
-    inputInfo.password = val.target.value;
+
+  const onChangePassword = (event) => {
+    setinputInfo((prev) => ({ ...prev, password: event.target.value }));
   };
   const onTryLogin = async () => {
     try {
@@ -63,7 +62,13 @@ function Login() {
       const data = await axios.get("/member/detail", {
         params: { id: inputInfo.id },
       });
-      userInfo.setContextApi(data.data);
+
+      console.log("Data from axios:", data.data); // Add this line
+
+      await userInfo.setContextApi(data.data); // assuming setContextApi returns a Promise
+
+      console.log("User info after login:", userInfo); // And this line
+
       goMainPage();
     } catch {
       console.log("error in get member detail");
@@ -72,6 +77,7 @@ function Login() {
 
   return (
     <div>
+      <TopBar></TopBar>
       <div className="loginPageMain">
         <div className="loginPageBox">
           <input
@@ -106,7 +112,6 @@ function Login() {
           회원가입
         </button>
       </div>
-      <TopBar></TopBar>
     </div>
   );
 }
