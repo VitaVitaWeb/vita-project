@@ -1,18 +1,19 @@
-import './VitaBlockStyle.css';
-import VitaBlockContentNoX from './VitaBlockContentNoX';
+import "./VitaBlockStyle.css";
+import VitaBlockContentNoX from "./VitaBlockContentNoX";
 
 function VitaBlock(props) {
-    return (
-        <div className="vita-component-space">
-            <VitaBlockContentNoX
-                vitaNumber={props.vitaNumber}
-                vitaImage={props.vitaImage}
-                vitaName={props.vitaName}
-                vitaWishCount={props.vitaWishCount}
-                vitaWish={props.vitaWish}>
-            </VitaBlockContentNoX>
-        </div>
-    )
+  return (
+    <div className="vita-component-space">
+      <VitaBlockContentNoX
+        vitaNumber={props.vitaNumber}
+        vitaImage={props.vitaImage}
+        vitaName={props.vitaName}
+        vitaWishCount={props.vitaWishCount}
+        vitaWish={props.vitaWish}
+        onProductRemoved={props.onProductRemoved} // onProductRemoved prop 추가
+      ></VitaBlockContentNoX>
+    </div>
+  );
 }
 
 export default VitaBlock;

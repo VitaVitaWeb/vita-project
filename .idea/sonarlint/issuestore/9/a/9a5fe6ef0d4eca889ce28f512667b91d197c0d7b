@@ -1,6 +1,0 @@
-
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÎÏòÑ8¸ß”Ï‚1
-\
-java:S1128"@Remove this unused import 'com.sejong.vitaweb.dao.BecarefulDao'.(ŠéôY8‘ˆÒÏ‚1
-`
-java:S1128">Remove this unused import 'com.sejong.vitaweb.vo.HowToEatDto'.(„Ë•áøÿÿÿÿ8“ˆÒÏ‚1

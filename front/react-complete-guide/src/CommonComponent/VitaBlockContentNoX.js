@@ -7,9 +7,16 @@ import { useSelector } from "react-redux";
 function VitaBlockContentNoX(props) {
   const likeCounter = useSelector((state) => state.counter);
   const toggleCounterHandler = () => {};
-
+  const handleRemoveClick = () => {
+    props.onProductRemoved && props.onProductRemoved(props.vitaNumber);
+  };
   return (
     <div>
+      <div className="vita-component-top">
+        <div className="x-button-space">
+          <button onClick={handleRemoveClick}>X</button> {/* X 버튼 추가 */}
+        </div>
+      </div>
       <div className="vita-component-top">
         <div className="x-button-space"></div>
       </div>

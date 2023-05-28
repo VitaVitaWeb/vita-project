@@ -86,11 +86,15 @@ function CarouselComponent() {
           style={{ backgroundImage: 'url("/img/mainthird.png")' }}
         >
           <div className="carousel-caption d-none d-md-block position-absolute top-50 start-50 translate-middle text-center">
-            <h5 className="text-white" style={{ fontSize: "24px" }}>
+            <h5 className="text-white" style={{ fontSize: "70px" }}>
               영양제 정보보기
             </h5>
-            <p className="text-white">
-              Some representative placeholder content for the third slide.
+            <p></p>
+            <p
+              className="text-white"
+              style={{ fontFamily: "Verdana", fontSize: "24px" }}
+            >
+              원하는 영양제에 대한 자세한 정보를 드립니다!
             </p>
           </div>
         </div>

@@ -77,8 +77,6 @@ v
 Fbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/VitaLikeDao.java,5\e\5ee29f54942607a781ca77c15f0356be27d65f7a
 r
 Bbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/VitaDao.java,f\0\f0555c770af9d0a369f3cb31894eb31e2d15781f
-
-Obackend/vita-web/src/main/java/com/sejong/vitaweb/service/BecarefulService.java,9\a\9a5fe6ef0d4eca889ce28f512667b91d197c0d7b
 †
 Vbackend/vita-web/src/main/java/com/sejong/vitaweb/service/DefaultBecarefulService.java,f\1\f1a345419ae905029ccee7bf2ed61949883b1266
 v
@@ -87,5 +85,5 @@ M
 backend/vita-web/build.gradle,7\8\78847909b824534d9594b1cd069475e3acfb08c8
 w
 Gbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/BecarefulDao.java,c\4\c4b5ffb3f710da9b8098e76ebc8d1a010b004fc7
-y
-Ibackend/vita-web/src/main/java/com/sejong/vitaweb/VitaWebApplication.java,7\1\71aa8b5e42f4ca5dd1c84e011311be01e94b7342
+
+Obackend/vita-web/src/main/java/com/sejong/vitaweb/web/HelloWorldController.java,c\a\ca5744ff17537842ae51f7ec41c50c1ccbb4a811
