@@ -32,7 +32,11 @@ function SurveyButton(props) {
       <button
         className={isClicked ? "surveyButtonClicked" : "surveyButton"}
         onClick={OnButtonClick}
-      ></button>
+      >
+        {props.name.iconUrl && (
+          <img src={props.name.iconUrl} alt={props.name.name} />
+        )}
+      </button>
       <div className="surveyButtonText">{props.name.name}</div>
     </div>
   );

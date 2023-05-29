@@ -1,3 +1,4 @@
+/*
 package com.sejong.vitaweb.service;
 
 
@@ -26,3 +27,4 @@ public class DefaultMailService implements MailService {
         mailSender.send(message);
     }
 }
+*/

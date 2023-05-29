@@ -8,24 +8,94 @@ import SurveyFormationApi from "./surveyFormationApi";
 import CustomerInfo from "../../customerInfo";
 
 function SurveyFormation() {
+  const englishToKorean = {
+    cap: {
+      text: "캡슐",
+      iconUrl:
+        "https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_3.7d3cda98.svg&w=64&q=75",
+    },
+    chew: {
+      text: "츄어블",
+      iconUrl:
+        "https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_6.daf8a0bd.svg&w=64&q=75",
+    },
+    liq: {
+      text: "액상",
+      iconUrl:
+        "https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_7.03773d70.svg&w=64&q=75",
+    },
+    pill: {
+      text: "정",
+      iconUrl:
+        "https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_1.cd6875f2.svg&w=64&q=75",
+    },
+    pow: {
+      text: "분말",
+      iconUrl:
+        "https://aimee.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCODE_3_8.92adae6b.svg&w=64&q=75",
+    },
+  };
   const lists = [
     [
-      { name: "캡슐", dbName: "cap" },
-      { name: "정", dbName: "pill" },
-      { name: "가루", dbName: "pow" },
-      { name: "액상", dbName: "liq" },
+      {
+        name: englishToKorean["cap"].text,
+        dbName: "cap",
+        iconUrl: englishToKorean["cap"].iconUrl,
+      },
+      {
+        name: englishToKorean["pill"].text,
+        dbName: "pill",
+        iconUrl: englishToKorean["pill"].iconUrl,
+      },
+      {
+        name: englishToKorean["pow"].text,
+        dbName: "pow",
+        iconUrl: englishToKorean["pow"].iconUrl,
+      },
+      {
+        name: englishToKorean["liq"].text,
+        dbName: "liq",
+        iconUrl: englishToKorean["liq"].iconUrl,
+      },
     ],
-    [{ name: "츄어블", dbName: "chew" }],
+    [
+      {
+        name: englishToKorean["chew"].text,
+        dbName: "chew",
+        iconUrl: englishToKorean["chew"].iconUrl,
+      },
+    ],
   ];
+
   const shortLists = [
     [
-      { name: "캡슐", dbName: "cap" },
-      { name: "정", dbName: "pill" },
-      { name: "가루", dbName: "pow" },
+      {
+        name: englishToKorean["cap"].text,
+        dbName: "cap",
+        iconUrl: englishToKorean["cap"].iconUrl,
+      },
+      {
+        name: englishToKorean["pill"].text,
+        dbName: "pill",
+        iconUrl: englishToKorean["pill"].iconUrl,
+      },
+      {
+        name: englishToKorean["pow"].text,
+        dbName: "pow",
+        iconUrl: englishToKorean["pow"].iconUrl,
+      },
     ],
     [
-      { name: "액상", dbName: "liq" },
-      { name: "츄어블", dbName: "chew" },
+      {
+        name: englishToKorean["liq"].text,
+        dbName: "liq",
+        iconUrl: englishToKorean["liq"].iconUrl,
+      },
+      {
+        name: englishToKorean["chew"].text,
+        dbName: "chew",
+        iconUrl: englishToKorean["chew"].iconUrl,
+      },
     ],
   ];
 

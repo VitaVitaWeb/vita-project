@@ -87,7 +87,8 @@ function InfoNutrientListSpace(props) {
     <div id="info-nutrient-space">
       <div id="info-nutrient-text">
         <h4>영양소</h4>
-        <h6>검은색은 권장량입니다!</h6>
+        <h6>권장량은 사람에 따라서 다를 수 있습니다!</h6>
+        <h6>저희의 권장량은 일반적인 기준입니다!</h6>
       </div>
       <div id="info-nutrient-list-space">{nutrientSource}</div>
     </div>
