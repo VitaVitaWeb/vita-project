@@ -10,7 +10,11 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.net.URLDecoder;
+import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/member/")
@@ -30,6 +34,14 @@ public class MemberController {
 
   @GetMapping("detail")
   public Member detail(@RequestParam String id) throws Exception {
+    try {
+      id = URLDecoder.decode(id, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+      throw new Exception("Invalid encoding");
+    }
+
+
     Member member = memberService.get(id);
 
     log.info("member = {}", member);
@@ -70,33 +82,29 @@ public class MemberController {
   }
 
 
-  @GetMapping("findpwd/{id}/{code}")
+  @PostMapping("findpwd")
   @ResponseBody
-  public void findpwd(@PathVariable("id") String id, @PathVariable("code")String code) throws Exception{
-    mailService.findPassword(id, code);
+  public void findpwd(@RequestParam("email") String email, @RequestParam("verifycode") int verifycode) throws Exception{
+
+    String emailSubject = "VitaWeb 비밀번호 확인 코드입니다.";
+    String emailText = "임시 비밀번호: "+ verifycode +"입니다!";
+    mailService.sendSimpleMessage(email,emailSubject,emailText);
   }
-//
-//
-//
-//  //  비밀번호 찾기
-//  @GetMapping("findpwd/{id}/{name}/{email}")
+
+
+
+  //  비밀번호 찾기
+//  @GetMapping("findpwd/{id}/{verifycode}")
 //  @ResponseBody
 //  public String findpwd(@PathVariable("id") String id,@PathVariable("name") String name) throws Exception {
-//    Map<String, String> map = new HashMap();
-//    map.put("id", id);
-//    map.put("name", name);
-//    map.put("email", email);
-//
-//    Member member = memberService.findpwd(map);
+//    String emailSubject = "VitaWeb 비밀번호 확인 코드입니다.";
+//    String emailText = "임시 비밀번호: "+ veri
 //
 //    if (member == null) {
 //      return "입력한 정보에 일치하는 회원이 존재하지 않습니다";
 //    }
 //    return member.getPassword();
 //  }
-//
-//  @GetMapping("findpwd")
-//  public void findpwd()  throws Exception {
-//
-//  }
+
+
 }

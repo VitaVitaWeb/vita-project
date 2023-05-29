@@ -30,7 +30,7 @@
     </resultMap>
 
     <resultMap type="vitaSurveyFormulation" id="vitaSurveyFormulation">
-        <id column="FORNO" property="forno"/>
+<!--        <id column="FORNO" property="forno"/>-->
         <result column="CAP" property="cap"/>
         <result column="PILL" property="pill"/>
         <result column="POW" property="pow"/>

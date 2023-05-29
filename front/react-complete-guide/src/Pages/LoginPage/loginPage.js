@@ -11,6 +11,7 @@ function Login() {
   const [inputInfo, setinputInfo] = useState({ id: null, password: null });
   const [isLoginFailed, setIsLoginFailed] = useState(false);
   const [loginErrorMessage, setLoginErrorMessage] = useState(null);
+  const { setCustomerInfo } = useContext(CustomerInfo);
 
   const movePage = useNavigate();
   function goSignUpPage() {
@@ -39,39 +40,49 @@ function Login() {
   const onTryLogin = async () => {
     try {
       console.log(inputInfo);
-      const data = await axios.post("/auth/login", null, {
+      const response = await axios.post("/auth/login", null, {
         params: {
           id: inputInfo.id,
           password: inputInfo.password,
         },
       });
-      console.log(data);
-      if (data.data) {
+      console.log(response);
+      if (response.data) {
         onLogin();
       } else {
         setIsLoginFailed(true);
         setLoginErrorMessage("아이디 또는 비밀번호를 잘못 입력하셨습니다.");
       }
-    } catch {
-      console.log("error in login");
+    } catch (error) {
+      console.log("Error in login:", error);
+      // print more detailed error information
+      console.error(error.response);
+      // Or if the error is due to the network issues
+      console.error(error.request);
     }
   };
 
   const onLogin = async () => {
     try {
-      const data = await axios.get("/member/detail", {
+      const response = await axios.get("/member/detail", {
         params: { id: inputInfo.id },
       });
 
-      console.log("Data from axios:", data.data); // Add this line
+      console.log("Data from axios:", response.data);
 
-      await userInfo.setContextApi(data.data); // assuming setContextApi returns a Promise
+      setCustomerInfo({ user: response.data });
 
-      console.log("User info after login:", userInfo); // And this line
+      // 사용자 정보를 로컬 스토리지에 저장합니다.
+      localStorage.setItem("userId", response.data.id);
+
+      console.log("User info after login:", userInfo);
+
+      // Show alert
+      alert(`${response.data.name}님! 로그인이 되었습니다.`);
 
       goMainPage();
-    } catch {
-      console.log("error in get member detail");
+    } catch (error) {
+      console.log("Error in get member detail:", error);
     }
   };
 

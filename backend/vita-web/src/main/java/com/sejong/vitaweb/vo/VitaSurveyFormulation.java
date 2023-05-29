@@ -16,6 +16,7 @@ public class VitaSurveyFormulation implements Serializable {
     boolean liq; // 액상 형태
     boolean chew; // 츄어블 형태
 
+
     String id;
 
     public VitaSurveyFormulation() {

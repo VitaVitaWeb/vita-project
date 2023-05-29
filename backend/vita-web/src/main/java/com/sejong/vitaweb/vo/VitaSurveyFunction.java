@@ -29,6 +29,9 @@ public class VitaSurveyFunction implements Serializable {
 
     private String id;
 
+    public VitaSurveyFunction() {
+    }
+
     public VitaSurveyFunction(VitaSurveyDto vitaSurveyInfo) {
         this.act = vitaSurveyInfo.isAct();
         this.sc = vitaSurveyInfo.isSc();
