@@ -84,8 +84,8 @@
         update vita_member set
         name=#{name},
         PHN=#{phoneNo},
-        birth=#{birthDay},
-        gender=#{gender}
+        bth=#{birthDay},
+        gen=#{gender}
         where
         id=#{id};
     </update>

@@ -57,7 +57,7 @@ public class MemberController {
 
 
 @PostMapping("update")
-  public void update(Member member) throws Exception {
+  public void update(@RequestBody Member member) throws Exception {
     if (!memberService.update(member)) {
       throw new Exception("회원 변경 오류입니다!");
     }
