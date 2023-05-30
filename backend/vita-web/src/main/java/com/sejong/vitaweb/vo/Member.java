@@ -22,6 +22,10 @@ public class Member implements Serializable {
   private Date birthDay;
   private int gender;
 
+  public Member() {
+  }
+
+
 
 }
 

@@ -21,6 +21,8 @@ import java.util.Map;
 @Slf4j
 @RequiredArgsConstructor
 public class MemberController {
+  private Map<String, Integer> tempPasswords = new HashMap<>();
+
   private final MemberService memberService;
   private final MailService mailService;
 
@@ -84,14 +86,42 @@ public class MemberController {
 
   @PostMapping("findpwd")
   @ResponseBody
-  public void findpwd(@RequestParam("email") String email, @RequestParam("verifycode") int verifycode) throws Exception{
+  public void findpwd(@RequestBody Map<String, String> requestBody) throws Exception{
+// 4자리 코드를 생성합니다.
+    String email = requestBody.get("email");
 
+    int verifycode = (int)((Math.random() * 9000) + 1000);
     String emailSubject = "VitaWeb 비밀번호 확인 코드입니다.";
     String emailText = "임시 비밀번호: "+ verifycode +"입니다!";
     mailService.sendSimpleMessage(email,emailSubject,emailText);
+
+    // 임시 비밀번호를 저장합니다.
+    tempPasswords.put(email, verifycode);
+
   }
 
 
+  @PostMapping("verifypwd")
+  @ResponseBody
+  public String  verifyPwd(@RequestBody Map<String, Object> requestBody) throws Exception {
+
+    String email = (String) requestBody.get("email");
+    int code = Integer.parseInt((String) requestBody.get("code")); // 변환 부분
+    // 사용자가 제출한 코드와 저장된 코드를 비교합니다.
+    Integer correctCode = tempPasswords.get(email);
+    if (correctCode != null && correctCode == code) {
+      // 사용자의 비밀번호를 '1234'로 초기화합니다.
+      Member member = memberService.get(email);
+      if (member != null) {
+        member.setPassword("1234");
+        memberService.update(member);
+
+        // 비밀번호가 초기화 되었음을 알려주는 메시지를 반환합니다.
+        return "비밀번호가 '1234'로 초기화되었습니다. 마이페이지에서 변경 가능합니다.";
+      }
+    }
+    return "인증 코드가 잘못되었습니다. 다시 시도해주세요.";
+  }
 
   //  비밀번호 찾기
 //  @GetMapping("findpwd/{id}/{verifycode}")

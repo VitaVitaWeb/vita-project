@@ -13,6 +13,7 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -88,6 +89,15 @@ public class DefaultMemberService implements MemberService {
   public Member findId(String name, Date birthday, int gender) throws Exception {
     return memberDao.findId(name, birthday, gender);
   }
+
+
+  public boolean updatePassword(String id, String newPassword) {
+    Map<String, String> params = new HashMap<>();
+    params.put("id", id);
+    params.put("pwd", newPassword);
+    return memberDao.updatePassword(params) > 0;
+  }
+
 
 
 

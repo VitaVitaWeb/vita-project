@@ -90,6 +90,11 @@
         id=#{id};
     </update>
 
+    <update id="updatePassword" parameterType="map">
+        UPDATE vita_member SET pwd = #{pwd} WHERE id=#{id};
+    </update>
+
+
     <select id="findId" resultMap="memberMap">
         select
             *
