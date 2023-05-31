@@ -5,8 +5,6 @@ Ibackend/vita-web/src/main/java/com/sejong/vitaweb/vo/VitaFormulation.java,a\0\
 Qbackend/vita-web/src/main/java/com/sejong/vitaweb/vo/NaverRequestVariableDto.java,b\e\be821769c341b5c301ba522843fb54022b32d815
 t
 Dbackend/vita-web/src/main/java/com/sejong/vitaweb/vo/VitaSurvey.java,1\b\1b751834f015e5e9c51f2e9ffd3b0142722f3652
-
-Obackend/vita-web/src/main/java/com/sejong/vitaweb/service/RecommendService.java,8\e\8e0eaa343c57c82eafa587b75c968c8d87412e87
 †
 Vbackend/vita-web/src/main/java/com/sejong/vitaweb/service/DefaultRecommendServcie.java,a\5\a5cf1c6be3e72750043a9da49fd13e326b581096
 |
@@ -31,8 +29,6 @@ t
 Dbackend/vita-web/src/main/java/com/sejong/vitaweb/dao/SearchDao.java,5\0\50c748da5b7cf592205385f56a98d4538fad6e22
 q
 Abackend/vita-web/src/main/java/com/sejong/vitaweb/vo/Vitamin.java,6\7\67f9c0b46e9ce63cc6a1da0141f92c8823da60f4
-ˆ
-Xbackend/vita-web/src/main/java/com/sejong/vitaweb/web/recommend/recommendController.java,0\0\000228d701dacdb063b4fa6818b697541278d2e3
 ~
 Nbackend/vita-web/src/main/java/com/sejong/vitaweb/service/HowToEatService.java,3\4\34321e49242aa737a06ce8858d31755ce4a88f88
 v
@@ -75,5 +71,9 @@ Qbackend/vita-web/src/main/java/com/sejong/vitaweb/service/DefaultMailService.ja
 Obackend/vita-web/src/main/java/com/sejong/vitaweb/vo/VitaSurveyFormulation.java,d\4\d4fcc62506c70e3eaff5f95cd07e0cc5e6ab71d6
 w
 Gbackend/vita-web/src/main/java/com/sejong/vitaweb/vo/VitaSurveyDto.java,d\f\df840f53d01957fe43d192130d847b367ce86a90
+|
+Lbackend/vita-web/src/main/java/com/sejong/vitaweb/service/MemberService.java,a\0\a0a5d61e12c839fc9fe22bbc48df26d947d277d4
+z
+Jbackend/vita-web/src/main/java/com/sejong/vitaweb/service/MailService.java,7\5\7537e318cda4f1887c0406f2b6142a7edc94130c
 |
 Lbackend/vita-web/src/main/java/com/sejong/vitaweb/vo/VitaSurveyFunction.java,8\1\81ad306a22140cf57dcae7da17b3f1cb78b93f89
