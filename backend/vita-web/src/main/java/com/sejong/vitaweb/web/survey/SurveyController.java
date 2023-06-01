@@ -20,6 +20,10 @@ public class SurveyController {
 
     @PostMapping("insert")
     public void insert(@RequestBody VitaSurveyDto vitaSurveyDto) {
+        if(vitaSurveyDto == null || vitaSurveyDto.getId() == null) {
+            throw new IllegalArgumentException("The vitaSurveyDto or its id should not be null.");
+        }
+
         log.info("info = {}", vitaSurveyDto);
         VitaSurveyFormulation vitaSurveyFormulation = new VitaSurveyFormulation(vitaSurveyDto);
         VitaSurveyFunction vitaSurveyFunction = new VitaSurveyFunction(vitaSurveyDto);
@@ -34,6 +38,7 @@ public class SurveyController {
             surveyService.insertSurvey(forno, funno);
         }
     }
+
 
     @GetMapping("function")
     public VitaSurveyFunction getVitaFunction(@RequestParam String id) throws Exception {

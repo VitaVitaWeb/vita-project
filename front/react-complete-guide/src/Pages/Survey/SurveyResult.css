@@ -1,0 +1,17 @@
+@media (min-width: 768px) {
+  .row > .col-md-4:nth-child(3n + 1) {
+    padding-right: 0;
+  }
+  .row > .col-md-4:nth-child(3n + 3) {
+    padding-left: 0;
+  }
+}
+/* CSS */
+.card {
+  width: 400px; /* Set card width */
+  height: auto; /* Set card height to auto to maintain aspect ratio */
+}
+
+.card .bd-placeholder-img {
+  height: 330px; /* Set image height */
+}
