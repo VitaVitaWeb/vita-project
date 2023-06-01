@@ -1,0 +1,26 @@
+.modalButton {
+  background-color: orange;
+  position: fixed;
+  border-style: none;
+  cursor: pointer;
+  height: 30px;
+  margin-left: 340px;
+  margin-top: 250px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.modalInputEmailBox {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  margin-left: 50px;
+}
+.modalInputEmailFont {
+  font-size: 30px;
+}
+.modalIdBox {
+  width: 500px;
+  display: flex;
+  margin-top: 20px;
+}

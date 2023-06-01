@@ -1,0 +1,9 @@
+.myPageMain {
+  height: 1600px;
+  margin: auto;
+}
+.myPageBorder {
+  display: flex;
+  width: 90vw;
+  margin: auto;
+}

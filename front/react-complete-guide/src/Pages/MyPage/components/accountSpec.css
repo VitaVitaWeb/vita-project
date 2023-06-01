@@ -1,0 +1,50 @@
+.accountTitle {
+  font-size: 30px;
+  margin-top: 150px;
+}
+.accountSpecMain {
+  width: 50vw;
+  height: 200px;
+  border-top-style: solid;
+  border-top-color: grey;
+}
+.accountSpecText {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+}
+.accountSpecButton {
+  background-color: orange;
+  border-style: none;
+  cursor: pointer;
+  height: 35px;
+  width: 140px;
+  font-size: 20px;
+  margin-left: auto;
+  border-radius: 10px;
+  color: white;
+}
+
+.accountSpecPassButton {
+  background-color: orange;
+  border-style: none;
+  cursor: pointer;
+  height: 35px;
+  width: 140px;
+  margin-top: 50px;
+  font-size: 20px;
+  margin-left: auto;
+  border-radius: 10px;
+  color: white;
+}
+.accountModal {
+  background-color: white;
+  border-style: solid;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  margin-top: 200px;
+  width: 500px;
+  height: 300px;
+}

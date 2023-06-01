@@ -8,7 +8,7 @@ import LoginPage from "./Pages/LoginPage/loginPage";
 import SignUpPage from "./Pages/LoginPage/signUpPage";
 import { CustomerInfoProvider } from "./customerInfo";
 import SupplementList from "./Pages/ListPage/List";
-import MyPage from "./Pages/MyPage/MyPage";
+import MyPage from "./Pages/MyPage/myPage";
 import { useEffect } from "react";
 import axios from "axios";
 import TopBar from "./CommonComponent/TopBar/topBar";
