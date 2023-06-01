@@ -21,7 +21,7 @@ function MainPage() {
   // const asdfe = async () => {
   //   try {
   //     const data = await axios.get("/survey/function", {
-  //       params: {
+  //       params: {0
   //         id: userInfo.user.id,
   //       },
   //     });
