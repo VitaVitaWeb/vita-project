@@ -220,24 +220,26 @@ function SurveyPurpose() {
     bone: false,
     col: false,
     vmid: false,
+    id: customerInfo.user.id, // <-- New code
   });
-
   const postSurvey = async () => {
+    if (!customerInfo || !customerInfo.user || !customerInfo.user.id) {
+      console.error("User ID is null. Please check the customerInfo object.");
+      return;
+    }
     let dataform = {
       ...location.state.surveyFor,
       ...surveyInfo,
-      id: customerInfo.user.id,
+      userId: customerInfo.user.id, // <-- New code
     };
     console.log(dataform);
     return axios
-      .post("/survey/insert", {
-        ...dataform,
-      })
+      .post(`/survey/insert`, dataform, config)
       .then((data) => {
         console.log(data);
       })
       .catch((error) => {
-        console.log("surveyPostError");
+        console.log("surveyPostError:", error.message);
       });
   };
 

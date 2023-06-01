@@ -11,7 +11,7 @@ function Login() {
   const [inputInfo, setinputInfo] = useState({ id: null, password: null });
   const [isLoginFailed, setIsLoginFailed] = useState(false);
   const [loginErrorMessage, setLoginErrorMessage] = useState(null);
-  const { setCustomerInfo } = useContext(CustomerInfo);
+  const { setCustomerInfo, setIsLogined } = useContext(CustomerInfo);
 
   const movePage = useNavigate();
   function goSignUpPage() {
@@ -68,16 +68,12 @@ function Login() {
         params: { id: inputInfo.id },
       });
 
-      console.log("Data from axios:", response.data);
-
       setCustomerInfo({ user: response.data });
 
-      // 사용자 정보를 로컬 스토리지에 저장합니다.
       localStorage.setItem("userId", response.data.id);
 
-      console.log("User info after login:", userInfo);
+      setIsLogined(true); // 로그인이 성공하면 로그인 상태를 true로 설정합니다.
 
-      // Show alert
       alert(`${response.data.name}님! 로그인이 되었습니다.`);
 
       goMainPage();
@@ -85,7 +81,6 @@ function Login() {
       console.log("Error in get member detail:", error);
     }
   };
-
   return (
     <div>
       <TopBar></TopBar>

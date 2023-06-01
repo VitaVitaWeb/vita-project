@@ -8,30 +8,41 @@ import axios from "axios";
 function TopBar() {
   // 각각의 페이지들을 이동하기 위한 함수 입니다.
   const movePage = useNavigate();
-  //
-  const { user, setContextApi, logOut } = useContext(CustomerInfo);
-  const [isLogined, setIsLogined] = useState(
-    localStorage.getItem("userId") ? true : false
-  );
-  const goPage = (route) => movePage(route);
-  const [searchKeyword, setSearchKeyword] = useState("");
-  const [products, setProducts] = useState([]);
+  const { user, logOut, isLogined, setIsLogined } = useContext(CustomerInfo);
 
-  const logOutAndSetLoginState = () => {
-    logOut();
-    setIsLogined(false);
-    localStorage.removeItem("userId");
-    alert("로그아웃 하였습니다.");
-    movePage("/mainPage");
+  const goPage = (route) => {
+    movePage(route);
+  };
+
+  const logOutAndSetLoginState = async () => {
+    try {
+      await axios.get("/auth/logout"); // Add this line
+      logOut();
+      alert("로그아웃 하였습니다.");
+      movePage("/mainPage");
+    } catch (error) {
+      console.error("Failed to logout:", error);
+    }
   };
 
   useEffect(() => {
-    if (localStorage.getItem("userId")) {
-      setIsLogined(true);
-    } else {
-      setIsLogined(false);
-    }
-  }, [user]);
+    const checkLoginStatus = async () => {
+      try {
+        const response = await axios.get("/auth/checkLogin");
+        if (response.data.id) {
+          // 로그인 상태를 체크하는 부분이 수정되었습니다.
+          setIsLogined(true);
+          console.log("isLogined set to true");
+        } else {
+          setIsLogined(false);
+          console.log("isLogined set to false");
+        }
+      } catch (error) {
+        console.error("Failed to check login status:", error);
+      }
+    };
+    checkLoginStatus();
+  }, []); // 의존성 배열을 빈 배열로 설정하면 컴포넌트가 마운트될 때만 실행됩니다.
 
   return (
     <header className="top-bar bg-white text-orange border-bottom">
