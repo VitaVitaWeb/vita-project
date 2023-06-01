@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import VitaBlock from '../../../CommonComponent/VitaBlock';
 
 const SimpleSlider = (props) => {
-
     const customStyles = `
         .slick-prev:before, .slick-next:before {
             color: #FF5C35;
