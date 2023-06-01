@@ -57,10 +57,11 @@ public class MemberController {
 
 
 @PostMapping("update")
-  public void update(@RequestBody Member member) throws Exception {
+  public Member update(@RequestBody Member member) throws Exception {
     if (!memberService.update(member)) {
       throw new Exception("회원 변경 오류입니다!");
     }
+    return member;
   }
 
   @GetMapping("delete")
