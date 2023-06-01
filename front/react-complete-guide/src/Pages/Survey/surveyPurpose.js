@@ -252,7 +252,7 @@ function SurveyPurpose() {
     postSurvey().then(() => {
       alert("설문조사가 저장되었습니다!");
     });
-    movePage("/mainPage");
+    movePage("/surveyresult");
   }
   function goPrevPage() {
     movePage("/surveyFormation");
