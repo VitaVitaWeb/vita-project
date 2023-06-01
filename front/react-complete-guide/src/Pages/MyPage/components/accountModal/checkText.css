@@ -1,0 +1,33 @@
+.modalCheckTextBox {
+  width: 500px;
+  height: 50px;
+  margin: auto;
+  display: flex;
+}
+.modalCheckTextInput {
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 30px;
+}
+.testHidden {
+  font-size: 0px;
+}
+.testUnHidden {
+  width: 500px;
+  font-size: 20px;
+  white-space: pre-line;
+  text-align: center;
+  margin: auto;
+}
+.modalCheckFalse {
+  font-size: 20px;
+  color: red;
+  margin-top: 30px;
+}
+.modalCheckTrue {
+  font-size: 20px;
+  margin-top: 30px;
+  color: chartreuse;
+}

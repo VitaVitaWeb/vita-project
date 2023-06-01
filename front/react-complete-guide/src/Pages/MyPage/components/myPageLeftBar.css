@@ -1,0 +1,42 @@
+.myPageLeftBar {
+  width: 200px;
+  height: 300px;
+  margin-top: 100px;
+  position: fixed;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 10px;
+}
+.myPageLeftBarName {
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  width: 170px;
+  height: 45px;
+  border-bottom-style: solid;
+  border-color: grey;
+}
+.myPageLeftBarAccount {
+  font-size: 30px;
+  text-align: center;
+  width: 170px;
+  height: 80px;
+  background-color: white;
+  border-style: none;
+  color: none;
+  border-bottom-style: solid;
+  border-color: grey;
+  margin-left: 12.5px;
+  cursor: pointer;
+}
+.myPageLeftBarJjim {
+  font-size: 30px;
+  text-align: center;
+  width: 170px;
+  height: 80px;
+  background-color: white;
+  border-style: none;
+  color: none;
+  margin-left: 12.5px;
+  cursor: pointer;
+}

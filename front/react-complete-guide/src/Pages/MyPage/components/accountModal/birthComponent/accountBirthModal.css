@@ -1,0 +1,32 @@
+.modalButton {
+  background-color: orange;
+  position: fixed;
+  border-style: none;
+  cursor: pointer;
+  height: 30px;
+  margin-left: 340px;
+  margin-top: 250px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.modalBirthBox {
+  width: 500px;
+  height: 50px;
+  display: flex;
+}
+.modalBirthInput {
+  width: 150px;
+  height: 40px;
+  margin-left: 45px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.modalBirthMonthDay {
+  width: 120px;
+  margin-left: 10px;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 20px;
+}
