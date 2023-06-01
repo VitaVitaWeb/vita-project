@@ -112,9 +112,12 @@ public class MemberController {
     if (correctCode != null && correctCode == code) {
       // 사용자의 비밀번호를 '1234'로 초기화합니다.
       Member member = memberService.get(email);
+
       if (member != null) {
         member.setPassword("1234");
-        memberService.update(member);
+        // 비밀번호를 업데이트합니다.
+
+        memberService.updatePassword(email, "1234");
 
         // 비밀번호가 초기화 되었음을 알려주는 메시지를 반환합니다.
         return "비밀번호가 '1234'로 초기화되었습니다. 마이페이지에서 변경 가능합니다.";

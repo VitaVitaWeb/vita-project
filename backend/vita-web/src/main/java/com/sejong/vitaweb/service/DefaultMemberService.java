@@ -91,12 +91,11 @@ public class DefaultMemberService implements MemberService {
   }
 
 
+  @Override
   public boolean updatePassword(String id, String newPassword) {
-    Map<String, String> params = new HashMap<>();
-    params.put("id", id);
-    params.put("pwd", newPassword);
-    return memberDao.updatePassword(params) > 0;
+    return memberDao.updatePassword(id, newPassword) > 0;
   }
+
 
 
 
