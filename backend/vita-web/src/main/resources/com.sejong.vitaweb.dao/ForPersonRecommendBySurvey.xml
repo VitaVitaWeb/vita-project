@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sejong.vitaweb.dao.ForPersonRecommendBySurveyMapper">
+
+    <select id="getRecommendedVitamin" resultType="com.sejong.vitaweb.vo.Vitamin">
+        SELECT v.*
+        FROM vita_vita v
+                 JOIN Vita_Function vf ON v.vno = vf.vno
+        WHERE EXISTS (
+                      SELECT 1
+                      FROM Vita_Sur_Function vsf
+                      WHERE vsf.id = #{id}
+                        AND (
+                              (vsf.sc = 1 AND vf.sc = 1)
+                              OR (vsf.act = 1 AND vf.act = 1)
+                              OR (vsf.eye = 1 AND vf.eye = 1)
+                              OR (vsf.joint = 1 AND vf.joint = 1)
+                              OR (vsf.oxy = 1 AND vf.oxy = 1)
+                              OR (vsf.sight = 1 AND vf.sight = 1)
+                              OR (vsf.skin = 1 AND vf.skin = 1)
+                              OR (vsf.imn = 1 AND vf.imn = 1)
+                              OR (vsf.jang = 1 AND vf.jang = 1)
+                              OR (vsf.gan = 1 AND vf.gan = 1)
+                              OR (vsf.prs = 1 AND vf.prs = 1)
+                              OR (vsf.bone = 1 AND vf.bone = 1)
+                              OR (vsf.col = 1 AND vf.col = 1)
+                              OR (vsf.vmid = 1 AND vf.vmid = 1)
+                          )
+                  )
+    </select>
+
+</mapper>
