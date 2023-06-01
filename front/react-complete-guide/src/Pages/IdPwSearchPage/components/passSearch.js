@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./searchPage.css";
 import TopBar from "../../../CommonComponent/TopBar/topBar";
-import Footer from "../../Footer/footer";
+
 function PassSearch(props) {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
@@ -31,8 +31,9 @@ function PassSearch(props) {
         code: code,
       });
       if (response.data) {
-        alert(response.data);
-        // 여기에 사용자가 로그인 페이지로 리디렉션되거나, 초기화가 성공적으로 이루어졌다는 것을 표시하는 코드를 추가하세요.
+        alert("인증 코드가 확인되었습니다. 비밀번호를 재설정하세요.");
+        // 코드가 맞다면 비밀번호를 재설정할 수 있게 합니다.
+        /* 비밀번호 재설정 로직 */
       } else {
         alert("인증 코드가 잘못되었습니다. 다시 시도해주세요.");
       }

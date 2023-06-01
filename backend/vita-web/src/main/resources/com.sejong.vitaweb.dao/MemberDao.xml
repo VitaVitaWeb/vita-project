@@ -91,7 +91,7 @@
     </update>
 
     <update id="updatePassword" parameterType="map">
-        UPDATE vita_member SET pwd = #{newPassword} WHERE id=#{id};
+        UPDATE vita_member SET pwd = #{pwd} WHERE id=#{id};
     </update>
 
 

@@ -17,8 +17,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class recommendController {
 
-    private final     RecommendService recommendService;
+    RecommendService recommendService;
 
+    @Autowired
+    public recommendController(RecommendService recommendService) {
+        this.recommendService = recommendService;
+    }
 
 
     @GetMapping
