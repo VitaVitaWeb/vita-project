@@ -15,6 +15,7 @@ import TopBar from "./CommonComponent/TopBar/topBar";
 import SearchPage from "./Pages/IdPwSearchPage/searchPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, createContext } from "react";
+import SurveyResult from "./Pages/Survey/surveyResult";
 
 function App() {
   const [user, setUser] = useState({});
@@ -38,6 +39,10 @@ function App() {
           <Route
             path={"/surveyFormation"}
             element={<SurveyFormation />}
+          ></Route>
+          <Route
+            path={"/surveyresult"}
+            element={<SurveyResult></SurveyResult>}
           ></Route>
           <Route path={"/supplementList"} element={<SupplementList />} />
           <Route path={"/surveyPurpose"} element={<SurveyPurpose />}></Route>
