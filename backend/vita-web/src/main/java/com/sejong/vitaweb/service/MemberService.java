@@ -34,7 +34,7 @@ public interface MemberService {
 
   Member findId(String name, Date birthday, int gender) throws Exception;
 
-  boolean updatePassword(String id, String newPassword) throws Exception;
+
 
 //  Member findpwd(Map<String, String> map) throws Exception;
 

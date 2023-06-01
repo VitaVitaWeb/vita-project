@@ -43,7 +43,6 @@ public interface MemberDao {
 
   Member checkCorrectUser(String id);
 
-    int updatePassword(String id, String newPassword);
-
+  int updatePassword(Map<String, String> params);
 
 }
