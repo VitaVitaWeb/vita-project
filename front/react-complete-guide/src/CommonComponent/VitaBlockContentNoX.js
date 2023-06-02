@@ -3,20 +3,32 @@ import WishButton from "./WishButton";
 import { Link } from "react-router-dom";
 import React from "react";
 import { useSelector } from "react-redux";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function VitaBlockContentNoX(props) {
-  const likeCounter = useSelector((state) => state.counter);
-  const toggleCounterHandler = () => {};
-  const handleRemoveClick = () => {
-    props.onProductRemoved && props.onProductRemoved(props.vitaNumber);
+  const [vitaWishData, setVitaWishData] = useState(null);
+
+  const fetchData = async () => {
+    const result = await axios.get(`/totallike/${props.vitaNumber}`);
+    console.log("Wish Count: ", result.data);
+    setVitaWishData(result.data);
   };
+
+  useEffect(() => {
+    fetchData();
+  }, [props.vitaNumber]);
+
+  const toggleCounterHandler = () => {
+    fetchData();
+  };
+
+  if (!vitaWishData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
-      <div className="vita-component-top">
-        <div className="x-button-space">
-          <button onClick={handleRemoveClick}>X</button> {/* X 버튼 추가 */}
-        </div>
-      </div>
       <div className="vita-component-top">
         <div className="x-button-space"></div>
       </div>
@@ -27,7 +39,10 @@ function VitaBlockContentNoX(props) {
             className="wish-button"
             onClick={toggleCounterHandler}
           >
-            {/* <WishButton></WishButton> */}
+            <WishButton
+              vitaNumber={props.vitaNumber}
+              onWishChange={toggleCounterHandler}
+            ></WishButton>
           </button>
         </div>
         <div className="vita-component-image">
@@ -51,11 +66,10 @@ function VitaBlockContentNoX(props) {
               alt="icon-heart"
             ></img>
             <span>
-              <p></p>
               <p>찜 개수</p>
             </span>
           </div>
-          <span>{likeCounter}</span>
+          <span>{vitaWishData.cnt}</span>
         </div>
       </div>
     </div>
