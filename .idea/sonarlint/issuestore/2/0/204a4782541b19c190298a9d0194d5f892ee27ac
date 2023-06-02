@@ -1,0 +1,23 @@
+
+[	java:S112*"FDefine and throw a dedicated exception instead of using a generic one.(ì²å±
+`	java:S112w"FDefine and throw a dedicated exception instead of using a generic one.(°äœªûÿÿÿÿ
+b
+java:S1192%"LDefine a constant instead of duplicating this literal "member = {}" 4 times.(Ï‰İ
+b
+java:S1192\"LDefine a constant instead of duplicating this literal "loginMember" 3 times.(Ìà¥Î
+‚
+java:S1130*"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ì²å±
+H
+java:S1172*"2Remove this unused method parameter "inputString".(ì²å±
+\
+java:S1126+"AReplace this if-then-else statement by a single return statement.(è‹åíøÿÿÿÿ
+\
+java:S1126;"AReplace this if-then-else statement by a single return statement.(è‹åíøÿÿÿÿ
+\
+java:S1126I"AReplace this if-then-else statement by a single return statement.(÷‘æ·üÿÿÿÿ
+V	java:S125f"<This block of commented-out lines of code should be removed.(ì§Á¨ûÿÿÿÿ
+V
+java:S1126p"AReplace this if-then-else statement by a single return statement.(Üë‡?
+‡
+java:S1130w"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(°äœªûÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(€ÜÈ÷ûÿÿÿÿ

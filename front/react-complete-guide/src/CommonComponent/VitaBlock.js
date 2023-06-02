@@ -8,9 +8,7 @@ function VitaBlock(props) {
         vitaNumber={props.vitaNumber}
         vitaImage={props.vitaImage}
         vitaName={props.vitaName}
-        vitaWishCount={props.vitaWishCount}
-        vitaWish={props.vitaWish}
-        onProductRemoved={props.onProductRemoved} // onProductRemoved prop 추가
+        // vitaWish={props.vitaWish}
       ></VitaBlockContentNoX>
     </div>
   );
