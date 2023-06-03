@@ -33,7 +33,6 @@ function VitaInfoPage() {
 
   return (
     <div>
-      <TopBar />
       <InfoIntroSection
         vitaName={vitaData.name}
         vitaNumber={vitaData.vno}
@@ -46,7 +45,11 @@ function VitaInfoPage() {
         vitaImage={vitaData.img_path}
       />
       <InfoDetailsSection vitaNumber={vitaData.vno} />
-      <InfoRecommendAnotherSection vitaCat={vitaData.category3} />
+      <InfoRecommendAnotherSection
+        vitaNumber={vitaData.vno}
+        vitaCat={vitaData.category3}
+      />
+      <TopBar />
     </div>
   );
 }

@@ -44,18 +44,21 @@ const SimpleSlider = (props) => {
 
   useEffect(() => {
     async function fetchData() {
+      console.log("props.vitaNumber: ", props.vitaNumber); // vitaNumber 확인
+
       const result = await axios.get("/vita/list");
       console.log(result.data); // 로그 추가
 
-      // category3에 해당하는 영양제만 필터링
+      // category3에 해당하는 영양제만 필터링하고 vitaNumber가 다른 영양제들만 필터링
       const filteredData = result.data.filter(
-        (vita) => vita.category3 === props.vitaCat
+        (vita) =>
+          vita.category3 === props.vitaCat && vita.vno !== props.vitaNumber
       );
 
       setVitaListData(filteredData);
     }
     fetchData();
-  }, [props.vitaCat]);
+  }, [props.vitaCat, props.vitaNumber]); // props.vitaNumber 의존성 추가
 
   if (!vitaListData) {
     return <div>Loading...</div>;
