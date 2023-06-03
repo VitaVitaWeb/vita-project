@@ -33,6 +33,7 @@ function VitaInfoPage() {
 
   return (
     <div>
+      <TopBar></TopBar>
       <InfoIntroSection
         vitaName={vitaData.name}
         vitaNumber={vitaData.vno}
