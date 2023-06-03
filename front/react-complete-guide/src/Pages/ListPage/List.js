@@ -137,7 +137,7 @@ function SupplementList() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+        <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4 g-2">
           {filteredItems.map((item) => (
             <Col key={item.vno}>
               <Card className="shadow-sm p-2 mb-2 bg-white rounded">
