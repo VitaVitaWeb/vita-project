@@ -171,28 +171,48 @@ function SurveyPurpose() {
 
   const shortLists = [
     [
-      { name: "스트레스", dbName: "sc" },
-      { name: "활력", dbName: "act" },
-      { name: "눈 건조감", dbName: "eye" },
+      { name: "스트레스", dbName: "sc", iconUrl: englishToKorean.sc.iconUrl },
+      { name: "활력", dbName: "act", iconUrl: englishToKorean.act.iconUrl },
+      {
+        name: "눈 건조감",
+        dbName: "eye",
+        iconUrl: englishToKorean.eye.iconUrl,
+      },
     ],
     [
-      { name: "관절 및 연골", dbName: "joint" },
-      { name: "항산화", dbName: "oxy" },
-      { name: "시력 및", dbName: "sight" },
+      {
+        name: "관절 및 연골",
+        dbName: "joint",
+        iconUrl: englishToKorean.joint.iconUrl,
+      },
+      { name: "항산화", dbName: "oxy", iconUrl: englishToKorean.oxy.iconUrl },
+      {
+        name: "시력 및",
+        dbName: "sight",
+        iconUrl: englishToKorean.sight.iconUrl,
+      },
     ],
     [
-      { name: "피부", dbName: "skin" },
-      { name: "면역력", dbName: "imn" },
-      { name: "장", dbName: "jang" },
+      { name: "피부", dbName: "skin", iconUrl: englishToKorean.skin.iconUrl },
+      { name: "면역력", dbName: "imn", iconUrl: englishToKorean.imn.iconUrl },
+      { name: "장", dbName: "jang", iconUrl: englishToKorean.jang.iconUrl },
     ],
     [
-      { name: "간", dbName: "gan" },
-      { name: "혈압", dbName: "prs" },
-      { name: "뼈", dbName: "bone" },
+      { name: "간", dbName: "gan", iconUrl: englishToKorean.gan.iconUrl },
+      { name: "혈압", dbName: "prs", iconUrl: englishToKorean.prs.iconUrl },
+      { name: "뼈", dbName: "bone", iconUrl: englishToKorean.bone.iconUrl },
     ],
     [
-      { name: "콜레스테롤", dbName: "col" },
-      { name: "혈중 중성지질", dbName: "vmid" },
+      {
+        name: "콜레스테롤",
+        dbName: "col",
+        iconUrl: englishToKorean.col.iconUrl,
+      },
+      {
+        name: "혈중 중성지질",
+        dbName: "vmid",
+        iconUrl: englishToKorean.vmid.iconUrl,
+      },
     ],
   ];
   const text = {
@@ -271,7 +291,10 @@ function SurveyPurpose() {
     >
       <TopBar></TopBar>
       <div className="surveyBackgroundBorder">
-        <SurveyMain lists={lists} text={text}></SurveyMain>
+        <SurveyMain
+          lists={innerWidth > 1000 ? lists : shortLists}
+          text={text}
+        ></SurveyMain>
       </div>
       <SurveyBottom nextNav={goNextPage} prevNav={goPrevPage}></SurveyBottom>
     </SurveyPurposeApi.Provider>

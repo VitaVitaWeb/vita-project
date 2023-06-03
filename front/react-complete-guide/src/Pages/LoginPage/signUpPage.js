@@ -112,6 +112,7 @@ function SignUpPage() {
 
   return (
     <div>
+      <TopBar />
       <div className="signUpPageMain">
         <NameComponent
           setValue={setInputUserInfo}
@@ -162,7 +163,6 @@ function SignUpPage() {
           </div>
         </div>
       </div>
-      <TopBar></TopBar>
     </div>
   );
 }
