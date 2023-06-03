@@ -17,6 +17,8 @@ const SurveyPurposeApi = createContext({
     col: false,
     vmid: false,
   },
+  cnt: 0,
+  setCnt: () => {},
   setContextApi: () => {},
 });
 export default SurveyPurposeApi;

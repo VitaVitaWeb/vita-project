@@ -1,0 +1,38 @@
+.accountSurveyFormTitle {
+  margin-top: 250px;
+  font-size: 30px;
+}
+.accountSurveyFuncTitle {
+  margin-top: 30px;
+  font-size: 30px;
+}
+.accountSurveyMain {
+  width: 50vw;
+  height: 100px;
+  border-top-style: solid;
+  border-top-color: grey;
+}
+.accountSpecText {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.accountSurveyList {
+  display: flex;
+}
+.accountSurveyListBlock {
+  background-color: orange;
+  grid-template-columns: minmax(200px, 500px);
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+.accountSurveyListText {
+  text-align: center;
+  font-size: 22px;
+  color: none;
+}

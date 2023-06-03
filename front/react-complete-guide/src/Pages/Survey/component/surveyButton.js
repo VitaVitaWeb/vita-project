@@ -9,8 +9,10 @@ function SurveyButton(props) {
   const surveyInfoTwo = useContext(SurveyPurposeApi);
 
   const OnButtonClick = () => {
+    console.log(surveyInfoTwo.cnt);
     if (isClicked === true) {
       setState(false);
+      surveyInfoTwo.setCnt(surveyInfoTwo.cnt - 1);
       SurveyCheckName({
         name: props.name.dbName,
         surveyInfo: surveyInfo,
@@ -18,13 +20,16 @@ function SurveyButton(props) {
         check: false,
       });
     } else {
-      setState(true);
-      SurveyCheckName({
-        name: props.name.dbName,
-        surveyInfo: surveyInfo,
-        surveyInfoTwo: surveyInfoTwo,
-        check: true,
-      });
+      if (surveyInfoTwo.cnt < 5) {
+        setState(true);
+        surveyInfoTwo.setCnt(surveyInfoTwo.cnt + 1);
+        SurveyCheckName({
+          name: props.name.dbName,
+          surveyInfo: surveyInfo,
+          surveyInfoTwo: surveyInfoTwo,
+          check: true,
+        });
+      }
     }
   };
   return (
