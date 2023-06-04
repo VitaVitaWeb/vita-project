@@ -41,7 +41,7 @@ public class SurveyController {
 
 
     @GetMapping("function")
-    public VitaSurveyFunction getVitaFunction(@RequestParam String id) throws Exception {
+    public VitaSurveyFunction getVitaFunction(@RequestParam("id") String id) throws Exception {
         try {
             id = URLDecoder.decode(id, "UTF-8");
         } catch (UnsupportedEncodingException e) {
