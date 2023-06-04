@@ -9,27 +9,12 @@ import SignUpPage from "./Pages/LoginPage/signUpPage";
 import { CustomerInfoProvider } from "./customerInfo";
 import SupplementList from "./Pages/ListPage/List";
 import MyPage from "./Pages/MyPage/myPage";
-import { useEffect } from "react";
-import axios from "axios";
-import TopBar from "./CommonComponent/TopBar/topBar";
 import SearchPage from "./Pages/IdPwSearchPage/searchPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, createContext } from "react";
+import React, { useContext } from "react";
 import SurveyResult from "./Pages/Survey/surveyResult";
 
 function App() {
-  const [user, setUser] = useState({});
-  useEffect(() => {
-    const checkLogin = async () => {
-      try {
-        const data = await axios.get("/auth/checkLogin");
-        setUser(data.data);
-      } catch {
-        console.log("error in login");
-      }
-    };
-    checkLogin();
-  }, []);
   return (
     <CustomerInfoProvider>
       <BrowserRouter>

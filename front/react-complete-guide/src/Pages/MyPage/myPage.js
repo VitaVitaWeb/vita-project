@@ -3,8 +3,23 @@ import AccountSurvey from "./components/accountSurvey/accountSurvey";
 import MyPageLeftBar from "./components/myPageLeftBar";
 import TopBar from "../../CommonComponent/TopBar/topBar";
 import "./myPage.css";
+import CustomerInfo from "../../customerInfo";
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
 
 function MyPage() {
+  const { setCustomerInfo } = useContext(CustomerInfo);
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        const data = await axios.get("/auth/checkLogin");
+        setCustomerInfo({ user: data.data });
+      } catch {
+        console.log("error in login");
+      }
+    };
+    checkLogin();
+  }, []);
   return (
     <div>
       <div id="1">

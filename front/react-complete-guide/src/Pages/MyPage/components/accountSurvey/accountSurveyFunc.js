@@ -6,6 +6,7 @@ import SurveyCheckName from "./surveyCheckName";
 function AccountSurveyFunc() {
   const userInfo = useContext(CustomerInfo);
   const [surveyData, setSurveyData] = useState([]);
+
   const GetSurveyData = async () => {
     try {
       const data = await axios.get("/survey/function", {
@@ -13,7 +14,6 @@ function AccountSurveyFunc() {
           id: userInfo.user.id,
         },
       });
-
       let dataList = [];
       for (let objKey in data.data) {
         if (data.data[objKey] && objKey !== "funno" && objKey !== "id")
@@ -27,7 +27,7 @@ function AccountSurveyFunc() {
   };
   useEffect(() => {
     GetSurveyData();
-  }, []);
+  }, [userInfo]);
 
   return (
     <div className="accountSurveyList">
