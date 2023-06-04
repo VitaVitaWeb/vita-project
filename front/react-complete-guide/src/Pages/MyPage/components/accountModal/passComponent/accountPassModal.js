@@ -27,6 +27,9 @@ function AccountPassModal() {
       console.log("err change");
     }
   };
+  const onClickCancel = () => {
+    setIsOpen(false);
+  };
   return (
     <div className="accountSpecText">
       <button className="accountSpecPassButton" onClick={onClickSetTrue}>
@@ -34,7 +37,10 @@ function AccountPassModal() {
       </button>
       <Modal className="accountModal" isOpen={isOpen}>
         <div>
-          <PassComponent onClickSetFalse={onClickSetFalse}></PassComponent>
+          <PassComponent
+            onClickSetFalse={onClickSetFalse}
+            onClickCancel={onClickCancel}
+          ></PassComponent>
         </div>
       </Modal>
     </div>

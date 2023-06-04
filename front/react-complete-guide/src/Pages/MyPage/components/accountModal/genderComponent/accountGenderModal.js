@@ -24,6 +24,9 @@ function AccountGenderModal() {
       console.log("err change");
     }
   };
+  const onClickCancel = () => {
+    setIsOpen(false);
+  };
   return (
     <div className="accountSpecText">
       성별:{userInfo.user.gender ? "여" : "남"}
@@ -32,6 +35,9 @@ function AccountGenderModal() {
       </button>
       <Modal className="accountModal" isOpen={isOpen}>
         <GenderComponent setGender={setGender} />
+        <button className="modalButtonCancel" onClick={onClickCancel}>
+          취소
+        </button>
         <button className="modalButton" onClick={onClickSetFalse}>
           변경사항 저장
         </button>

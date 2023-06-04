@@ -34,6 +34,9 @@ function AccountIdModal() {
       setEmail({ email: null, emailCom: null });
     }
   };
+  const onClickCancel = () => {
+    setIsOpen(false);
+  };
   return (
     <div className="accountSpecText">
       아이디:{userInfo.user.id}
@@ -47,6 +50,9 @@ function AccountIdModal() {
           email={email}
           setEmail={setEmail}
         />
+        <button className="modalButtonCancel" onClick={onClickCancel}>
+          취소
+        </button>
         <button className="modalButton" onClick={onClickSetFalse}>
           변경사항 저장
         </button>

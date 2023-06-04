@@ -4,8 +4,22 @@
   border-style: none;
   cursor: pointer;
   height: 30px;
+  width: 140px;
   margin-left: 340px;
   margin-top: 250px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.modalButtonCancel {
+  background-color: orange;
+  position: fixed;
+  border-style: none;
+  cursor: pointer;
+  height: 30px;
+  width: 140px;
+  margin-top: 250px;
+  margin-left: 20px;
   font-size: 20px;
   border-radius: 10px;
   color: white;

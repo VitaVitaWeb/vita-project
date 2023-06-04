@@ -14,7 +14,6 @@ function AccountPhoneModal() {
     setIsOpen(true);
   };
   const onClickSetFalse = async () => {
-    setIsOpen(false);
     console.log(phoneCheck);
     if (phoneCheck) {
       console.log(userInfo.user);
@@ -28,7 +27,12 @@ function AccountPhoneModal() {
       } catch {
         console.log("err change");
       }
+      setIsOpen(false);
     }
+    setPhoneVal("");
+  };
+  const onClickCancel = () => {
+    setIsOpen(false);
     setPhoneVal("");
   };
   return (
@@ -44,6 +48,9 @@ function AccountPhoneModal() {
           phoneCheck={phoneCheck}
           setPhoneCheck={setPhoneCheck}
         />
+        <button className="modalButtonCancel" onClick={onClickCancel}>
+          취소
+        </button>
         <button className="modalButton" onClick={onClickSetFalse}>
           변경사항 저장
         </button>

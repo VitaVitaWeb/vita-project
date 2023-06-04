@@ -16,7 +16,6 @@ function AccountNameModal() {
     setIsOpen(true);
   };
   const onClickSetFalse = async () => {
-    setIsOpen(false);
     if (nicknameCheck) {
       try {
         const data = await axios.post("/member/update", {
@@ -29,7 +28,12 @@ function AccountNameModal() {
         console.log("err change");
       }
       setNameVal("");
+      setIsOpen(false);
     }
+  };
+  const onClickCancel = () => {
+    setIsOpen(false);
+    setNameVal("");
   };
   return (
     <div className="accountSpecText">
@@ -46,6 +50,9 @@ function AccountNameModal() {
           nameCheckText={nameCheckText}
           setCheckText={setCheckText}
         />
+        <button className="modalButtonCancel" onClick={onClickCancel}>
+          취소
+        </button>
         <button className="modalButton" onClick={onClickSetFalse}>
           변경사항 저장
         </button>

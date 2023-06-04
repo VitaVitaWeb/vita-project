@@ -22,7 +22,7 @@ function AccountSurveyFunc() {
           dataList.push(objKey);
       }
       setSurveyData(dataList);
-      console.log(data);
+      console.log(surveyData);
     } catch {
       console.log("error in login");
     }
@@ -34,12 +34,11 @@ function AccountSurveyFunc() {
   return (
     <div className="accountSurveyList">
       {surveyData.map((name) => (
-    <div className="accountSurveyListBlock" key={name}>
-        {SurveyCheckName(name)}
-        <div className="accountSurveyListText">{SurveyCheckName(name)}</div>
-    </div>
-))}
-
+        <div className="accountSurveyListBlock" key={name}>
+          {SurveyCheckName(name)}
+          <div className="accountSurveyListText">{SurveyCheckName(name)}</div>
+        </div>
+      ))}
     </div>
   );
 }

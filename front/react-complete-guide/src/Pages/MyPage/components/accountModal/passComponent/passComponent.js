@@ -102,6 +102,9 @@ function PassComponent(props) {
         checkHidden={true}
         nameCheckText={passCheckText}
       />
+      <button className="modalButtonCancelPass" onClick={props.onClickCancel}>
+        취소
+      </button>
       <button className="modalPassButton" onClick={onClickModalButton}>
         변경사항 저장
       </button>
