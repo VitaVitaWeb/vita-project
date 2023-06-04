@@ -9,6 +9,8 @@ function AccountSurveyFunc() {
 
   const GetSurveyData = async () => {
     try {
+      console.log(userInfo.user.id);
+
       const data = await axios.get("/survey/function", {
         params: {
           id: userInfo.user.id,
@@ -32,11 +34,12 @@ function AccountSurveyFunc() {
   return (
     <div className="accountSurveyList">
       {surveyData.map((name) => (
-        <div className="accountSurveyListBlock">
-          {SurveyCheckName(name)}
-          <div className="accountSurveyListText">{SurveyCheckName(name)}</div>
-        </div>
-      ))}
+    <div className="accountSurveyListBlock" key={name}>
+        {SurveyCheckName(name)}
+        <div className="accountSurveyListText">{SurveyCheckName(name)}</div>
+    </div>
+))}
+
     </div>
   );
 }
