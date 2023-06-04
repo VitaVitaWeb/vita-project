@@ -1,30 +1,41 @@
 import CustomerInfo from "../../../../customerInfo";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import SurveyCheckName from "./surveyCheckName";
 function AccountSurveyForma() {
   const userInfo = useContext(CustomerInfo);
   const [surveyData, setSurveyData] = useState([]);
-    const GetSurveyData = async () => {
-      try {
-        const data = await axios.get("/survey/formulation", {
-          params: {
-            id: userInfo.user.id,
-          },
-        });
+  const GetSurveyData = async () => {
+    try {
+      const data = await axios.get("/survey/formulation", {
+        params: {
+          id: userInfo.user.id,
+        },
+      });
 
-        let dataList = [];
-        for (let objKey in data.data) {
-          if (data.data[objKey] && objKey !== "funno" && objKey !== "id")
-            dataList.push(objKey);
-        }
-        setSurveyData(dataList);
-        console.log(data);
-      } catch {
-        console.log("error in login");
+      let dataList = [];
+      for (let objKey in data.data) {
+        if (data.data[objKey] && objKey !== "funno" && objKey !== "id")
+          dataList.push(objKey);
       }
-    };
-    useEffect(() => {
-      GetSurveyData();
-    }, [userInfo]);
+      setSurveyData(dataList);
+      console.log(data);
+    } catch {
+      console.log("error in login");
+    }
+  };
+  useEffect(() => {
+    GetSurveyData();
+  }, [userInfo]);
+  return (
+    <div className="accountSurveyList">
+      {surveyData.map((name) => (
+        <div className="accountSurveyListBlock" key={name}>
+          {SurveyCheckName(name)}
+          <div className="accountSurveyListText">{SurveyCheckName(name)}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
 export default AccountSurveyForma;
