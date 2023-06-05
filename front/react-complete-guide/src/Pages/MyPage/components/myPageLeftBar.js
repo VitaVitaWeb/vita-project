@@ -14,10 +14,7 @@ function MyPageLeftBar() {
         <button className="myPageLeftBarAccount">계정정보</button>
       </Link>
       <Link to="3" spy={true} smooth={true}>
-        <button className="myPageLeftBarAccount">선호형태</button>
-      </Link>
-      <Link to="4" spy={true} smooth={true}>
-        <button className="myPageLeftBarJjim">찜 목록</button>
+        <button className="myPageLeftBarJjim">선호형태</button>
       </Link>
     </div>
   );
